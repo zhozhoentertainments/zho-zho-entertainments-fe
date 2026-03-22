@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Figtree,Poppins } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { cn } from "@/lib/utils";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -32,11 +34,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", figtree.variable)}
-    >
-      <body className={poppins.variable}>{children}</body>
-    </html>
+    <div className="flex h-screen flex-col">
+    <Header/>
+    <main className="flex-1">{children}</main>
+    <Footer/>
+    </div>
   );
 }
