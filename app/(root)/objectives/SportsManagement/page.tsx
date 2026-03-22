@@ -178,14 +178,14 @@ export default function SportsManagementPage() {
         {/* Image Collage Grid */}
         <div className="grid grid-cols-2 gap-4 ">
           <div className="h-full rounded-[2rem] overflow-hidden shadow-xl">
-             <img src="https://plus.unsplash.com/premium_photo-1664303228186-a61e7dc91597?q=80&w=800" alt="Kho Kho Action" className="w-full h-full object-cover" />
+             <img src="https://scontent.fgau4-1.fna.fbcdn.net/v/t51.75761-15/475463035_18298774195236801_5605918848006714738_n.webp?stp=dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=eBNkcCZXfiEQ7kNvwHHWeNZ&_nc_oc=Ado6xeXx2fFqBUNGL4H_UNLsO8xwcEbf4MXaZ1xk7Os1bwI-2ezNPQtICovhpQyCMzA&_nc_zt=23&_nc_ht=scontent.fgau4-1.fna&_nc_gid=i-mmij6DQ-1IN-O6to8RiQ&_nc_ss=7a32e&oh=00_AfzBUJ1BoPsB_j8Qin3AkoO0fYvfTvFMcShxXs6bXD84Ww&oe=69C5FDCB" alt="Kho Kho Action" className="w-full h-full object-cover" />
           </div>
           <div className="grid grid-rows-2 gap-4 h-full">
             <div className="rounded-[2rem] overflow-hidden shadow-xl">
-               <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800" alt="Teamwork" className="w-full h-full object-cover" />
+               <img src="https://images.tv9hindi.com/wp-content/uploads/2025/01/kho-kho.jpg?w=1280" alt="Teamwork" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-[2rem] overflow-hidden shadow-xl bg-gray-200">
-               <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=800" alt="Strategy" className="w-full h-full object-cover" />
+               <img src="https://www.ultimatekhokho.com/static-assets/waf-images/e2/d9/15/4-3/nG6p9a46cj.jpg?v=1.04&w=1024" alt="Strategy" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
