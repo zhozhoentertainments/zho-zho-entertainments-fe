@@ -9,14 +9,13 @@ import Landing from "./Landing/page";
 export default function Home() {
   return (
     <div className="w-full min-h-screen bg-[#050505] p-3 md:p-6 lg:p-8 font-sans flex flex-col">
-      <div className="relative w-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)] rounded-[2rem] md:rounded-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center overflow-hidden text-white flex flex-col shadow-2xl ring-1 ring-white/10">
+      <div className="relative w-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)] rounded-[2rem] md:rounded-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center  text-white flex flex-col shadow-2xl ring-1 ring-white/10">
 
-        {/* Dark overlay for contrast */}
+       
         <div className="absolute inset-0 bg-black/60 md:bg-black/50 lg:bg-gradient-to-r from-black/90 via-black/50 to-black/70 z-0"></div>
 
-        {/* Content strictly over the overlay */}
-        <div className="relative z-10 flex flex-col flex-1 px-10 md:px-20 lg:px-32 xl:px-44 w-full">
-          {/* Navigation */}
+        <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">
+         
           <header className="w-full flex items-center justify-between py-6 lg:py-8">
             <Link href="/" className="relative z-10 transition-transform hover:scale-105">
               <Image
@@ -65,7 +64,7 @@ export default function Home() {
             </div>
           </header>
 
-          {/* Main Hero Content */}
+       
           <main className="flex-1 flex flex-col justify-center pb-12 pt-8 lg:pt-0 lg:pb-0 h-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-full">
 
@@ -95,14 +94,21 @@ export default function Home() {
                   Live It. Feel It. Zho Zho. Take your event experiences to the next level with our expert-led programs designed for everyone. From mastering fundamentals to advanced strategies, our professional team delivers.
                 </p>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-4">
-                  <button 
-                    onClick={() => document.getElementById('mission-section')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="bg-black hover:bg-neutral-800 border-2 border-white/20 text-white rounded-full text-lg font-bold shadow-2xl transition-all hover:scale-105 h-[64px] min-w-[240px] px-8 flex items-center justify-center whitespace-nowrap cursor-pointer"
-                  >
-                    Explore Now
-                  </button>
+               {/* Action Buttons */}
+        <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-4">
+          <button 
+             onClick={() => {
+                const el = document.getElementById("mission-section");
+                if (el) {
+                  el.scrollIntoView({ 
+                    behavior: "smooth", 
+                    block: "start" 
+                  });
+                }
+              }}
+        className="bg-black hover:bg-neutral-800 border-2 border-white/20 text-white rounded-full text-lg font-bold shadow-2xl transition-all hover:scale-105 h-[64px] min-w-[240px] px-8 flex items-center justify-center whitespace-nowrap cursor-pointer">
+              Explore Now
+        </button>
                 </div>
               </div>
 

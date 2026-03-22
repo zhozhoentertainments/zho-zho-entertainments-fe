@@ -128,98 +128,106 @@ const stats = ["Quick Reflexes", "Teamwork", "Strategy", "Communication", "Endur
 
 export default function SportsManagementPage() {
   return (
-    <div>
-    <div className="w-full  bg-white font-sans flex flex-col pb-32">
-      {/* Hero Section */}
-      <div className="relative w-full h-[60vh] min-h-[400px] md:h-[500px] rounded-b-[2.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl z-10">
-        <div className="absolute inset-0 bg-black/70 md:bg-black/60 lg:bg-gradient-to-t from-black/95 via-black/50 to-black/80 z-0"></div>
+    <div className="w-full bg-white font-sans">
+      {/* 1. Hero Section - Cleaned up height and z-index issues */}
+      <div className="relative w-full h-[60vh] min-h-[500px] rounded-b-[2.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
+        <div className="absolute inset-0 bg-black/70 md:bg-black/60 lg:bg-gradient-to-t from-black/95 via-black/50 to-black/80"></div>
+        
         <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full mx-auto">
           <Header />
         </div>
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 mt-10">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md w-fit shadow-lg mb-6">
+
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-16">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md shadow-lg mb-6">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
             <span className="text-xs md:text-sm font-bold text-white tracking-widest uppercase">Sports Management</span>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">Kho Kho</h1>
-          <div className="mt-8 text-sm font-medium text-white/70 tracking-widest uppercase flex items-center gap-2">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">Kho Kho</h1>
+          
+          <nav className="flex items-center gap-2 text-sm font-medium text-white/70 tracking-widest uppercase">
             <Link href="/" className="hover:text-white transition-colors">Home</Link> 
             <ChevronRight className="w-4 h-4 text-white/40" />
             <Link href="/objectives" className="hover:text-white transition-colors">Objectives</Link>
             <ChevronRight className="w-4 h-4 text-white/40" />
             <span className="text-white cursor-default">Sports Management</span>
-          </div>
+          </nav>
         </div>
       </div>
-      </div>
 
-      {/* Intro Section with Staggered Images - Added mt-20 for space after header */}
-      <section className="md:px-12 pt-24 pb-40 lg:pb-56 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-white">
-        <div>
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md w-fit shadow-lg mb-6">
+      {/* 2. Intro Section - Standardized py-20 md:py-32 for even spacing */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col gap-6">
+          <div className="inline-flex items-center gap-3 rounded-full border border-gray-100 bg-gray-50 px-4 py-2 w-fit shadow-sm">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
-            <span className="text-xs md:text-sm font-bold text-black tracking-widest uppercase">Play</span>
+            <span className="text-xs md:text-sm font-bold text-gray-900 tracking-widest uppercase">Play</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">The Game of Chasers</h2>
-          <p className="text-gray-600 leading-relaxed text-lg ">
-            Kho Kho is a traditional Indian team sport that's fast-paced and fun, combining elements of tag and running. It has evolved from a rural pastime into a respected competitive sport, celebrated for its heritage and dynamic gameplay.
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">The Game of Chasers</h2>
+          <p className="text-gray-600 leading-relaxed text-lg">
+            Kho Kho is a traditional Indian team sport that's fast-paced and fun, combining elements of tag and running. It has evolved from a rural pastime into a respected competitive sport.
           </p>
-          <p className="text-gray-500 mb-6 uppercase text-sm font-bold tracking-widest">It requires</p>
-          <div className="grid grid-cols-2 gap-y-6">
-            {stats.map((stat, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="text-yellow-500"><Check className="w-6 h-6 stroke-[3px]" /></div>
-                <span className="text-lg font-bold text-gray-800">{stat}</span>
-              </div>
-            ))}
+          
+          <div className="pt-4">
+            <p className="text-gray-400 mb-6 uppercase text-xs font-bold tracking-[0.2em]">Required Skills</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+              {stats.map((stat, i) => (
+                <div key={i} className="flex items-center gap-3 group">
+                  <div className="text-red-600 bg-red-50 p-1 rounded-full group-hover:bg-red-600 group-hover:text-white transition-colors">
+                    <Check className="w-4 h-4 stroke-[3px]" />
+                  </div>
+                  <span className="text-base font-bold text-gray-800">{stat}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Image Collage Grid */}
-        <div className="grid grid-cols-2 gap-4 ">
-          <div className="h-full rounded-[2rem] overflow-hidden shadow-xl">
-             <img src="https://scontent.fgau4-1.fna.fbcdn.net/v/t51.75761-15/475463035_18298774195236801_5605918848006714738_n.webp?stp=dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=eBNkcCZXfiEQ7kNvwHHWeNZ&_nc_oc=Ado6xeXx2fFqBUNGL4H_UNLsO8xwcEbf4MXaZ1xk7Os1bwI-2ezNPQtICovhpQyCMzA&_nc_zt=23&_nc_ht=scontent.fgau4-1.fna&_nc_gid=i-mmij6DQ-1IN-O6to8RiQ&_nc_ss=7a32e&oh=00_AfzBUJ1BoPsB_j8Qin3AkoO0fYvfTvFMcShxXs6bXD84Ww&oe=69C5FDCB" alt="Kho Kho Action" className="w-full h-full object-cover" />
+        {/* Improved Collage Layout */}
+        <div className="grid grid-cols-2 gap-4 h-[500px]">
+          <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+             <img src="https://gripinternational.in/wp-content/uploads/2019/08/Banner-2-1.jpg" alt="Kho Kho Action" className="w-full h-full object-cover" />
           </div>
-          <div className="grid grid-rows-2 gap-4 h-full">
-            <div className="rounded-[2rem] overflow-hidden shadow-xl">
+          <div className="grid grid-rows-2 gap-4">
+            <div className="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
                <img src="https://images.tv9hindi.com/wp-content/uploads/2025/01/kho-kho.jpg?w=1280" alt="Teamwork" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-xl bg-gray-200">
-               <img src="https://www.ultimatekhokho.com/static-assets/waf-images/e2/d9/15/4-3/nG6p9a46cj.jpg?v=1.04&w=1024" alt="Strategy" className="w-full h-full object-cover" />
+            <div className="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white bg-gray-100">
+               <img src="https://img-cdn.publive.online/filters:format(webp)/english-betterindia/media/post_attachments/uploads/2025/01/Rajasthan-attacker-Bhuvneshwar-Sahu-in-Blue-captures-Telugu-Yoddhas-wicket-during-a-Ultimate-Kho-Kho-Season1-match-in-Pune-on-Tuesday-August-16-2022_11zon-1737367282.jpg" alt="Strategy" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
       </section>
     
-      <section className="bg-gray-100 py-32 md:py-40 mb-20 section-how-to-play">
-        <div className="mx-auto px-6 md:px-12">
-          <h2 className="text-4xl md:text-5xl font-bold pt-24 text-center text-gray-900 drop-shadow-sm">
-            How to Play <span className="text-red-600">Kho-Kho?</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* 3. How to Play Section - Consistent Padding and Responsive Grid */}
+      <section className="bg-gray-50 py-20 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 md:mb-24">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900">
+              How to Play <span className="text-red-600 underline decoration-red-200 underline-offset-8">Kho-Kho?</span>
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {rulesData.map((rule, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-yellow-500 hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 border-b pb-4 mb-6 text-center uppercase tracking-wider">
+              <div key={idx} className="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <h3 className="text-xl font-extrabold text-gray-900 border-b border-gray-50 pb-6 mb-6 uppercase tracking-tighter">
                   {rule.title}
                 </h3>
                 {rule.points ? (
-                  <ul className="space-y-4">
+                  <ul className="space-y-4 flex-grow">
                     {rule.points.map((p, i) => (
-                      <li key={i} className="flex gap-2 text-sm text-gray-600 items-start">
-                        <span className="mt-1 text-xs">▶</span> {p}
+                      <li key={i} className="flex gap-3 text-sm md:text-base text-gray-600 items-start leading-relaxed">
+                        <span className="text-red-500 font-bold mt-0.5">•</span> {p}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  rule.customContent
+                  <div className="flex-grow">{rule.customContent}</div>
                 )}
               </div>
             ))}
           </div>
         </div>
-        
       </section>
-      <div className="20"></div>
     </div>
   );
 }
