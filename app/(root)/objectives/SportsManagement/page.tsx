@@ -56,17 +56,84 @@ const rulesData = [
       "The chaser must say 'Kho' clearly and audibly to signal the change.",
     ],
   },
+  {
+    title: "RULES FOR RUNNERS",
+    points: [
+      "Runners dodge the chasers by running around the central lane or using poles as a barrier.",
+      "Once a runner is tagged, they are out of the game until the inning changes.",
+      "Runners can’t step out of bounds or touch the central lane directly.",
+      "Runners can use the poles to change direction and dodge the chaser.",
+      "Runners are not allowed to cross the central lane or touch it directly.",
+    ],
+  },
+  {
+    title: "SCORING & WINNING",
+    points: [
+      "Each runner tagged by the chasers counts as one point for the chasing team.",
+      "Each team scores by tagging as many runners as possible.",
+      "After each inning, teams switch roles – chasers become runners and vice versa.",
+      "At the end of both innings, the team with the highest score wins.",
+      "If the scores are tied, an extra inning or sudden-death round may be played.",
+     ]
+  },
+  {
+    title: "KEY SKILLS",
+    customContent: (
+      <div className="space-y-4">
+        <div>
+          <span className="text-red-600 font-bold block mb-1">Agility and Reflexes :</span>
+          <p className="text-gray-600 text-sm">Both chasers and runners need to make quick decisions and movements.</p>
+        </div>
+        <div>
+          <span className="text-red-600 font-bold block mb-1">Team Coordination :</span>
+          <p className="text-gray-600 text-sm">Chasers need good communication for smooth role changes.</p>
+        </div>
+        <div>
+          <span className="text-red-600 font-bold block mb-1">Pole Utilization :</span>
+          <p className="text-gray-600 text-sm">Runners can use poles to evade tags; chasers use poles to switch directions.</p>
+        </div>
+         <div>
+          <span className="text-red-600 font-bold block mb-1">Endurance :</span>
+          <p className="text-gray-600 text-sm">Kho Kho is fast-paced, so players need to pace their energy for sustained performance.</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "STRATEGIES",
+    customContent: (
+      <div className="space-y-4">
+        <div>
+          <span className="text-red-600 font-bold block mb-1">Positioning and Anticipation :</span>
+          <p className="text-gray-600 text-sm">Chasers should position strategically to block runners’ escape routes.</p>
+        </div>
+        <div>
+          <span className="text-red-600 font-bold block mb-1">Efficient Use of "Kho" :</span>
+          <p className="text-gray-600 text-sm">Switch roles only when needed to maintain energy and field coverage.</p>
+        </div>
+        <div>
+          <span className="text-red-600 font-bold block mb-1">Deceptive Movements :</span>
+          <p className="text-gray-600 text-sm">Runners should use fake moves and pole dodges to mislead chasers.</p>
+        </div>
+         <div>
+          <span className="text-red-600 font-bold block mb-1">Endurance Management :</span>
+          <p className="text-gray-600 text-sm">Both teams should pace their energy, with chasers avoiding unnecessary sprints and runners using strategic pauses.</p>
+        </div>
+      </div>
+    ),
+  },
 ];
 
 const stats = ["Quick Reflexes", "Teamwork", "Strategy", "Communication", "Endurance", "Quick Decision-Making"];
 
 export default function SportsManagementPage() {
   return (
-    <div className="w-full min-h-[100dvh] bg-white font-sans flex flex-col pb-32">
+    <div>
+    <div className="w-full  bg-white font-sans flex flex-col pb-32">
       {/* Hero Section */}
-      <div className="relative w-full h-[55vh] min-h-[400px] md:h-[500px] rounded-b-[2.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl z-10">
+      <div className="relative w-full h-[60vh] min-h-[400px] md:h-[500px] rounded-b-[2.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl z-10">
         <div className="absolute inset-0 bg-black/70 md:bg-black/60 lg:bg-gradient-to-t from-black/95 via-black/50 to-black/80 z-0"></div>
-        <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full max-w-[1280px] mx-auto">
+        <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full mx-auto">
           <Header />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 mt-10">
@@ -74,7 +141,7 @@ export default function SportsManagementPage() {
             <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
             <span className="text-xs md:text-sm font-bold text-white tracking-widest uppercase">Sports Management</span>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">How to Play Kho Kho</h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">Kho Kho</h1>
           <div className="mt-8 text-sm font-medium text-white/70 tracking-widest uppercase flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Home</Link> 
             <ChevronRight className="w-4 h-4 text-white/40" />
@@ -84,13 +151,17 @@ export default function SportsManagementPage() {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Intro Section with Staggered Images - Added mt-20 for space after header */}
-      <section className="md:px-12 py-24 mb-24 lg:mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="md:px-12 pt-24 pb-40 lg:pb-56 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-white">
         <div>
-          <span className="bg-red-600 text-white px-3 py-1 text-xs font-bold uppercase mb-4 inline-block">Play</span>
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md w-fit shadow-lg mb-6">
+            <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
+            <span className="text-xs md:text-sm font-bold text-black tracking-widest uppercase">Play</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">The Game of Chasers</h2>
-          <p className="text-gray-600 leading-relaxed text-lg mb-8">
+          <p className="text-gray-600 leading-relaxed text-lg ">
             Kho Kho is a traditional Indian team sport that's fast-paced and fun, combining elements of tag and running. It has evolved from a rural pastime into a respected competitive sport, celebrated for its heritage and dynamic gameplay.
           </p>
           <p className="text-gray-500 mb-6 uppercase text-sm font-bold tracking-widest">It requires</p>
@@ -105,7 +176,7 @@ export default function SportsManagementPage() {
         </div>
 
         {/* Image Collage Grid */}
-        <div className="grid grid-cols-2 gap-4 h-[500px]">
+        <div className="grid grid-cols-2 gap-4 ">
           <div className="h-full rounded-[2rem] overflow-hidden shadow-xl">
              <img src="https://plus.unsplash.com/premium_photo-1664303228186-a61e7dc91597?q=80&w=800" alt="Kho Kho Action" className="w-full h-full object-cover" />
           </div>
@@ -119,11 +190,10 @@ export default function SportsManagementPage() {
           </div>
         </div>
       </section>
-
-      {/* Rule Cards Grid - Added mb-20 for space before footer */}
-      <section className="bg-gray-100 py-24 mb-20">
+    
+      <section className="bg-gray-100 py-32 md:py-40 mb-20 section-how-to-play">
         <div className="mx-auto px-6 md:px-12">
-          <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-bold pt-24 text-center text-gray-900 drop-shadow-sm">
             How to Play <span className="text-red-600">Kho-Kho?</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -147,7 +217,9 @@ export default function SportsManagementPage() {
             ))}
           </div>
         </div>
+        
       </section>
+      <div className="20"></div>
     </div>
   );
 }

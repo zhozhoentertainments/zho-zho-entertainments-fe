@@ -3,15 +3,7 @@
 import Header from "@/components/shared/Header";
 import Link from "next/link";
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
+import Cards from "@/components/Cards";
 
 const objectivesData = [
   {
@@ -23,7 +15,7 @@ const objectivesData = [
   {
     title: "CULTURAL EVENTS",
     desc: "Vibrant organization of traditional and modern cultural festivals that celebrate diverse heritage and community.",
-    image: "https://images.unsplash.com/photo-1533174000255-12b485de41bc?q=80&w=800&auto=format&fit=crop",
+    image: "https://thepatriot.in/wp-content/uploads/2025/04/Dance-6.jpg",
   },
   {
     title: "CORPORATE EVENTS",
@@ -43,7 +35,7 @@ const objectivesData = [
   {
     title: "TRAVEL & ENTERTAINMENT TRIPS",
     desc: "Curated luxury travel packages and entertainment-focused destination experiences around the globe.",
-    image: "https://images.unsplash.com/photo-1436450412740-6bba4e2e650c?q=80&w=800&auto=format&fit=crop",
+    image: "https://www.southernliving.com/thmb/uC9lfdB-vpeXk1XuxT12bII4EQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1474089369-d2b0855436be4074ae986429058bf15c.jpg",
   },
   {
     title: "PRODUCE, DIRECT AND DISTRIBUTE FILMS AND DOCUMENTARIES",
@@ -64,9 +56,11 @@ const objectivesData = [
 
 export default function ObjectivesPage() {
   return (
-    <div className="w-full min-h-screen bg-gray-50 font-sans flex flex-col">
+    <div>
+    <div className="w-full  bg-gray-50 font-sans flex flex-col">
+      
+      {/* Hero Section */}
       <div className="relative w-full h-[60vh] min-h-[400px] md:h-[500px] rounded-b-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
-
         <div className="absolute inset-0 bg-black/60 md:bg-black/50 lg:bg-gradient-to-t from-black/80 via-black/40 to-black/80 z-0"></div>
 
         <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full max-w-[1280px] mx-auto">
@@ -84,52 +78,27 @@ export default function ObjectivesPage() {
           </div>
         </div>
       </div>
+      <div className="h-20"></div>
+      </div>
 
-      {/* main content section */}
-      <main className="flex-1 w-full mx-auto px-8 md:px-16 lg:px-24 my-24 lg:my-32 flex flex-col items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4 w-full">
-          {objectivesData.map((obj, idx) => (
-            <Card key={idx} className="relative w-[85%] md:w-[80%] lg:w-[70%] mx-auto aspect-[4/5] pt-0 overflow-hidden group shadow-2xl rounded-[2.5rem] border-0 bg-transparent">
-              
-              {/* Image Background */}
-              <div className="absolute inset-0 z-10 transition-transform duration-700 ease-out group-hover:scale-110">
-                <img src={obj.image} alt={obj.title} className="w-full h-full object-cover" />
-              </div>
-              
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 z-20 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity group-hover:opacity-100" />
-              
-              {/* Content layered above image via z-30 */}
-              <div className="relative z-30 h-full p-6 md:p-8 flex flex-col justify-end">
-                <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col">
-                  
-                  <CardHeader className="p-0 mb-4 z-40">
-                    <CardTitle className="text-2xl font-bold text-white mb-2 leading-tight drop-shadow-xl">
-                      {obj.title}
-                    </CardTitle>
-                    <CardDescription className="text-white/80 text-sm font-medium leading-relaxed mt-2 opacity-95">
-                      {obj.desc}
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out mt-4 z-40">
-                    <div className="w-full h-[2px] bg-white/20 mb-6"></div>
-                    <CardFooter className="p-0">
-                      <Link href={obj.link || "#"} className="flex items-center gap-4 group/btn">
-                        <span className="text-white font-bold tracking-widest uppercase text-sm">Read More</span>
-                        <div className="w-10 h-10 rounded-full bg-red-600/90 flex items-center justify-center transition-colors group-hover/btn:bg-red-500">
-                          <ArrowUpRight className="w-5 h-5 text-white transition-transform group-hover/btn:scale-110" />
-                        </div>
-                      </Link>
-                    </CardFooter>
-                  </div>
-                  
-                </div>
-              </div>
-            </Card>
+      {/* Main Content Section */}
+      <main className=" mb-24 mx-auto px-6 md:px-12 py-16 bg-white pl-10 pr-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {objectivesData.map((card, index) => (
+            <Cards
+              key={index}
+              title={card.title}
+              desc={card.desc}
+              image={card.image}
+              link={card.link}
+            />
           ))}
         </div>
+        <div className="h-20"></div>
       </main>
-    </div>
+
+    
+</div>
+    
   );
 }

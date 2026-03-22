@@ -1,14 +1,14 @@
 "use client";
 
+import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import Link from "next/link";
 import React from "react";
 
 export default function MissionPage() {
   return (
-    <div className="w-full min-h-screen bg-gray-50 font-sans flex flex-col">
+    <div className="w-full min-h-[100dvh] bg-gray-50 font-sans flex flex-col">
       <div className="relative w-full h-[60vh] min-h-[400px] md:h-[500px] rounded-b-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
-    
       <div className="absolute inset-0 bg-black/60 md:bg-black/50 lg:bg-gradient-to-t from-black/80 via-black/40 to-black/80 z-0"></div>
 
         <div className="absolute top-0 left-0 right-0 z-50 px-10 md:px-20 lg:px-32 xl:px-44 w-full mx-auto max-w-[1600px]">
@@ -26,9 +26,8 @@ export default function MissionPage() {
           </div>
         </div>
       </div>
-
       {/* Main Content Section */}
-      <main className="flex-1 w-full mx-auto px-6 py-20 flex flex-col items-center text-center justify-center">
+      <main className="flex-1 w-full mx-auto px-6 pt-[120px] md:pt-[180px] pb-32 flex flex-col items-center text-center justify-center">
   
         <div className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-2 shadow-sm mb-12 transition-transform hover:-translate-y-1">
           <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
@@ -47,6 +46,8 @@ export default function MissionPage() {
           </p>
         </div>
       </main>
+  
     </div>
+
   );
 }

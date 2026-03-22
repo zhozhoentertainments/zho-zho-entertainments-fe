@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/co
 
 export default function Header() {
   return (
-    <header className="w-full flex items-center justify-between py-6 md:py-10">
+    <header className="w-full mb-10 flex items-center justify-between py-6 md:py-10">
       <Link href="/" className="transition-transform hover:scale-105">
         <Image
           src="/logo.png"
