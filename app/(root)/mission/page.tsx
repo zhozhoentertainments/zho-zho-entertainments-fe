@@ -27,7 +27,7 @@ export default function MissionPage() {
         </div>
       </div>
       {/* Main Content Section */}
-      <main className="flex-1 w-full mx-auto px-6 md:pt-[180px] pb-32 flex flex-col items-center text-center justify-center">
+      <main className="flex-1 w-full mx-auto px-6 md:pt-12 pb-12 flex flex-col items-center text-center justify-center">
   
         <div className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-2 shadow-sm mb-12 transition-transform hover:-translate-y-1">
           <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
