@@ -4,12 +4,21 @@ import Header from "@/components/shared/Header";
 import Link from "next/link";
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 
 const objectivesData = [
   {
     title: "SPORTS MANAGEMENT",
     desc: "Expert coordination, talent representation, and seamless operation of premier sporting events and athletic programs.",
     image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=800&auto=format&fit=crop",
+    link: "/objectives/SportsManagement"
   },
   {
     title: "CULTURAL EVENTS",
@@ -57,7 +66,7 @@ export default function ObjectivesPage() {
   return (
     <div className="w-full min-h-screen bg-gray-50 font-sans flex flex-col">
       <div className="relative w-full h-[60vh] min-h-[400px] md:h-[500px] rounded-b-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
-    
+
         <div className="absolute inset-0 bg-black/60 md:bg-black/50 lg:bg-gradient-to-t from-black/80 via-black/40 to-black/80 z-0"></div>
 
         <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full max-w-[1280px] mx-auto">
@@ -69,53 +78,57 @@ export default function ObjectivesPage() {
             Objectives
           </h1>
           <div className="text-sm md:text-base font-medium text-white/80 tracking-[0.2em] uppercase flex items-center gap-3">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link> 
-            <span className="text-white/30 text-xs">/</span> 
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-white/30 text-xs">/</span>
             <span className="text-white cursor-default">Objectives</span>
           </div>
         </div>
       </div>
 
       {/* main content section */}
-      <main className="">
-        
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 w-full">
+      <main className="flex-1 w-full mx-auto px-8 md:px-16 lg:px-24 my-24 lg:my-32 flex flex-col items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4 w-full">
           {objectivesData.map((obj, idx) => (
-            <div key={idx} className="relative rounded-[3rem] w-full aspect-[4/5] overflow-hidden group shadow-lg ring-1 ring-black/5">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-                style={{ backgroundImage: `url(${obj.image})` }}
-              ></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Card key={idx} className="relative w-[85%] md:w-[80%] lg:w-[70%] mx-auto aspect-[4/5] pt-0 overflow-hidden group shadow-2xl rounded-[2.5rem] border-0 bg-transparent">
               
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <div className="transform translate-y-16 group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col">
+              {/* Image Background */}
+              <div className="absolute inset-0 z-10 transition-transform duration-700 ease-out group-hover:scale-110">
+                <img src={obj.image} alt={obj.title} className="w-full h-full object-cover" />
+              </div>
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 z-20 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity group-hover:opacity-100" />
+              
+              {/* Content layered above image via z-30 */}
+              <div className="relative z-30 h-full p-6 md:p-8 flex flex-col justify-end">
+                <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col">
                   
-                  <h3 className="text-2xl font-bold text-white mb-3 leading-snug drop-shadow-md">
-                    {obj.title}
-                  </h3>
+                  <CardHeader className="p-0 mb-4 z-40">
+                    <CardTitle className="text-2xl font-bold text-white mb-2 leading-tight drop-shadow-xl">
+                      {obj.title}
+                    </CardTitle>
+                    <CardDescription className="text-white/80 text-sm font-medium leading-relaxed mt-2 opacity-95">
+                      {obj.desc}
+                    </CardDescription>
+                  </CardHeader>
                   
-                  <p className="text-white/80 text-sm font-medium leading-relaxed">
-                    {obj.desc}
-                  </p>
-                  
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out mt-6">
-                    <div className="w-full h-[4px] bg-white/20 mb-4"></div>
-                    <button className="flex items-center gap-3 self-start group/btn">
-                      <span className="text-white font-bold tracking-wide text-sm">Read More</span>
-                      <div className="w-6 h-6 rounded-full bg-red-900/80 flex items-center justify-center border border-white/20 group-hover/btn:bg-red-600 transition-colors">
-                        <ArrowUpRight className="w-3 h-3 text-white" />
-                      </div>
-                    </button>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out mt-4 z-40">
+                    <div className="w-full h-[2px] bg-white/20 mb-6"></div>
+                    <CardFooter className="p-0">
+                      <Link href={obj.link || "#"} className="flex items-center gap-4 group/btn">
+                        <span className="text-white font-bold tracking-widest uppercase text-sm">Read More</span>
+                        <div className="w-10 h-10 rounded-full bg-red-600/90 flex items-center justify-center transition-colors group-hover/btn:bg-red-500">
+                          <ArrowUpRight className="w-5 h-5 text-white transition-transform group-hover/btn:scale-110" />
+                        </div>
+                      </Link>
+                    </CardFooter>
                   </div>
                   
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
-
       </main>
     </div>
   );

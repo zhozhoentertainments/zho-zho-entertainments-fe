@@ -1,15 +1,15 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Play, ArrowUpRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import Landing from "./Landing/page";
 
 export default function Home() {
   return (
     <div className="w-full min-h-screen bg-[#050505] p-3 md:p-6 lg:p-8 font-sans flex flex-col">
-      <div className="relative flex-1 w-full rounded-[2rem] md:rounded-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center overflow-hidden text-white flex flex-col shadow-2xl ring-1 ring-white/10">
+      <div className="relative w-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)] rounded-[2rem] md:rounded-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center overflow-hidden text-white flex flex-col shadow-2xl ring-1 ring-white/10">
 
         {/* Dark overlay for contrast */}
         <div className="absolute inset-0 bg-black/60 md:bg-black/50 lg:bg-gradient-to-r from-black/90 via-black/50 to-black/70 z-0"></div>
@@ -22,9 +22,9 @@ export default function Home() {
               <Image
                 src="/logo.png"
                 alt="Zho Zho Entertainments"
-                width={180}
-                height={60}
-                className="object-contain h-10 md:h-14 w-auto drop-shadow-2xl "
+                width={300}
+                height={120}
+                className="object-contain h-[60px] md:h-[84px] w-auto drop-shadow-2xl "
               />
             </Link>
 
@@ -48,9 +48,9 @@ export default function Home() {
                       <Image
                 src="/logo.png"
                 alt="Zho Zho Entertainments"
-                width={180}
-                height={60}
-                className="object-contain h-10 md:h-14 w-auto drop-shadow-2xl "
+                width={300}
+                height={120}
+                className="object-contain h-[60px] md:h-[84px] w-auto drop-shadow-2xl "
               />
                     </SheetTitle>
                   </SheetHeader>
@@ -97,7 +97,10 @@ export default function Home() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-4">
-                  <button className="bg-black hover:bg-neutral-800 border-2 border-white/20 text-white rounded-full text-lg font-bold shadow-2xl transition-all hover:scale-105 h-[64px] min-w-[240px] px-8 flex items-center justify-center whitespace-nowrap cursor-pointer">
+                  <button 
+                    onClick={() => document.getElementById('mission-section')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="bg-black hover:bg-neutral-800 border-2 border-white/20 text-white rounded-full text-lg font-bold shadow-2xl transition-all hover:scale-105 h-[64px] min-w-[240px] px-8 flex items-center justify-center whitespace-nowrap cursor-pointer"
+                  >
                     Explore Now
                   </button>
                 </div>
@@ -107,6 +110,7 @@ export default function Home() {
           </main>
         </div>
       </div>
+      <Landing/>
     </div>
   );
 }
