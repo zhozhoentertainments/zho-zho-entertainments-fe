@@ -1,25 +1,20 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
-import { Play, ArrowUpRight, Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+
 import Landing from "./Landing/page";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+import BackgroundVideo from 'next-video/background-video';
 import Header from "@/components/shared/Header";
+
+import Video from 'next-video';
+import myVideo from '../../videos/Vid.mp4'; 
+ 
+
 
 export default function Home() {
   return (
     <div className="w-full min-h-screen font-sans flex flex-col">
-      <div className="relative w-full min-h-screen bg-[url('/bg.avif')] bg-cover bg-center text-white flex flex-col">
+      <div className="relative w-full min-h-screen bg-cover bg-center text-black flex flex-col">
+        <BackgroundVideo src={myVideo}>
+    
 
 
         <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">
@@ -33,13 +28,13 @@ export default function Home() {
               {/* Left Side */}
               <div className="flex flex-col gap-6 lg:gap-8 drop-shadow-xl mt-12 lg:mt-0">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-md w-fit shadow-lg transition-transform hover:-translate-y-1">
+                <div className="inline-flex items-center gap-3 rounded-full border border-black/20 bg-black/10 px-5 py-2.5 backdrop-blur-md w-fit shadow-lg transition-transform hover:-translate-y-1">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
-                  <span className="text-sm md:text-base font-medium text-white/90 tracking-wide">Welcome to Zho Zho</span>
+                  <span className="text-sm md:text-base font-medium text-black/90 tracking-wide">Welcome to Zho Zho</span>
                 </div>
 
                 {/* Heading */}
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.1] tracking-tight text-white drop-shadow-lg">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.1] tracking-tight text-black drop-shadow-lg">
                   Events that speak.<br />Moments that stay.
                 </h1>
               </div>
@@ -52,7 +47,7 @@ export default function Home() {
                 </div>
 
                 {/* Description */}
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-lg font-normal drop-shadow-md">
+                <p className="text-black/80 text-lg md:text-xl leading-relaxed max-w-lg font-normal drop-shadow-md ">
                   Live It. Feel It. Zho Zho. Take your event experiences to the next level with our expert-led programs designed for everyone. From mastering fundamentals to advanced strategies, our professional team delivers.
                 </p>
 
@@ -77,7 +72,9 @@ export default function Home() {
             </div>
           </main>
         </div>
+        </BackgroundVideo>
       </div>
+      
       <Landing/>
     </div>
   );
