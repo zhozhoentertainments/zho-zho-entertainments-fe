@@ -54,7 +54,7 @@ const sections = [
 export default function Landing() {
   return (
     <section className="relative w-full py-32 overflow-hidden bg-white">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/10 blur-[160px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]  blur-[160px]" />
 
       <div className="mx-auto px-6 md:px-12 flex flex-col gap-32">
         {sections.map((section, i) => (
