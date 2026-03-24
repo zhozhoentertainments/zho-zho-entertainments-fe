@@ -129,7 +129,7 @@ const stats = ["Quick Reflexes", "Teamwork", "Strategy", "Communication", "Endur
 export default function SportsManagementPage() {
   return (
     <div className="w-full bg-white font-sans">
-      {/* 1. Hero Section - Cleaned up height and z-index issues */}
+     
       <div className="relative w-full h-[60vh] min-h-[500px] rounded-b-[2.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
         <div className="absolute inset-0 bg-black/70 md:bg-black/60 lg:bg-gradient-to-t from-black/95 via-black/50 to-black/80"></div>
         
@@ -154,7 +154,7 @@ export default function SportsManagementPage() {
         </div>
       </div>
 
-      {/* 2. Intro Section - Standardized py-20 md:py-32 for even spacing */}
+    
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="flex flex-col gap-6">
           <div className="inline-flex items-center gap-3 rounded-full border border-gray-100 bg-gray-50 px-4 py-2 w-fit shadow-sm">
@@ -181,7 +181,7 @@ export default function SportsManagementPage() {
           </div>
         </div>
 
-        {/* Improved Collage Layout */}
+        {/*Collage Layout */}
         <div className="grid grid-cols-2 gap-4 h-[500px]">
           <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
              <img src="https://gripinternational.in/wp-content/uploads/2019/08/Banner-2-1.jpg" alt="Kho Kho Action" className="w-full h-full object-cover" />
@@ -197,7 +197,7 @@ export default function SportsManagementPage() {
         </div>
       </section>
     
-      {/* 3. How to Play Section - Consistent Padding and Responsive Grid */}
+
       <section className="bg-gray-50 py-20 md:py-32">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="text-center mb-16 md:mb-24">

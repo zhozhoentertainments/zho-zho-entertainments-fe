@@ -17,12 +17,12 @@ export default function PurposePage() {
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold drop-shadow-lg tracking-tight mb-4">
-            Purpose
+            Sponsors
           </h1>
           <div className="text-sm md:text-base font-medium text-white/80 tracking-[0.2em] uppercase flex items-center gap-3">
             <Link href="/" className="hover:text-white transition-colors">Home</Link> 
             <span className="text-white/30 text-xs">/</span> 
-            <span className="text-white cursor-default">Purpose</span>
+            <span className="text-white cursor-default">Sponsors</span>
           </div>
         </div>
       </div>

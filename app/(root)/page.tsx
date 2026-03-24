@@ -5,64 +5,26 @@ import Link from "next/link";
 import { Play, ArrowUpRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import Landing from "./Landing/page";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import Header from "@/components/shared/Header";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-[#050505] p-3 md:p-6 lg:p-8 font-sans flex flex-col">
-      <div className="relative w-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)] rounded-[2rem] md:rounded-[2.5rem] bg-[url('/bg.avif')] bg-cover bg-center  text-white flex flex-col shadow-2xl ring-1 ring-white/10">
+    <div className="w-full min-h-screen bg-white p-3 md:p-6 lg:p-8 font-sans flex flex-col">
+      <div className="relative w-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)] bg-[url('/bg.avif')] bg-cover bg-center  text-white flex flex-col shadow-2xl ring-1 ring-white/10">
 
-       
-        <div className="absolute inset-0 bg-black/60 md:bg-black/50 lg:bg-gradient-to-r from-black/90 via-black/50 to-black/70 z-0"></div>
 
         <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">
          
-          <header className="w-full flex items-center justify-between py-6 lg:py-8">
-            <Link href="/" className="relative z-10 transition-transform hover:scale-105">
-              <Image
-                src="/logo.png"
-                alt="Zho Zho Entertainments"
-                width={300}
-                height={120}
-                className="object-contain h-[60px] md:h-[84px] w-auto drop-shadow-2xl "
-              />
-            </Link>
-
-            <nav className="hidden md:flex items-center gap-10 text-sm md:text-base font-semibold tracking-wide">
-              <Link href="/mission" className="hover:text-red-400 transition-colors">Mission</Link>
-              <Link href="/vision" className="hover:text-red-400 transition-colors">Vision</Link>
-              <Link href="/purpose" className="hover:text-red-400 transition-colors">Purpose</Link>
-              <Link href="/objectives" className="hover:text-red-400 transition-colors">Objectives</Link>
-            </nav>
-
-            <div className="md:hidden">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <button className="p-2 bg-black/20 rounded-lg backdrop-blur-sm cursor-pointer border border-white/10 hover:bg-black/40 transition-colors">
-                    <Menu className="w-7 h-7 text-white" />
-                  </button>
-                </SheetTrigger>
-                <SheetContent side="right" className="bg-neutral-950 border-white/10 text-white w-64">
-                  <SheetHeader>
-                    <SheetTitle className="text-left text-white text-xl font-bold">
-                      <Image
-                src="/logo.png"
-                alt="Zho Zho Entertainments"
-                width={300}
-                height={120}
-                className="object-contain h-[60px] md:h-[84px] w-auto drop-shadow-2xl "
-              />
-                    </SheetTitle>
-                  </SheetHeader>
-                  <div className="flex flex-col gap-6 mt-10">
-                    <Link href="/mission" className="text-lg font-semibold hover:text-red-400 transition-colors">Mission</Link>
-                    <Link href="/vision" className="text-lg font-semibold hover:text-red-400 transition-colors">Vision</Link>
-                    <Link href="/purpose" className="text-lg font-semibold hover:text-red-400 transition-colors">Purpose</Link>
-                    <Link href="/objectives" className="text-lg font-semibold hover:text-red-400 transition-colors">Objectives</Link>
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
-          </header>
+         <Header/>
 
        
           <main className="flex-1 flex flex-col justify-center pb-12 pt-8 lg:pt-0 lg:pb-0 h-full">
