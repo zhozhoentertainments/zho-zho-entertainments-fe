@@ -53,7 +53,7 @@ const sections = [
 
 export default function Landing() {
   return (
-    <section className="relative w-full py-32 overflow-hidden">
+    <section className="relative w-full py-32 overflow-hidden bg-white">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/10 blur-[160px]" />
 
       <div className="mx-auto px-6 md:px-12 flex flex-col gap-32">
@@ -99,7 +99,7 @@ export default function Landing() {
                 transition={{ delay: 0.2 }}
                 className="inline-flex items-center gap-3 rounded-full border border-black/20 bg-black/5 px-5 py-2 backdrop-blur-md mb-8 w-fit"
               >
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
                 <span className="text-xs uppercase tracking-[0.25em] text-black/90 font-semibold">
                   {section.badge}
                 </span>
@@ -135,11 +135,11 @@ export default function Landing() {
                   href={section.link}
                   className="group flex items-center gap-5"
                 >
-                  <span className="text-black uppercase tracking-[0.2em] text-sm font-semibold group-hover:text-red-400 transition">
+                  <span className="text-black uppercase tracking-[0.2em] text-sm font-semibold group-hover:text-purple-400 transition">
                     Explore {section.id}
                   </span>
 
-                  <div className="w-14 h-14 rounded-full bg-black/5 border border-black/20 flex items-center justify-center group-hover:bg-red-600 group-hover:border-transparent group-hover:shadow-[0_0_30px_rgba(255,0,0,0.6)] transition-all duration-300">
+                  <div className="w-14 h-14 rounded-full bg-black/5 border border-black/20 flex items-center justify-center group-hover:bg-purple-600 group-hover:border-transparent group-hover:shadow-[0 0 30px rgba(128,0,128,0.6)] transition-all duration-300">
                     <ArrowUpRight className="w-6 h-6 group-hover:scale-110 transition" />
                   </div>
                 </Link>

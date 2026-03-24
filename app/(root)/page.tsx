@@ -18,8 +18,8 @@ import Header from "@/components/shared/Header";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-white p-3 md:p-6 lg:p-8 font-sans flex flex-col">
-      <div className="relative w-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)] bg-[url('/bg.avif')] bg-cover bg-center  text-white flex flex-col shadow-2xl ring-1 ring-white/10">
+    <div className="w-full min-h-screen font-sans flex flex-col">
+      <div className="relative w-full min-h-screen bg-[url('/bg.avif')] bg-cover bg-center text-white flex flex-col">
 
 
         <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">
