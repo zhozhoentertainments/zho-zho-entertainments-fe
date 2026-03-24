@@ -68,11 +68,11 @@ const Footer = () => {
           
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-xs md:text-sm font-semibold tracking-wider text-black/80 uppercase">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-              <Link href="/ourTeam" className="hover:text-purple-400 transition-colors">Our Team</Link>
-              <Link href="/aboutUs" className="hover:text-purple-400 transition-colors">About Us</Link>
-              <Link href="/sponsors" className="hover:text-purple-400 transition-colors">Sponsors</Link>
-              <Link href="/volunteers" className="hover:text-purple-400 transition-colors">Volunteers</Link>
-              <Link href="/servicess" className="hover:text-purple-400 transition-colors">Services</Link>
+              <Link href="/" className="hover:text-purple-400 transition-colors">Our Team</Link>
+              <Link href="/" className="hover:text-purple-400 transition-colors">About Us</Link>
+              <Link href="/" className="hover:text-purple-400 transition-colors">Sponsors</Link>
+              <Link href="/" className="hover:text-purple-400 transition-colors">Volunteers</Link>
+              <Link href="/" className="hover:text-purple-400 transition-colors">Services</Link>
               {/* <NavigationMenu viewport={false}>
                 <NavigationMenuList>
                   <NavigationMenuItem>

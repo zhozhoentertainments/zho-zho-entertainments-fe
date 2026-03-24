@@ -42,11 +42,11 @@ export default function Header() {
         {/* Navigation Section - Reverting to original order and styles */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm md:text-base font-semibold tracking-wide">
           <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-          <Link href="/ourTeam" className="hover:text-purple-400 transition-colors">Our Team</Link>
-          <Link href="/aboutUs" className="hover:text-purple-400 transition-colors">About Us</Link>
-          <Link href="/sponsors" className="hover:text-purple-400 transition-colors">Sponsors</Link>
-          <Link href="/volunteers" className="hover:text-purple-400 transition-colors">Volunteers</Link>
-          <Link href="/servicess" className="hover:text-purple-400 transition-colors">Services</Link>
+          <Link href="/" className="hover:text-purple-400 transition-colors">Our Team</Link>
+          <Link href="/" className="hover:text-purple-400 transition-colors">About Us</Link>
+          <Link href="/" className="hover:text-purple-400 transition-colors">Sponsors</Link>
+          <Link href="/" className="hover:text-purple-400 transition-colors">Volunteers</Link>
+          <Link href="/" className="hover:text-purple-400 transition-colors">Services</Link>
           
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
@@ -57,13 +57,13 @@ export default function Header() {
                 <NavigationMenuContent className="mt-2 min-w-[200px] bg-neutral-950/90 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl p-2 animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-300">
                   <div className="flex flex-col gap-1.5">
                     <NavigationMenuLink asChild>
-                      <Link href="/gallery/images" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
+                      <Link href="/" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
                         <span>Image Gallery</span>
                         <div className="size-1.5 rounded-full bg-purple-400 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <Link href="/gallery/videos" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
+                      <Link href="/" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
                         <span>Video Gallery</span>
                         <div className="size-1.5 rounded-full bg-purple-400 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                       </Link>
@@ -83,13 +83,13 @@ export default function Header() {
                 <NavigationMenuContent className="mt-2 min-w-[220px] bg-neutral-950/90 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl p-2 animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-300">
                   <div className="flex flex-col gap-1.5">
                     <NavigationMenuLink asChild>
-                      <Link href="/events/sports" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
+                      <Link href="/" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
                         <span>Sports Event</span>
                         <div className="size-1.5 rounded-full bg-purple-400 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <Link href="/events/cultural" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
+                      <Link href="/" className="group/item flex items-center justify-between px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
                         <span>Cultural Events</span>
                         <div className="size-1.5 rounded-full bg-pruple-400 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                       </Link>
@@ -123,24 +123,24 @@ export default function Header() {
               </SheetHeader>
               <div className="flex flex-col gap-6 mt-12 overflow-y-auto max-h-[calc(100vh-120px)] pb-10">
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Home</Link>
-                <Link href="/ourTeam" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Our Team</Link>
-                <Link href="/aboutUs" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
-                <Link href="/sponsors" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Sponsors</Link>
-                <Link href="/volunteers" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Volunteers</Link>
-                <Link href="/servicess" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Services</Link>
+                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Our Team</Link>
+                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
+                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Sponsors</Link>
+                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Volunteers</Link>
+                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Services</Link>
                 
                 <div className="h-px bg-white/10 my-2 mx-2" />
                 
                 <div className="flex flex-col gap-4">
                   <div className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] px-2">Gallery</div>
-                  <Link href="/gallery/images" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Image Gallery</Link>
-                  <Link href="/gallery/videos" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Video Gallery</Link>
+                  <Link href="/" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Image Gallery</Link>
+                  <Link href="/" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Video Gallery</Link>
                 </div>
 
                 <div className="flex flex-col gap-4">
                   <div className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] px-2">Upcoming Events</div>
-                  <Link href="/events/sports" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Sports Events</Link>
-                  <Link href="/events/cultural" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Cultural Events</Link>
+                  <Link href="/" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Sports Events</Link>
+                  <Link href="/" className="text-base font-medium text-white/70 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all">Cultural Events</Link>
                 </div>
               </div>
             </SheetContent>
