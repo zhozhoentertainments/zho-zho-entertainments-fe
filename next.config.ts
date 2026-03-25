@@ -12,18 +12,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  turbo: {
-    rules: {
-      "*.mp4": {
-        as: "url",
-        loaders: ["raw-loader"],
-      },
-      "*.MP4": {
-        as: "url",
-        loaders: ["raw-loader"],
-      },
-    },
-  },
+  
 };
 
 export default withNextVideo(nextConfig);
