@@ -28,21 +28,7 @@ export default function volunteersPage() {
       </div>
 
       {/* Main Content Section */}
-      <main className="flex-1 w-full mx-auto px-6 py-20 flex flex-col items-center text-center justify-center">
-  
-        <div className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-2 shadow-sm mb-12 transition-transform hover:-translate-y-1">
-          <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-          <span className="text-xs md:text-sm font-bold text-gray-800 tracking-widest uppercase">Volunteers</span>
-        </div>
-
-        <div className="flex flex-col gap-12  text-gray-800">
-          <p className="text-xl md:text-2xl lg:text-[28px] leading-relaxed lg:leading-[1.8] font-medium text-gray-600 italic">
-            "To be a leading, diversified entertainment organisation recognised for creative excellence, technological innovation, and social impact — shaping the future of entertainment across sports, music, culture, gaming, travel, and live experiences."
-          </p>
-          
-          <div className="w-20 h-1 bg-red-500 mx-auto rounded-full"></div>
-        </div>
-      </main>
+      
     </div>
   );
 }
