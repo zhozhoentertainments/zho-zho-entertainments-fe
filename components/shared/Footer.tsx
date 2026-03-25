@@ -22,7 +22,7 @@ const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Footer = () => {
   return (
-    <footer className="w-full flex justify-center relative z-50 bg-[#F1DCF5]">
+    <footer className="w-full flex justify-center relative z-50 bg-[#edb5f8]">
      
       <div className="w-full px-6 md:px-12 pt-12 pb-8 md:pt-16 md:pb-8 flex flex-col items-center text-black relative">  
       

@@ -41,18 +41,18 @@ export default function Header() {
 
         {/* Navigation Section - Reverting to original order and styles */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm md:text-base font-semibold tracking-wide">
-          <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-          <Link href="/" className="hover:text-purple-400 transition-colors">Our Team</Link>
-          <Link href="/" className="hover:text-purple-400 transition-colors">About Us</Link>
-          <Link href="/" className="hover:text-purple-400 transition-colors">Sponsors</Link>
-          <Link href="/" className="hover:text-purple-400 transition-colors">Volunteers</Link>
-          <Link href="/" className="hover:text-purple-400 transition-colors">Services</Link>
+          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Home</Link>
+          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Our Team</Link>
+          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">About Us</Link>
+          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Sponsors</Link>
+          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Volunteers</Link>
+          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Services</Link>
           
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-white/5 data-[state=open]:bg-white/10 text-white hover:text-purple-400 transition-all duration-300 border-none px-4 py-2 rounded-xl h-auto focus:bg-transparent shadow-none">
-                  <span className="font-semibold tracking-wide">Gallery</span>
+                  <span className="font-extrabold tracking-wide text-[1rem]">Gallery</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="mt-2 min-w-[200px] bg-neutral-950/90 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl p-2 animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-300">
                   <div className="flex flex-col gap-1.5">
@@ -78,7 +78,7 @@ export default function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent hover:bg-white/5 data-[state=open]:bg-white/10 text-white hover:text-purple-400 transition-all duration-300 border-none px-4 py-2 rounded-xl h-auto focus:bg-transparent shadow-none">
-                  <span className="font-semibold tracking-wide">Upcoming Events</span>
+                  <span className="font-extrabold tracking-wide text-[1rem]">Upcoming Events</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="mt-2 min-w-[220px] bg-neutral-950/90 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl p-2 animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-300">
                   <div className="flex flex-col gap-1.5">
@@ -124,7 +124,7 @@ export default function Header() {
               <div className="flex flex-col gap-6 mt-12 overflow-y-auto max-h-[calc(100vh-120px)] pb-10">
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Home</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Our Team</Link>
-                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
+                <Link href="/aboutUs" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Sponsors</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Volunteers</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Services</Link>
