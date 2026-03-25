@@ -214,12 +214,7 @@ export default function SportsManagementPage() {
             </div>
           </div>
 
-          <Link href="/contact" className="group flex items-center gap-6 mt-4">
-             <span className="text-neutral-900 uppercase tracking-[0.2em] font-black group-hover:text-purple-600 transition-colors">Start Training</span>
-             <div className="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center text-white group-hover:bg-purple-600 transition-all duration-500 hover:rotate-45">
-               <ArrowUpRight size={24} />
-             </div>
-          </Link>
+        
         </motion.div>
 
         {/* Collage Layout */}
