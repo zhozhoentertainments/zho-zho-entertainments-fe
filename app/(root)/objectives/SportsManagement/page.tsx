@@ -186,7 +186,7 @@ export default function SportsManagementPage() {
               <div className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></div>
               <span className="text-xs md:text-sm font-bold text-purple-900 tracking-widest uppercase italic">Discover the Tradition</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-neutral-900 leading-[0.9] tracking-tighter uppercase">The Game of <br/><span className="text-purple-600">Chasers</span></h2>
+            <h2 className="text-5xl md:text-7xl font-black text-neutral-900 leading-[0.9] tracking-tighter uppercase">The Game of <br/><span className="text-purple-600">Run</span> &  <span className="text-purple-600">Chase</span></h2>
           </div>
 
           <p className="text-neutral-600 leading-relaxed text-xl font-medium max-w-xl">
