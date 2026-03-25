@@ -4,6 +4,7 @@ import Header from "@/components/shared/Header";
 import Link from "next/link";
 import React from "react";
 import { ChevronRight, Check, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const rulesData = [
   {
@@ -20,19 +21,19 @@ const rulesData = [
     customContent: (
       <div className="space-y-4">
         <div>
-          <span className="text-red-600 font-bold block mb-1">Chasers:</span>
-          <p className="text-gray-600 text-sm">These players are responsible for tagging the opponents.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Chasers:</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">These players are responsible for tagging the opponents.</p>
         </div>
         <div>
-          <span className="text-red-600 font-bold block mb-1">Runners:</span>
-          <p className="text-gray-600 text-sm">These players avoid getting tagged by dodging or using the poles.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Runners:</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">These players avoid getting tagged by dodging or using the poles.</p>
         </div>
         <ul className="space-y-2 mt-4">
-          <li className="flex gap-2 text-sm text-gray-600 items-start">
-            <span className="mt-1">▶</span> The main goal is to tag as many players on the opposing team as possible within a set time.
+          <li className="flex gap-2 text-sm md:text-base text-neutral-600 items-start font-medium">
+            <span className="text-purple-500 mt-1">▶</span> The main goal is to tag as many players on the opposing team as possible within a set time.
           </li>
-          <li className="flex gap-2 text-sm text-gray-600 items-start">
-            <span className="mt-1">▶</span> The team that tags the most players wins the round.
+          <li className="flex gap-2 text-sm md:text-base text-neutral-600 items-start font-medium">
+            <span className="text-purple-500 mt-1">▶</span> The team that tags the most players wins the round.
           </li>
         </ul>
       </div>
@@ -81,20 +82,20 @@ const rulesData = [
     customContent: (
       <div className="space-y-4">
         <div>
-          <span className="text-red-600 font-bold block mb-1">Agility and Reflexes :</span>
-          <p className="text-gray-600 text-sm">Both chasers and runners need to make quick decisions and movements.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Agility and Reflexes :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Both chasers and runners need to make quick decisions and movements.</p>
         </div>
         <div>
-          <span className="text-red-600 font-bold block mb-1">Team Coordination :</span>
-          <p className="text-gray-600 text-sm">Chasers need good communication for smooth role changes.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Team Coordination :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Chasers need good communication for smooth role changes.</p>
         </div>
         <div>
-          <span className="text-red-600 font-bold block mb-1">Pole Utilization :</span>
-          <p className="text-gray-600 text-sm">Runners can use poles to evade tags; chasers use poles to switch directions.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Pole Utilization :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Runners can use poles to evade tags; chasers use poles to switch directions.</p>
         </div>
          <div>
-          <span className="text-red-600 font-bold block mb-1">Endurance :</span>
-          <p className="text-gray-600 text-sm">Kho Kho is fast-paced, so players need to pace their energy for sustained performance.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Endurance :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Kho Kho is fast-paced, so players need to pace their energy for sustained performance.</p>
         </div>
       </div>
     ),
@@ -104,20 +105,20 @@ const rulesData = [
     customContent: (
       <div className="space-y-4">
         <div>
-          <span className="text-red-600 font-bold block mb-1">Positioning and Anticipation :</span>
-          <p className="text-gray-600 text-sm">Chasers should position strategically to block runners’ escape routes.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Positioning and Anticipation :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Chasers should position strategically to block runners’ escape routes.</p>
         </div>
         <div>
-          <span className="text-red-600 font-bold block mb-1">Efficient Use of "Kho" :</span>
-          <p className="text-gray-600 text-sm">Switch roles only when needed to maintain energy and field coverage.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Efficient Use of "Kho" :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Switch roles only when needed to maintain energy and field coverage.</p>
         </div>
         <div>
-          <span className="text-red-600 font-bold block mb-1">Deceptive Movements :</span>
-          <p className="text-gray-600 text-sm">Runners should use fake moves and pole dodges to mislead chasers.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Deceptive Movements :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Runners should use fake moves and pole dodges to mislead chasers.</p>
         </div>
          <div>
-          <span className="text-red-600 font-bold block mb-1">Endurance Management :</span>
-          <p className="text-gray-600 text-sm">Both teams should pace their energy, with chasers avoiding unnecessary sprints and runners using strategic pauses.</p>
+          <span className="text-purple-600 font-extrabold block mb-1">Endurance Management :</span>
+          <p className="text-neutral-600 text-sm md:text-base font-medium">Both teams should pace their energy, with chasers avoiding unnecessary sprints and runners using strategic pauses.</p>
         </div>
       </div>
     ),
@@ -128,102 +129,155 @@ const stats = ["Quick Reflexes", "Teamwork", "Strategy", "Communication", "Endur
 
 export default function SportsManagementPage() {
   return (
-    <div className="w-full bg-white font-sans">
+    <div className="w-full bg-[#FCEBFC] font-sans">
      
-      <div className="relative w-full h-[60vh] min-h-[500px] rounded-b-[2.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
-        <div className="absolute inset-0 bg-black/70 md:bg-black/60 lg:bg-gradient-to-t from-black/95 via-black/50 to-black/80"></div>
+      {/* Hero Section */}
+      <div className="relative w-full h-[60vh] min-h-[500px] rounded-b-[3.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
+        <div className="absolute inset-0 bg-neutral-900/60 md:bg-neutral-900/40 lg:bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
         
         <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full mx-auto">
           <Header />
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-16">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md shadow-lg mb-6">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
-            <span className="text-xs md:text-sm font-bold text-white tracking-widest uppercase">Sports Management</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">Kho Kho</h1>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md shadow-lg mb-8"
+          >
+            <div className="w-2.5 h-2.5 rounded-full bg-purple-500 animate-pulse"></div>
+            <span className="text-xs md:text-sm font-bold text-white tracking-[0.3em] uppercase">Sports Management</span>
+          </motion.div>
           
-          <nav className="flex items-center gap-2 text-sm font-medium text-white/70 tracking-widest uppercase">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link> 
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 uppercase"
+          >
+            Kho Kho
+          </motion.h1>
+          
+          <motion.nav 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-3 text-xs md:text-sm font-bold text-white/70 tracking-[0.2em] uppercase"
+          >
+            <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link> 
             <ChevronRight className="w-4 h-4 text-white/40" />
-            <Link href="/objectives" className="hover:text-white transition-colors">Objectives</Link>
+            <Link href="/objectives" className="hover:text-purple-400 transition-colors">Objectives</Link>
             <ChevronRight className="w-4 h-4 text-white/40" />
             <span className="text-white cursor-default">Sports Management</span>
-          </nav>
+          </motion.nav>
         </div>
       </div>
 
-    
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="flex flex-col gap-6">
-          <div className="inline-flex items-center gap-3 rounded-full border border-gray-100 bg-gray-50 px-4 py-2 w-fit shadow-sm">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></div>
-            <span className="text-xs md:text-sm font-bold text-gray-900 tracking-widest uppercase">Play</span>
+      {/* Main Content */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-40 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-10"
+        >
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-3 rounded-full border border-purple-200 bg-purple-100/50 px-5 py-2 w-fit">
+              <div className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></div>
+              <span className="text-xs md:text-sm font-bold text-purple-900 tracking-widest uppercase italic">Discover the Tradition</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black text-neutral-900 leading-[0.9] tracking-tighter uppercase">The Game of <br/><span className="text-purple-600">Chasers</span></h2>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">The Game of Chasers</h2>
-          <p className="text-gray-600 leading-relaxed text-lg">
+
+          <p className="text-neutral-600 leading-relaxed text-xl font-medium max-w-xl">
             Kho Kho is a traditional Indian team sport that's fast-paced and fun, combining elements of tag and running. It has evolved from a rural pastime into a respected competitive sport.
           </p>
           
-          <div className="pt-4">
-            <p className="text-gray-400 mb-6 uppercase text-xs font-bold tracking-[0.2em]">Required Skills</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+          <div className="pt-8 space-y-8">
+            <p className="text-neutral-400 uppercase text-xs font-bold tracking-[0.3em]">Required Skills Path</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12">
               {stats.map((stat, i) => (
-                <div key={i} className="flex items-center gap-3 group">
-                  <div className="text-red-600 bg-red-50 p-1 rounded-full group-hover:bg-red-600 group-hover:text-white transition-colors">
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-4 group cursor-default"
+                >
+                  <div className="text-purple-600 bg-purple-100 p-2 rounded-xl group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
                     <Check className="w-4 h-4 stroke-[3px]" />
                   </div>
-                  <span className="text-base font-bold text-gray-800">{stat}</span>
-                </div>
+                  <span className="text-lg font-bold text-neutral-800 tracking-tight group-hover:text-purple-600 transition-colors uppercase">{stat}</span>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/*Collage Layout */}
-        <div className="grid grid-cols-2 gap-4 h-[500px]">
-          <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+          <Link href="/contact" className="group flex items-center gap-6 mt-4">
+             <span className="text-neutral-900 uppercase tracking-[0.2em] font-black group-hover:text-purple-600 transition-colors">Start Training</span>
+             <div className="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center text-white group-hover:bg-purple-600 transition-all duration-500 hover:rotate-45">
+               <ArrowUpRight size={24} />
+             </div>
+          </Link>
+        </motion.div>
+
+        {/* Collage Layout */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 gap-6 h-[600px] items-center"
+        >
+          <div className="rounded-[3rem] overflow-hidden shadow-2xl border-2 border-white/50 h-[90%] mt-auto hover:scale-[1.02] transition-transform duration-700">
              <img src="https://gripinternational.in/wp-content/uploads/2019/08/Banner-2-1.jpg" alt="Kho Kho Action" className="w-full h-full object-cover" />
           </div>
-          <div className="grid grid-rows-2 gap-4">
-            <div className="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white">
+          <div className="grid grid-rows-2 gap-6 h-full">
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/50 hover:scale-[1.02] transition-transform duration-700">
                <img src="https://images.tv9hindi.com/wp-content/uploads/2025/01/kho-kho.jpg?w=1280" alt="Teamwork" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white bg-gray-100">
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-white/50 bg-gray-100 hover:scale-[1.02] transition-transform duration-700">
                <img src="https://img-cdn.publive.online/filters:format(webp)/english-betterindia/media/post_attachments/uploads/2025/01/Rajasthan-attacker-Bhuvneshwar-Sahu-in-Blue-captures-Telugu-Yoddhas-wicket-during-a-Ultimate-Kho-Kho-Season1-match-in-Pune-on-Tuesday-August-16-2022_11zon-1737367282.jpg" alt="Strategy" className="w-full h-full object-cover" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     
-
-      <section className="bg-gray-50 py-20 md:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="text-center mb-16 md:mb-24">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900">
-              How to Play <span className="text-red-600 underline decoration-red-200 underline-offset-8">Kho-Kho?</span>
+      {/* Rules Section */}
+      <section className="bg-white/40 backdrop-blur-xl border-t border-white/20 py-24 md:py-48 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#FCEBFC] to-transparent"></div>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="text-center mb-24 md:mb-32">
+            <h2 className="text-5xl md:text-8xl font-black text-neutral-900 tracking-tighter uppercase leading-[0.9]">
+              How to Play <br/><span className="text-purple-600 underline decoration-purple-100 decoration-8 underline-offset-[16px]">Kho-Kho?</span>
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {rulesData.map((rule, idx) => (
-              <div key={idx} className="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <h3 className="text-xl font-extrabold text-gray-900 border-b border-gray-50 pb-6 mb-6 uppercase tracking-tighter">
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/80 p-10 md:p-12 rounded-[3.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group flex flex-col"
+              >
+                <h3 className="text-2xl font-black text-neutral-900 border-b border-purple-50 pb-8 mb-8 uppercase tracking-tighter group-hover:text-purple-600 transition-colors">
                   {rule.title}
                 </h3>
                 {rule.points ? (
-                  <ul className="space-y-4 flex-grow">
+                  <ul className="space-y-5 flex-grow">
                     {rule.points.map((p, i) => (
-                      <li key={i} className="flex gap-3 text-sm md:text-base text-gray-600 items-start leading-relaxed">
-                        <span className="text-red-500 font-bold mt-0.5">•</span> {p}
+                      <li key={i} className="flex gap-4 text-sm md:text-base text-neutral-600 items-start leading-relaxed font-medium">
+                        <div className="w-2 h-2 rounded-full bg-purple-500 mt-2.5 shrink-0" /> {p}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <div className="flex-grow">{rule.customContent}</div>
+                  <div className="flex-grow text-neutral-700">{rule.customContent}</div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

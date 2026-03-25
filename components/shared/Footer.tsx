@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Facebook, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Phone, Mail, Globe, MapPin } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -43,23 +43,43 @@ const Footer = () => {
             To build a world-class entertainment enterprise enriching lives through the power of storytelling and culture.
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 pt-4 text-sm font-medium text-black/70 flex-wrap">
-            <div className="flex items-center gap-2">
-              <span className="text-purple-600 font-bold">Phone:</span>
-              <a href="tel:+918019037799" className="hover:text-purple-600 transition-colors">+ 91 80190 37799</a>
+          <div className="flex flex-col items-center gap-8 pt-6 text-sm font-medium text-black/70 w-full max-w-4xl">
+            {/* Contact Details Row */}
+            <div className="flex flex-col md:flex-row flex-wrap justify-center items-start md:items-center gap-x-12 gap-y-5 px-4 w-fit mx-auto">
+              <a href="tel:+918019037799" className="flex items-center gap-3 hover:text-purple-600 transition-all group min-w-[240px] md:min-w-0">
+                <div className="w-9 h-9 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors shrink-0">
+                  <Phone size={16} />
+                </div>
+                <span className="whitespace-nowrap font-semibold">+91 80190 37799</span>
+              </a>
+              
+              <a href="mailto:info@zhozhoentertainments.com" className="flex items-center gap-3 hover:text-purple-600 transition-all group min-w-[240px] md:min-w-0">
+                <div className="w-9 h-9 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors shrink-0">
+                  <Mail size={16} />
+                </div>
+                <span className="whitespace-nowrap font-semibold">info@zhozhoentertainments.com</span>
+              </a>
+
+              <Link href="https://zhozhoentertainments.com" target="_blank" className="flex items-center gap-3 hover:text-purple-600 transition-all group min-w-[240px] md:min-w-0">
+                <div className="w-9 h-9 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors shrink-0">
+                  <Globe size={16} />
+                </div>
+                <span className="whitespace-nowrap font-semibold">zhozhoentertainments.com</span>
+              </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-purple-600 font-bold">Email:</span>
-              <a href="mailto:info@zhozhoentertainments.com" className="hover:text-purple-600 transition-colors">info@zhozhoentertainments.com</a>
+
+            {/* Address Section */}
+            <div className="flex items-start gap-4 bg-white/40 backdrop-blur-md border border-white/30 px-6 py-5 rounded-[2rem] max-w-2xl w-full transition-all hover:bg-white/60 hover:shadow-xl group/address">
+              <div className="shrink-0 w-10 h-10 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 group-hover/address:bg-purple-600 group-hover/address:text-white transition-all duration-300">
+                <MapPin size={20} />
+              </div>
+              <div className="flex flex-col gap-1 text-left">
+                <span className="text-purple-600 font-bold uppercase tracking-wider text-xs">Our Location</span>
+                <p className="text-sm leading-relaxed font-medium">
+                  Flat No: 102, Sai Kiran Apartments, Ameerpet, Hyderabad, TS - 500038.
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-purple-600 font-bold">Website:</span>
-              <Link href="https://zhozhoentertainments.com" target="_blank" className="hover:text-purple-600 transition-colors">zhozhoentertainments.com</Link>
-            </div>
-          </div>
-          <div className="max-w-md text-center pt-2 text-sm font-medium text-black/70">
-            <span className="text-purple-600 font-bold">Address:</span>
-            <span className="ml-2">Flat No: 102, Sai Kiran Apartments, Ameerpet, Hyderabad, TS - 500038.</span>
           </div>
         </div>
 

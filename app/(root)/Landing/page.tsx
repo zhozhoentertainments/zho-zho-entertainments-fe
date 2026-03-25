@@ -54,9 +54,17 @@ const sections = [
 ];
 
 const destinations = [
+ 
+  { name: "Bengaluru", image: "/bangalore.jpg" },
+  { name: "Delhi", image: "/Delhi.jpg" },
+  { name: "Chennai", image: "/chennai.jpg" },
+  { name: "Pune", image: "/Pune.jpg" },
   { name: "Hyderabad", image: "/hyderabad.jpg" },
   { name: "Vijayawada", image: "/vijayawada.jpg" },
   { name: "Visakhapatnam", image: "/vishakhapatnam.jpg" },
+  { name: "Odisha", image: "/odisha.jpg" },
+  { name: "Tirupati", image: "/tirupati.jpg" },
+
   
 ];
 
@@ -179,78 +187,71 @@ export default function Landing() {
     <div className="flex flex-col bg-[#FCEBFC]">
       {/* Services Grid Section */}
       <section className="relative w-full py-32 overflow-hidden">
-        <div className="mx-auto px-6 md:px-12 flex flex-col gap-32">
+        <div className="mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl">
           {sections.map((section, i) => (
             <motion.div
               key={section.id}
               id={i === 0 ? "mission-section" : undefined}
-              initial={{ opacity: 0, y: 80 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
+              whileHover={{ y: -15 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className={`flex flex-col ${
-                section.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-              } items-center gap-16 lg:gap-28`}
+              className="group flex flex-col bg-white/40 backdrop-blur-md border border-white/20 rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_80px_rgba(147,51,234,0.1)] transition-all duration-500 cursor-pointer"
             >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5 }}
-                className="w-full lg:w-1/2 relative rounded-[2.5rem] overflow-hidden aspect-[4/3] lg:aspect-square border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.1)]"
-              >
+              <div className="relative w-full aspect-[16/10] overflow-hidden">
                 <Image
                   src={section.image}
                   alt={section.title}
                   fill
-                  className="object-cover transition-transform duration-1000 hover:scale-110"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute top-6 left-6">
+                   <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 + 0.3 }}
+                    className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md"
+                   >
+                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
+                    <span className="text-xs uppercase tracking-[0.25em] text-white font-semibold">
+                      {section.badge}
+                    </span>
+                  </motion.div>
+                </div>
+              </div>
 
-              <div className="w-full lg:w-1/2 flex flex-col text-black">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
+              <div className="p-10 flex flex-col flex-grow">
+                <motion.h2 
+                  initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-flex items-center gap-3 rounded-full border border-black/20 bg-black/5 px-5 py-2 backdrop-blur-md mb-8 w-fit"
-                >
-                  <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                  <span className="text-xs uppercase tracking-[0.25em] text-black/90 font-semibold">
-                    {section.badge}
-                  </span>
-                </motion.div>
-
-                <motion.h2
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tighter"
+                  transition={{ delay: i * 0.1 + 0.4 }}
+                  className="text-3xl md:text-4xl font-bold leading-[1.2] mb-6 tracking-tighter text-black"
                 >
                   {section.title}
                 </motion.h2>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-black/60 text-lg leading-relaxed mb-10 max-w-xl font-medium"
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: i * 0.1 + 0.5 }}
+                  className="text-black/60 text-lg leading-relaxed mb-8 font-medium line-clamp-3"
                 >
                   {section.description}
                 </motion.p>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Link href={section.link} className="group flex items-center gap-5">
-                    <span className="text-black uppercase tracking-[0.2em] text-sm font-bold group-hover:text-purple-600 transition">
+                <div className="mt-auto">
+                  <Link href={section.link} className="group/link flex items-center gap-4">
+                    <span className="text-black uppercase tracking-[0.2em] text-xs font-bold group-hover/link:text-purple-600 transition">
                       Explore {section.id}
                     </span>
-                    <div className="w-14 h-14 rounded-full bg-black/5 border border-black/20 flex items-center justify-center group-hover:bg-purple-600 group-hover:border-transparent group-hover:shadow-[0_10px_30px_rgba(147,51,234,0.3)] transition-all duration-300">
-                      <ArrowUpRight className="w-6 h-6 group-hover:scale-110 group-hover:text-white transition" />
+                    <div className="w-12 h-12 rounded-full bg-black/45 border border-black/20 flex items-center justify-center group-hover/link:bg-purple-600 group-hover/link:border-transparent group-hover/link:shadow-[0_10px_30px_rgba(147,51,234,0.3)] transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 group-hover/link:scale-110 group-hover/link:text-white transition" />
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}
