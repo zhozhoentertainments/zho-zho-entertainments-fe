@@ -157,7 +157,7 @@ const AboutPage = () => {
               Ready to create something <br /> extraordinary?
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link  href="/servicess">
+              <Link  href="/">
                <button className="px-8 py-4 bg-white text-purple-700 rounded-full font-bold hover:scale-105 transition-all flex items-center gap-2 shadow-xl ">
                 Our Services <ArrowRight size={20} />
               </button>
