@@ -11,11 +11,12 @@ import {
   Zap, 
   Crown, 
   Gift, 
-  Mic2, 
-  Monitor, 
+  Phone,
+  ChevronRight,
+  Mic2,
+  Monitor,
   Droplets,
-  Mail,
-  Phone
+  Mail
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Header from "@/components/shared/Header";
@@ -90,7 +91,7 @@ const SponsorsPage = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-50/80 via-white/40 to-black/50 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-white/20 to-black/80 backdrop-blur-md z-10" />
         </div>
         
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-200/40 blur-[120px] rounded-full z-0" />
@@ -104,10 +105,10 @@ const SponsorsPage = () => {
           >
             Sponsors <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">& Partners</span>
           </motion.h1>
-          <nav className="flex items-center justify-center gap-2 text-sm md:text-base font-medium text-neutral-500">
-            <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
-            <span className="text-neutral-300">/</span>
-            <span className="text-neutral-800">Sponsors</span>
+          <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/70 uppercase tracking-[0.2em]">
+            <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4 text-white/30" />
+            <span className="text-white">Sponsors</span>
           </nav>
         </div>
       </section>

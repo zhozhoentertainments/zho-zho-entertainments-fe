@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Target, Eye, Star, Users, Briefcase } from "lucide-react";
+import { ArrowRight, Target, Eye, Star, Users, Briefcase, ChevronRight } from "lucide-react";
 import Header from "@/components/shared/Header";
 
 const AboutPage = () => {
@@ -25,7 +25,7 @@ const AboutPage = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-50/80 via-white/40 to-black/60 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-white/20 to-black/80 backdrop-blur-md z-10" />
         </div>
         
         
@@ -35,10 +35,10 @@ const AboutPage = () => {
           <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-neutral-950">
             ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">US</span>
           </h1>
-          <nav className="flex items-center justify-center gap-2 text-sm md:text-base font-medium text-neutral-500">
-            <Link href="/" className="hover:text-purple-600 transition-colors">Home</Link>
-            <span className="text-neutral-300">/</span>
-            <span className="text-neutral-800">About Us</span>
+          <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/70 uppercase tracking-[0.2em]">
+            <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4 text-white/30" />
+            <span className="text-white">About Us</span>
           </nav>
         </div>
       </section>

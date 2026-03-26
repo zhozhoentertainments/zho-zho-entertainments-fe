@@ -48,7 +48,7 @@ export default function Header() {
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Home</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Our Team</Link>
           <Link href="/aboutUs" className="text-white font-extrabold hover:text-purple-400 transition-colors">About Us</Link>
-          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Sponsors</Link>
+          <Link href="/sponsors" className="text-white font-extrabold hover:text-purple-400 transition-colors">Sponsors</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Volunteers</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Services</Link>
           
@@ -154,7 +154,7 @@ export default function Header() {
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Home</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Our Team</Link>
                 <Link href="/aboutUs" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
-                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Sponsors</Link>
+                <Link href="/sponsors" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Sponsors</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Volunteers</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Services</Link>
                 

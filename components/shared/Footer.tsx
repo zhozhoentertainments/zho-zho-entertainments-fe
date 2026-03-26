@@ -90,7 +90,7 @@ const Footer = () => {
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Our Team</Link>
               <Link href="/aboutUs" className="hover:text-purple-400 transition-colors">About Us</Link>
-              <Link href="/" className="hover:text-purple-400 transition-colors">Sponsors</Link>
+              <Link href="/sponsors" className="hover:text-purple-400 transition-colors">Sponsors</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Volunteers</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Services</Link>
           </div>
