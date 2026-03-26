@@ -89,61 +89,10 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-xs md:text-sm font-semibold tracking-wider text-black/80 uppercase">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Our Team</Link>
-              <Link href="/" className="hover:text-purple-400 transition-colors">About Us</Link>
+              <Link href="/aboutUs" className="hover:text-purple-400 transition-colors">About Us</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Sponsors</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Volunteers</Link>
               <Link href="/" className="hover:text-purple-400 transition-colors">Services</Link>
-              {/* <NavigationMenu viewport={false}>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 text-white hover:text-red-400 transition-colors border-none p-0 h-auto focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
-                      <span className="font-semibold">Gallery</span>
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bottom-full top-auto mb-4 min-w-[180px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)] rounded-2xl p-1.5 animate-in fade-in zoom-in-95 duration-200">
-                      <div className="flex flex-col gap-1">
-                        <NavigationMenuLink asChild>
-                          <Link href="/gallery/images" className="group/item flex items-center justify-between px-4 py-2.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
-                            <span>Image Gallery</span>
-                            <div className="size-1.5 rounded-full bg-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link href="/gallery/videos" className="group/item flex items-center justify-between px-4 py-2.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
-                            <span>Video Gallery</span>
-                            <div className="size-1.5 rounded-full bg-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-
-              <NavigationMenu viewport={false}>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 text-white hover:text-red-400 transition-colors border-none p-0 h-auto focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
-                      <span className="font-semibold">Upcoming Events</span>
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bottom-full top-auto mb-4 min-w-[200px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.5)] rounded-2xl p-1.5 animate-in fade-in zoom-in-95 duration-200">
-                      <div className="flex flex-col gap-1">
-                        <NavigationMenuLink asChild>
-                          <Link href="/events/sports" className="group/item flex items-center justify-between px-4 py-2.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
-                            <span>Sports Event</span>
-                            <div className="size-1.5 rounded-full bg-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link href="/events/cultural" className="group/item flex items-center justify-between px-4 py-2.5 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200">
-                            <span>Cultural Events</span>
-                            <div className="size-1.5 rounded-full bg-red-500 opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu> */}
           </div>
 
           <div className="flex items-center gap-4">

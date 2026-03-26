@@ -47,7 +47,7 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm md:text-base font-semibold tracking-wide">
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Home</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Our Team</Link>
-          <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">About Us</Link>
+          <Link href="/aboutUs" className="text-white font-extrabold hover:text-purple-400 transition-colors">About Us</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Sponsors</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Volunteers</Link>
           <Link href="/" className="text-white font-extrabold hover:text-purple-400 transition-colors">Services</Link>
@@ -153,7 +153,7 @@ export default function Header() {
               <div className="flex flex-col gap-6 mt-12 overflow-y-auto max-h-[calc(100vh-120px)] pb-10">
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Home</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Our Team</Link>
-                <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
+                <Link href="/aboutUs" className="text-lg font-medium hover:text-red-400 transition-colors px-2">About Us</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Sponsors</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Volunteers</Link>
                 <Link href="/" className="text-lg font-medium hover:text-red-400 transition-colors px-2">Services</Link>

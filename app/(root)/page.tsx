@@ -71,8 +71,8 @@ export default function Home() {
 
        
         <div className="flex flex-col px-6 py-12 gap-6 bg-white">
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-black  tracking-tight">
-            Events that speak.<br />Moments that stay.
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-black  tracking-tight uppercase font-extrabold">
+            Events that <span className="text-purple-600">speak.</span><br />Moments that <span className="text-purple-600">stay.</span>
           </h1>
           <p className="text-black/70 text-lg leading-relaxed font-medium">
             Zho Zho Entertainments delivers high-impact corporate events. Trusted by top companies. 
@@ -86,7 +86,7 @@ export default function Home() {
                   el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }
               }}
-              className="bg-black text-white rounded-full text-lg font-bold h-[56px] px-10 flex items-center justify-center w-fit cursor-pointer active:scale-95 transition-transform">
+              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full text-lg font-bold h-[56px] px-10 flex items-center justify-center w-fit cursor-pointer active:scale-95 transition-transform">
               Explore Now
             </button>
           </div>
