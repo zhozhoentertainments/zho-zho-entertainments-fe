@@ -109,15 +109,15 @@ export default function VolunteersPage() {
       </section>
 
       {/* Introduction/Quote */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 container mx-auto text-center">
+      <section className="py-24 px-6 md:px-12 lg:px-24 container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto space-y-10"
+          className="max-w-4xl mx-auto space-y-10 text-left"
         >
           <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-purple-100 border border-purple-200 text-purple-700 text-sm font-bold tracking-[0.2em] uppercase">
-            <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse shrink-0" />
             Be the Heart – Behind the Movement
           </div>
           
@@ -252,8 +252,8 @@ export default function VolunteersPage() {
 
               <div className="space-y-6">
                 {eligibility.map((item, index) => (
-                  <div key={index} className="flex items-center gap-5 group">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-purple-600 group-hover:border-transparent transition-all duration-500">
+                  <div key={index} className="flex items-start gap-5 group">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-purple-600 group-hover:border-transparent transition-all duration-500 shrink-0 mt-1">
                       <span className="text-purple-500 group-hover:text-white font-black">{index + 1}</span>
                     </div>
                     <p className="text-lg text-white/80 font-medium group-hover:text-white transition-colors">{item}</p>
