@@ -15,7 +15,7 @@ const sections = [
       "To build a world-class entertainment enterprise that produces, promotes, and delivers exceptional creative experiences across all platforms.",
     image:
       "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1200&auto=format&fit=crop",
-    link: "/",
+    link: "/aboutUs#mission",
     reverse: false,
   },
   {
@@ -26,7 +26,7 @@ const sections = [
       "We constantly push the boundaries of creativity and technology to redefine luxury entertainment and cinematic experiences.",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
-    link: "/",
+    link: "/aboutUs#vision",
     reverse: true,
   },
   {

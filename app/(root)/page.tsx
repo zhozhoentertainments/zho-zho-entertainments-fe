@@ -12,10 +12,13 @@ import myVideo from '../../videos/final.mp4';
 export default function Home() {
   return (
     <div className="w-full min-h-screen font-sans flex flex-col bg-white">
+      {/* Header Wrapper */}
+      <div className="fixed top-0 left-0 right-0 z-[110] w-full">
+        <Header />
+      </div>
      
       <div className="hidden lg:flex relative w-full min-h-screen bg-white text-black flex-col">
         <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">
-          <Header/>
           <main className="flex-1 flex flex-col pt-48 pb-12 h-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-24 items-center">
               {/* Left Side: Content */}
@@ -60,9 +63,6 @@ export default function Home() {
       {/* Mobile View - Stacked Layout */}
       <div className="lg:hidden flex flex-col w-full bg-white">
        
-        <div className="relative z-50">
-          <Header />
-        </div>
 
        
         <div className="w-full aspect-video relative mt-24">

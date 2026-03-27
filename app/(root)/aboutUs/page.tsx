@@ -83,7 +83,7 @@ const AboutPage = () => {
       <section className="py-24 bg-[#FCEBFC] relative border-y border-purple-100">
         <div className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Vision Card */}
-          <div className="group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 hover:border-purple-400 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
+          <div id="vision" className="group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 hover:border-purple-400 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 blur-3xl group-hover:bg-purple-200 transition-all" />
             <div className="relative z-10 space-y-6">
               <div className="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform duration-500">
@@ -96,7 +96,7 @@ const AboutPage = () => {
           </div>
 
           {/* Mission Card */}
-          <div className="group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 hover:border-purple-400 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
+          <div id="mission" className="group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 hover:border-purple-400 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-100 blur-3xl group-hover:bg-fuchsia-200 transition-all" />
             <div className="relative z-10 space-y-6">
               <div className="w-16 h-16 rounded-2xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 group-hover:scale-110 transition-transform duration-500">
