@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Target, Eye, Star, Users, Briefcase, ChevronRight } from "lucide-react";
 import Header from "@/components/shared/Header";
-import SplineScene from "@/components/shared/SplineScene";
 
 const AboutPage = () => {
   return (
@@ -16,23 +15,29 @@ const AboutPage = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950">
+      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         
         <div className="absolute inset-0 z-0">
-          <SplineScene 
-            scene="https://prod.spline.design/SoaoAtNfXF3JzKxg/scene.splinecode"
-            className="w-full h-full"
+          <Image
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop"
+            alt="Hero Background"
+            fill
+            className="object-cover"
+            priority
           />
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-white/20 to-black/80 backdrop-blur-md z-10" />
         </div>
         
-        <div className="relative z-20 text-center px-4 mt-20 pointer-events-none">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-white drop-shadow-2xl">
-            ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300 drop-shadow-xl">US</span>
+        
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-200/40 blur-[120px] rounded-full z-0" />
+        
+        <div className="relative z-20 text-center px-4 mt-20">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-neutral-950">
+            ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">US</span>
           </h1>
-          <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/80 uppercase tracking-[0.2em] pointer-events-auto drop-shadow-md">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4 text-white/50" />
+          <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/70 uppercase tracking-[0.2em]">
+            <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4 text-white/30" />
             <span className="text-white">About Us</span>
           </nav>
         </div>
@@ -50,11 +55,14 @@ const AboutPage = () => {
               More Than Moments — <br />
               <span className="text-purple-600">We Create Movements</span>
             </h2>
-            <p className="text-lg md:text-xl text-neutral-600 leading-relaxed text-justify md:text-left">
-              Zho Zho Entertainments is a new-generation event management company redefining how events are conceptualized and delivered. With a dynamic approach and a strong focus on innovation, we specialize in curating and executing a diverse range of events—including high-energy sports events, vibrant cultural experiences, and professionally managed government and corporate engagements.
+            <p className="text-lg md:text-xl text-neutral-600 leading-relaxed">
+              Zho Zho Entertainments is a new-age event management company dedicated to redefining experiences. 
+              We blend creativity, wellness, and social impact to curate inclusive, cause-driven events 
+              aimed at sparking meaningful change. 
             </p>
-            <p className="text-lg text-neutral-500 leading-relaxed text-justify md:text-left">
-              Driven by creativity, precision, and a deep understanding of audience engagement, Zho Zho Entertainments brings together strategic planning and flawless execution to create impactful, memorable experiences. Our team is committed to delivering excellence at every stage, making us a trusted partner for brands, institutions, and organizations looking to make a lasting impression.
+            <p className="text-lg text-neutral-500">
+              Our focus goes beyond mere logistics; we aim to transform lives through shared experiences that 
+              resonate with purpose and emotional strength.
             </p>
           </div>
           <div className="relative group animate-in fade-in slide-in-from-right-8 duration-1000">

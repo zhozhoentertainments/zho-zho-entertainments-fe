@@ -5,7 +5,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import SplineScene from "@/components/shared/SplineScene";
 import { 
   Users, 
   Heart, 
@@ -77,28 +76,32 @@ export default function VolunteersPage() {
       </div>
 
       {/* Standardized Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden bg-neutral-950">
+      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <SplineScene 
-            scene="https://prod.spline.design/AxPEPi58DF1Zgqtj/scene.splinecode" 
-            className="w-full h-full object-cover"
+          <Image
+            src="/volunteers/hero.png"
+            alt="Volunteers Hero"
+            fill
+            className="object-cover"
+            priority
           />
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-0 bg-black/20 pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-white/20 to-black/80 backdrop-blur-md z-10" />
         </div>
         
-        <div className="relative z-20 text-center px-4 mt-20 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-200/40 blur-[120px] rounded-full z-0" />
+        
+        <div className="relative z-20 text-center px-4 mt-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-white uppercase drop-shadow-2xl">
-              Volunteer <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300 drop-shadow-xl">With Us</span>
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-neutral-950 uppercase">
+              Volunteer <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">With Us</span>
             </h1>
-            <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/80 uppercase tracking-[0.2em] pointer-events-auto drop-shadow-md">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <ChevronRight className="w-4 h-4 text-white/50" />
+            <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/70 uppercase tracking-[0.2em]">
+              <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
+              <ChevronRight className="w-4 h-4 text-white/30" />
               <span className="text-white cursor-default">Volunteers</span>
             </nav>
           </motion.div>
