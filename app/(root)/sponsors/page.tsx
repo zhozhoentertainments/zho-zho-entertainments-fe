@@ -241,7 +241,7 @@ const SponsorsPage = () => {
             </motion.div>
 
             {/* Globe container - Front layer, locked pointer events */}
-            <div className="absolute z-10 w-[80%] h-[80%] md:w-[60%] md:h-[60%] pointer-events-none flex items-center justify-center rounded-full overflow-hidden">
+            <div className="absolute z-10 w-[68%] h-[68%] md:w-[51%] md:h-[51%] pointer-events-none flex items-center justify-center rounded-full overflow-hidden">
                <Spline scene="https://prod.spline.design/oVueZoeGO7AO2mhX/scene.splinecode" />
             </div>
 
