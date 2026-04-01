@@ -56,13 +56,10 @@ const AboutPage = () => {
               <span className="text-purple-600">We Create Movements</span>
             </h2>
             <p className="text-lg md:text-xl text-neutral-600 leading-relaxed">
-              Zho Zho Entertainments is a new-age event management company dedicated to redefining experiences. 
-              We blend creativity, wellness, and social impact to curate inclusive, cause-driven events 
-              aimed at sparking meaningful change. 
+              Zho Zho Entertainments is a new-generation event management company redefining how events are conceptualized and delivered. With a dynamic approach and a strong focus on innovation, we specialize in curating and executing a diverse range of events—including high-energy sports events, vibrant cultural experiences, and professionally managed government and corporate engagements.
             </p>
             <p className="text-lg text-neutral-500">
-              Our focus goes beyond mere logistics; we aim to transform lives through shared experiences that 
-              resonate with purpose and emotional strength.
+              Driven by creativity, precision, and a deep understanding of audience engagement, Zho Zho Entertainments brings together strategic planning and flawless execution to create impactful, memorable experiences. Our team is committed to delivering excellence at every stage, making us a trusted partner for brands, institutions, and organizations looking to make a lasting impression. 
             </p>
           </div>
           <div className="relative group animate-in fade-in slide-in-from-right-8 duration-1000">

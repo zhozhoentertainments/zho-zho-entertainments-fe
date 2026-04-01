@@ -1,8 +1,11 @@
-"use client";
+"use client"
 
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Spline from '@splinetool/react-spline';
+
+
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -16,12 +19,31 @@ import {
   Mic2,
   Monitor,
   Droplets,
-  Mail
+  Mail,
+  Facebook,
+  Instagram,
+  Youtube
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Header from "@/components/shared/Header";
 
+const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 4.076H5.036z" />
+  </svg>
+);
+
 const SponsorsPage = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const orbitScale = useTransform(scrollYProgress, [0.1, 0.35, 0.65, 0.9], [0, 1, 1, 0]);
+  const iconOpacity = useTransform(scrollYProgress, [0.1, 0.25, 0.75, 0.9], [0, 1, 1, 0]);
+
   const whySponsor = [
     {
       icon: <ShieldCheck className="text-purple-600" />,
@@ -162,10 +184,79 @@ const SponsorsPage = () => {
       <section className="py-24 bg-[#FCEBFC] relative border-y border-purple-100">
         <div className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-950 uppercase tracking-tighter">Why Sponsor Us?</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-950 uppercase tracking-tighter">Why <span className="text-purple-600">Sponsor</span> Us?</h2>
             <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
               Align your brand with impact and reach a wider, more engaged audience.
             </p>
+          </div>
+          <div 
+            ref={containerRef}
+            className="relative mx-auto w-[300px] h-[300px] md:w-[450px] md:h-[450px] mb-24 flex items-center justify-center"
+          >
+
+            {/* Orbiting ring and spokes */}
+            <motion.div 
+              style={{ scale: orbitScale, opacity: iconOpacity }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 rounded-full border border-purple-200/50 z-0 pointer-events-none"
+            >
+              {[
+                { icon: <Facebook className="w-8 h-8 md:w-10 md:h-10 text-[#1877F2] group-hover:text-white transition-colors" />, href: "https://www.facebook.com/profile.php?id=61580795231859", hover: "hover:bg-[#1877F2] hover:border-[#1877F2]" },
+                { icon: <XIcon className="w-7 h-7 md:w-9 md:h-9 text-black group-hover:text-white transition-colors" />, href: "https://x.com/ZhoZhoEnt", hover: "hover:bg-black hover:border-black" },
+                { icon: <Instagram className="w-8 h-8 md:w-10 md:h-10 text-[#d62976] group-hover:text-white transition-colors" />, href: "https://www.instagram.com/zhozho_entertainments", hover: "hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-500 hover:border-transparent" },
+                { icon: <Youtube className="w-8 h-8 md:w-10 md:h-10 text-[#FF0000] group-hover:text-white transition-colors" />, href: "https://www.youtube.com/@ZhoZhoEntertainments", hover: "hover:bg-[#FF0000] hover:border-[#FF0000]" },
+                { icon: <Mail className="w-8 h-8 md:w-10 md:h-10 text-neutral-600 group-hover:text-white transition-colors" />, href: "mailto:info@zhozhoentertainments.com", hover: "hover:bg-neutral-600 hover:border-neutral-600" }
+              ].map((link, i, arr) => {
+                const angle = (i * 360) / arr.length;
+                return (
+                  <div 
+                    key={i} 
+                    className="absolute w-full h-full top-0 left-0"
+                    style={{ transform: `rotate(${angle}deg)` }}
+                  >
+                    {/* Spoke connecting icon to globe */}
+                    <div className="absolute top-[40px] md:top-[50px] h-10 md:h-14 left-1/2 -ml-[0.5px] w-[1px] bg-gradient-to-b from-purple-300 via-purple-200 to-transparent" />
+
+                    <div className="absolute top-0 left-1/2 -mt-8 -ml-8 md:-mt-10 md:-ml-10 w-16 h-16 md:w-20 md:h-20">
+                      <motion.div
+                        initial={{ rotate: -angle }}
+                        animate={{ rotate: -(360 + angle) }}
+                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                        className="w-full h-full text-neutral-700 pointer-events-auto"
+                      >
+                        <a 
+                          href={link.href} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className={`w-full h-full rounded-full bg-white shadow-xl border-2 border-purple-100 flex items-center justify-center transition-colors duration-300 ${link.hover} group`}
+                        >
+                          {link.icon}
+                        </a>
+                      </motion.div>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            {/* Globe container - Front layer, locked pointer events */}
+            <div className="absolute z-10 w-[80%] h-[80%] md:w-[60%] md:h-[60%] pointer-events-none flex items-center justify-center rounded-full overflow-hidden">
+               <Spline scene="https://prod.spline.design/oVueZoeGO7AO2mhX/scene.splinecode" />
+            </div>
+
+          </div>
+
+          <div className="text-center mb-20 px-4">
+            <motion.h3 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-4xl font-black text-neutral-950 uppercase tracking-tight leading-tight"
+            >
+              Get visibility across the globe <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">on all the platforms</span>
+            </motion.h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
