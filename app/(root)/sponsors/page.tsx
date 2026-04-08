@@ -157,7 +157,7 @@ const SponsorsPage = () => {
               Our sponsors and partners are not just supporters — they are <span className="text-purple-600 font-bold">changemakers</span> who share our commitment to wellness, community, and meaningful engagement.
             </p>
             <p className="text-lg text-neutral-500">
-              Whether it’s a city run for mental health, a wellness retreat, or an awareness campaign, your sponsorship helps us reach more people, create deeper experiences, and build a healthier, more connected world.
+              Whether it’s a sports event, concert, or a corporate conclave, your sponsorship helps us reach more people, create deeper experiences, and build a more connected world.
             </p>
           </motion.div>
           
