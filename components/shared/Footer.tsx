@@ -57,16 +57,30 @@ const Footer = () => {
               </Link>
             </div>
 
-            {/* Address Section */}
-            <div className="flex items-start gap-4 bg-white/40 backdrop-blur-md border border-white/30 px-6 py-5 rounded-[2rem] max-w-2xl w-full transition-all hover:bg-white/60 hover:shadow-xl group/address">
-              <div className="shrink-0 w-10 h-10 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 group-hover/address:bg-purple-600 group-hover/address:text-white transition-all duration-300">
-                <MapPin size={20} />
+            {/* Address & Map Section */}
+            <div className="flex flex-col gap-6 bg-white/40 backdrop-blur-md border border-white/30 p-6 rounded-[2rem] max-w-2xl w-full transition-all hover:bg-white/60 hover:shadow-xl group/address">
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-10 h-10 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 group-hover/address:bg-purple-600 group-hover/address:text-white transition-all duration-300">
+                  <MapPin size={20} />
+                </div>
+                <div className="flex flex-col gap-1 text-left">
+                  <span className="text-purple-600 font-bold uppercase tracking-wider text-xs">Our Location</span>
+                  <p className="text-sm leading-relaxed font-medium">
+                    Flat No: 102, Sai Kiran Apartments, Ameerpet, Hyderabad, TS - 500038.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-1 text-left">
-                <span className="text-purple-600 font-bold uppercase tracking-wider text-xs">Our Location</span>
-                <p className="text-sm leading-relaxed font-medium">
-                  Flat No: 102, Sai Kiran Apartments, Ameerpet, Hyderabad, TS - 500038.
-                </p>
+              
+              {/* Cleaned Map iframe */}
+              <div className="w-full h-48 md:h-64 rounded-xl overflow-hidden border border-white/50 relative shadow-inner">
+                <iframe 
+                  src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Flat%20No%3A%20102%2C%20Sai%20Kiran%20Apartments%2C%20Ameerpet%2C%20Hyderabad%2C%20TS%20-%20500038&t=&z=10&ie=UTF8&iwloc=B&output=embed"
+                  frameBorder={0} 
+                  scrolling="no" 
+                  marginHeight={0} 
+                  marginWidth={0} 
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
               </div>
             </div>
           </div>

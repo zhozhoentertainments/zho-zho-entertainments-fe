@@ -6,7 +6,7 @@ import React from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
-export default function TeamPage() {
+export default function BoardOfDirectorsPage() {
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans flex flex-col overflow-x-hidden">
       {/* Header Wrapper */}
@@ -20,7 +20,7 @@ export default function TeamPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop"
-            alt="Our Team Hero"
+            alt="Board of Directors Hero"
             fill
             className="object-cover"
             priority
@@ -37,7 +37,7 @@ export default function TeamPage() {
           <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/70 uppercase tracking-[0.2em]">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4 text-white/30" />
-            <span className="text-white">Our Team</span>
+            <span className="text-white">Board of Directors</span>
           </nav>
         </div>
       </section>
@@ -47,11 +47,21 @@ export default function TeamPage() {
   
         <div className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-2 shadow-sm mb-12 transition-transform hover:-translate-y-1">
           <div className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></div>
-          <span className="text-xs md:text-sm font-bold text-gray-800 tracking-widest uppercase">Our Team</span>
+          <span className="text-xs md:text-sm font-bold text-gray-800 tracking-widest uppercase">Board of Directors</span>
         </div>
 
-      
-
+        {/* Board of Directors Section */}
+        <section className="w-full max-w-7xl  px-4 flex flex-col items-center">
+          <div className="text-center ">
+            <h2 className="text-4xl md:text-5xl font-black text-neutral-950 uppercase tracking-tighter mb-12">
+              Board of <span className="text-purple-600">Directors</span>
+            </h2>
+          </div>
+          
+          <div className="flex flex-col items-center justify-center text-neutral-500 py-12">
+            <p className="text-lg font-medium">Content coming soon...</p>
+          </div>
+        </section>
       </main>
     </div>
   );
