@@ -1,11 +1,8 @@
 "use client"
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Spline from '@splinetool/react-spline';
-
-
 import { 
   ArrowRight, 
   ShieldCheck, 

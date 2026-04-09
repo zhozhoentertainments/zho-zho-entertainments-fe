@@ -2,17 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Facebook, Instagram, Youtube, Phone, Mail, Globe, MapPin } from 'lucide-react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-
-
 
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -83,12 +72,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Adjusted mt-2 to mt-8 and reduced pt-10 to pt-6 to close the gap with the copyright */}
         <div className="w-full flex flex-col lg:flex-row items-center justify-between border-t border-white/10 pt-8 mt-8 z-10 gap-8 lg:gap-0">
           
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-xs md:text-sm font-semibold tracking-wider text-black/80 uppercase">
             <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-              <Link href="/" className="hover:text-purple-400 transition-colors">Our Team</Link>
+              <Link href="/ourTeam" className="hover:text-purple-400 transition-colors">Our Team</Link>
               <Link href="/aboutUs" className="hover:text-purple-400 transition-colors">About Us</Link>
               <Link href="/sponsors" className="hover:text-purple-400 transition-colors">Sponsors</Link>
               <Link href="/volunteers" className="hover:text-purple-400 transition-colors">Volunteers</Link>

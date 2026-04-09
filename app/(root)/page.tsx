@@ -5,7 +5,7 @@ import BackgroundVideo from 'next-video/background-video';
 import Header from "@/components/shared/Header";
 
 import Video from 'next-video';
-import myVideo from '../../videos/final.mp4'; 
+import myVideo from '../../videos/hero1.mp4'; 
  
 
 
@@ -51,6 +51,10 @@ export default function Home() {
               <div className="relative aspect-[4/5] xl:aspect-square rounded-[3rem] xl:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-[8px] xl:border-[12px] border-neutral-50 group max-h-[70vh]">
                 <BackgroundVideo 
                   src={myVideo} 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
@@ -65,12 +69,19 @@ export default function Home() {
        
 
        
-        <div className="w-full aspect-video relative mt-24">
-          <BackgroundVideo src={myVideo} className="w-full h-full object-cover" />
+        <div className="w-full aspect-video relative ">
+          <BackgroundVideo 
+            src={myVideo} 
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover" 
+          />
         </div>
 
        
-        <div className="flex flex-col px-6 py-12 gap-6 bg-white">
+        <div className="flex flex-col px-6 py-12 gap-6 mt-24 bg-white">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-black  tracking-tight uppercase font-extrabold">
             Events that <span className="text-purple-600">speak.</span><br />Moments that <span className="text-purple-600">stay.</span>
           </h1>
