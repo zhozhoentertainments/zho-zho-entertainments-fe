@@ -68,7 +68,7 @@ export default function Home() {
                     </div>
                     <p className="text-neutral-900 font-bold text-sm leading-tight text-left">
                       <span className="block text-[11px] text-purple-600 font-black tracking-[0.2em] uppercase mb-1">Coming Soon</span>
-                      National Kho-Kho Championship <br /><span className="text-neutral-500">@ Hyderabad</span>
+                      Elite Kho-Kho Championship <br /><span className="text-neutral-500">@ Hyderabad</span>
                     </p>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function Home() {
               </div>
               <p className="text-neutral-900 font-bold text-xs leading-tight text-left">
                 <span className="block text-[9px] text-purple-600 font-black tracking-[0.2em] uppercase mb-0.5">Coming Soon</span>
-                National Kho-Kho Championship <br /><span className="text-neutral-500">@ Hyderabad</span>
+               Elite Kho-Kho Championship <br /><span className="text-neutral-500">@ Hyderabad</span>
               </p>
             </div>
           </div>
