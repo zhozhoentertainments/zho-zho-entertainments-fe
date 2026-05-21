@@ -31,8 +31,7 @@ export default function Header() {
 
   return (
     <div className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-7xl z-[100]">
-      <header className="w-full flex items-center justify-between px-6 md:px-10 py-3 md:py-4 backdrop-blur-xl bg-neutral-950/40 border border-white/10 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500">
-        
+      <header className="w-full flex items-center justify-between px-6 md:px-10 py-3 md:py-4 backdrop-blur-xl bg-neutral-950/40 border border-white/10 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500">       
         {/* Logo Section */}
         <Link href="/" className="relative z-10 transition-transform hover:scale-105 shrink-0">
           <Image

@@ -135,9 +135,9 @@ export default function SportsManagementPage() {
       <div className="relative w-full h-[60vh] min-h-[500px] rounded-b-[3.5rem] bg-[url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center overflow-hidden text-white shadow-2xl">
         <div className="absolute inset-0 bg-neutral-900/60 md:bg-neutral-900/40 lg:bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
         
-        <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full mx-auto">
+        {/* <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 w-full mx-auto">
           <Header />
-        </div>
+        </div> */}
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-16">
           <motion.div 

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 // import Footer from "@/components/shared/Footer";
-import Footer from "@/components/shared/Footer.jsx";
+// import Footer from "@/components/shared/Footer.jsx";
 
 import { Analytics } from "@vercel/analytics/next"
+import NewFooter from "@/components/shared/NewFooter";
+import NewHeader from "@/components/shared/NewHeader";
 
 export const metadata: Metadata = {
   title: "zho-zho entertainments",
@@ -16,10 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex min-h-screen flex-col font-sans bg-[#050505] text-white overflow-x-hidden">
+      <NewHeader/>
       <main className="flex-1 flex flex-col">{children}</main>
-     <Footer/>
-     {/* <Footer/> */}
-     <Analytics/>
+      <NewFooter />
+      {/* <Footer/> */}
+      <Analytics />
     </div>
   );
 }

@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen font-sans flex flex-col bg-white">
       {/* Header Wrapper */}
-      <div className="fixed top-0 left-0 right-0 z-[110] w-full">
+      {/* <div className="fixed top-0 left-0 right-0 z-[110] w-full">
         <Header />
-      </div>
+      </div> */}
 
       <div className="hidden lg:flex relative w-full min-h-screen bg-white text-black flex-col">
         <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">

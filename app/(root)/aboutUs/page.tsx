@@ -10,9 +10,9 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white text-neutral-900 font-sans overflow-x-hidden">
       {/* Header Wrapper */}
-      <div className="fixed top-0 left-0 right-0 z-[110] w-full">
+      {/* <div className="fixed top-0 left-0 right-0 z-[110] w-full">
         <Header />
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
