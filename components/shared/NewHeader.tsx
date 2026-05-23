@@ -47,7 +47,7 @@ export default function NewHeader() {
           <div className="w-full max-w-[92%] xl:max-w-[85%] mx-auto px-4 flex justify-between items-center">
             <div className="flex items-center gap-4 sm:gap-6">
               <span className="flex items-center gap-1.5 hover:text-[#A822F5] transition-colors cursor-default">
-                <MapPin size={13} className="text-[#A822F5]" />
+                <MapPin size={13} className="text-[#A822F5] hidden sm:inline" />
                 <span className="hidden sm:inline">Flat No: 102, Sai Kiran Apartments, Ameerpet , Hyderabad, TS - 500038
 
                 </span>

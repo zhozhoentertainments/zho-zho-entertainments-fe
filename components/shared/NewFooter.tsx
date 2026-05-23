@@ -83,8 +83,8 @@ export default function NewFooter(): React.JSX.Element {
 
           {/* Social Platforms */}
           <div className="space-y-4 w-full flex flex-col items-center lg:items-start pt-2">
-            <h4 className="text-[13px] font-black uppercase tracking-[0.3em] text-[#DD4EFF]  border-[#DD4EFF] pb-1 w-fit">
-              // CONNECT NOW
+            <h4 className="text-[13px] font-black uppercase tracking-[0.3em] text-[#DD4EFF]   pb-1 w-fit">
+              || CONNECT NOW
             </h4>
             <div className="flex items-center gap-3">
               {SOCIALS.map(({ href, icon: Icon, label, small }) => (
@@ -105,7 +105,7 @@ export default function NewFooter(): React.JSX.Element {
 
         {/* COLUMN 2: THE PLAYBOOK (Navigation Hub) - HEADING: CYAN, SUBHEADING: LIGHT GRAY */}
         <div className="space-y-6">
-          <h4 className="text-[13px] font-black uppercase tracking-[0.3em] text-[#DD4EFF] flex items-center gap-2 border-l-4 border-[#DD4EFF] pl-3 bg-gradient-to-r from-[rgba(92,225,230,0.08)] via-transparent to-transparent py-1 rounded-r">
+          <h4 className="text-[13px] font-black uppercase tracking-[0.3em] text-[#DD4EFF] flex items-center gap-2 border-l-4 border-[#f9f871] pl-3 bg-gradient-to-r from-[rgba(92,225,230,0.08)] via-transparent to-transparent py-1 rounded-r">
             OUR INDEX
           </h4>
           {/* Subheading - Light Gray */}
@@ -118,7 +118,7 @@ export default function NewFooter(): React.JSX.Element {
               <a
                 key={href}
                 href={href}
-                className="group flex items-center justify-between p-3.5 border border-[rgba(92,225,230,0.18)] bg-[rgba(92,225,230,0.02)] text-sm font-bold tracking-wider text-[rgba(245,240,232,0.85)] transition-all duration-200 hover:bg-[#5CE1E6] hover:text-black rounded-lg hover:shadow-md"
+                className="group flex items-center justify-between p-3.5 border border-[rgba(92,225,230,0.18)] bg-[rgba(92,225,230,0.02)] text-sm font-bold tracking-wider text-[rgba(245,240,232,0.85)] transition-all duration-200 hover:bg-[#f9f871] hover:text-black rounded-lg hover:shadow-md"
               >
                 <span>{label}</span>
                 <ArrowRight size={16} className="text-[#5CE1E6] group-hover:text-black transition-transform duration-200 group-hover:translate-x-1" />
@@ -130,7 +130,7 @@ export default function NewFooter(): React.JSX.Element {
         {/* COLUMN 3: BACKSTAGE INFO & SECURE LIVE MAP MODULE - HEADING: CYAN, SUBHEADING: LIGHT GRAY */}
         <div className="md:col-span-2 lg:col-span-1 flex flex-col gap-6 w-full">
           <div className="space-y-5 w-full">
-            <h4 className="text-[13px] font-black uppercase tracking-[0.3em] text-[#DD4EFF] flex items-center gap-2 border-l-4 border-[#DD4EFF] pl-3 bg-gradient-to-r from-[rgba(92,225,230,0.08)] via-transparent to-transparent py-1 rounded-r">
+            <h4 className="text-[13px] font-black uppercase tracking-[0.3em] text-[#DD4EFF] flex items-center gap-2 border-l-4 border-[#f9f871] pl-3 bg-gradient-to-r from-[rgba(92,225,230,0.08)] via-transparent to-transparent py-1 rounded-r">
               BACKSTAGE INFO
             </h4>
             {/* Subheading - Light Gray */}
@@ -146,11 +146,11 @@ export default function NewFooter(): React.JSX.Element {
                   {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
                   className="group flex items-center gap-4 p-3.5 border border-dashed border-[rgba(92,225,230,0.3)] bg-[rgba(11,6,22,0.6)] rounded-xl hover:border-[#5CE1E6] transition-all duration-200 hover:bg-[rgba(92,225,230,0.02)]"
                 >
-                  <div className="p-2.5 bg-[rgba(92,225,230,0.08)] text-[#5CE1E6] group-hover:bg-[#5CE1E6] group-hover:text-black transition-all rounded-lg shrink-0">
+                  <div className="p-2.5 bg-[rgba(92,225,230,0.08)] text-[#795DC6] group-hover:bg-[#f9f871] group-hover:text-black transition-all rounded-lg shrink-0">
                     <Icon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="block text-[10px] font-mono font-black tracking-widest text-[#5CE1E6]/80">
+                    <span className="block text-[10px] font-mono font-black tracking-widest text-[#aac65d]/80">
                       {tag}
                     </span>
                     <span className="block text-sm sm:text-[15px] font-bold text-[rgba(245,240,232,0.95)] break-all group-hover:text-[#5CE1E6] transition-colors mt-0.5">

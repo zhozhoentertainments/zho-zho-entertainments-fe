@@ -6,6 +6,8 @@ import Header from "@/components/shared/Header";
 
 import Video from 'next-video';
 import myVideo from '../../videos/hero1.mp4';
+import Sponsors from "./components/Sponsors";
+import HeroSection from "./components/HeroSection";
 
 
 
@@ -17,11 +19,11 @@ export default function Home() {
         <Header />
       </div> */}
 
-      <div className="hidden lg:flex relative w-full min-h-screen bg-white text-black flex-col">
+      {/* <div className="hidden lg:flex relative w-full min-h-screen bg-white text-black flex-col">
         <div className="relative z-10 flex flex-col flex-1 px-8 sm:px-14 md:px-20 lg:px-32 xl:px-44 w-full">
           <main className="flex-1 flex flex-col pt-48 pb-12 h-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-24 items-center">
-              {/* Left Side: Content */}
+             
               <div className="flex flex-col gap-6 xl:gap-6">
                 <h1 className="text-5xl lg:text-6xl xl:text-[4rem] font-black leading-[1] tracking-tighter uppercase text-neutral-900">
                   Events that <span className="text-purple-600">Speak.</span><br />
@@ -47,7 +49,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right Side: Video */}
+            
               <div className="relative aspect-[4/5] xl:aspect-square rounded-[3rem] xl:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-[8px] xl:border-[12px] border-neutral-50 group max-h-[70vh]">
                 <BackgroundVideo
                   src={myVideo}
@@ -59,7 +61,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                {/* Floating Announcement Badge */}
+              
                 <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 w-[85%] max-w-sm z-20">
                   <div className="bg-white/95 backdrop-blur-xl border border-purple-200 p-4 rounded-2xl shadow-[0_20px_50px_rgba(147,51,234,0.4)] flex items-center gap-4 transform transition-all hover:scale-105 cursor-default group/badge">
                     <div className="relative flex h-4 w-4 shrink-0">
@@ -76,7 +78,9 @@ export default function Home() {
             </div>
           </main>
         </div>
-      </div>
+      </div> */}
+      <HeroSection/>
+      <Sponsors/>
 
       {/* Mobile View - Stacked Layout */}
       <div className="lg:hidden flex flex-col w-full bg-white">
