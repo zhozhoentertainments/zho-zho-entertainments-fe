@@ -234,3 +234,23 @@ body {
 .react-datepicker__time-list-item--selected {
   background-color: #624cf5 !important;
 }
+
+/* Ethnocentric Regular Font */
+@font-face {
+  font-family: 'Ethnocentric Regular';
+  src: url('/fonts/ethnocentric-regular.woff2') format('woff2'),
+       url('/fonts/ethnocentric-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

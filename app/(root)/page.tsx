@@ -8,6 +8,7 @@ import Video from 'next-video';
 import myVideo from '../../videos/hero1.mp4';
 import Sponsors from "./components/Sponsors";
 import HeroSection from "./components/HeroSection";
+import WhyKhoKho from "./components/WhyKhoKho";
 
 
 
@@ -81,12 +82,11 @@ export default function Home() {
       </div> */}
       <HeroSection/>
       <Sponsors/>
+      <WhyKhoKho/>
+      
 
       {/* Mobile View - Stacked Layout */}
-      <div className="lg:hidden flex flex-col w-full bg-white">
-
-
-
+      {/* <div className="lg:hidden flex flex-col w-full bg-white">
         <div className="w-full aspect-video relative ">
           <BackgroundVideo
             src={myVideo}
@@ -96,7 +96,6 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           />
-          {/* Floating Announcement Badge */}
           <div className="absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[320px] z-20">
             <div className="bg-white/95 backdrop-blur-xl border border-purple-200 p-3 rounded-2xl shadow-[0_10px_30px_rgba(147,51,234,0.3)] flex items-center gap-3">
               <div className="relative flex h-3 w-3 shrink-0">
@@ -133,7 +132,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Landing />
     </div>

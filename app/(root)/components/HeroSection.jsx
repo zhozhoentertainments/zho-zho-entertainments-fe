@@ -7,8 +7,6 @@ const customSliderData = [
   { id: 2, src: "/slider/2.png", bgColor: "bg-[#1A0033]" },
   { id: 3, src: "/slider/3.png", bgColor: "bg-[#0D001A]" },
   { id: 4, src: "/slider/4.png", bgColor: "bg-[#16002C]" },
-  // नई इमेज जोड़ने के लिए बस नीचे इस तरह लाइन बढ़ा दें:
-  // { id: 5, src: "/slider/my-new-image.png", bgColor: "bg-[#110024]" },
 ];
 
 export default function UltimatePerfectSlider() {
@@ -20,7 +18,6 @@ export default function UltimatePerfectSlider() {
   const containerWidth = useRef(0);
   const containerRef = useRef(null);
 
-  // एरे खाली होने पर क्रैश से बचाने के लिए सेफ फॉलबैक
   const currentBg = customSliderData[currentIndex]?.bgColor || "bg-[#110024]";
 
   const nextSlide = useCallback(() => {
@@ -33,7 +30,6 @@ export default function UltimatePerfectSlider() {
     setDragOffset(0);
   };
 
-  // ऑटो-प्ले
   useEffect(() => {
     if (isDragging) return;
     const slideInterval = setInterval(nextSlide, 5000);
@@ -85,6 +81,25 @@ export default function UltimatePerfectSlider() {
       onMouseLeave={handleEnd}
     >
 
+      {/* ─── डेंस स्टेडियम लाइट्स (12 Floating Bubbles) ─── */}
+      <div className="absolute inset-0 z-0 pointer-events-none hidden md:block overflow-hidden">
+        {/* Left Side Bubbles */}
+        <div className="stadium-bubble sb-left-1"></div>
+        <div className="stadium-bubble sb-left-2"></div>
+        <div className="stadium-bubble sb-left-3"></div>
+        <div className="stadium-bubble sb-left-4"></div>
+        <div className="stadium-bubble sb-left-5"></div>
+        <div className="stadium-bubble sb-left-6"></div>
+        
+        {/* Right Side Bubbles */}
+        <div className="stadium-bubble sb-right-1"></div>
+        <div className="stadium-bubble sb-right-2"></div>
+        <div className="stadium-bubble sb-right-3"></div>
+        <div className="stadium-bubble sb-right-4"></div>
+        <div className="stadium-bubble sb-right-5"></div>
+        <div className="stadium-bubble sb-right-6"></div>
+      </div>
+
       {/* एम्बिएंट बैकग्राउंड ऑरा ग्लो */}
       {customSliderData.map((slide, index) => (
         <div
@@ -97,9 +112,19 @@ export default function UltimatePerfectSlider() {
         </div>
       ))}
 
-      {/* ─── मुख्य स्लाइडर ट्रैक ─── */}
-      <div className="relative w-full max-w-7xl aspect-video z-10 flex items-center justify-center px-0 sm:px-4 md:px-8 mt-20">
-        <div className="relative w-full h-full overflow-hidden sm:rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-black/20">
+      {/* ─── मुख्य स्लाइडर ट्रैक (अब रेस्पॉन्सिव हाइट के साथ ताकि कोई टेक्स्ट न कटे) ─── */}
+      <div className="relative w-full max-w-7xl z-10 px-4 sm:px-6 md:px-16 mt-20">
+        {/* 'invisible' इमेज का इस्तेमाल करके कंटेनर को इमेज के नेचुरल एस्पेक्ट रेशियो में फैलाया है */}
+        <div className="relative w-full overflow-hidden sm:rounded-2xl md:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.6)]">
+          
+          {/* ये इमेज यूजर को नहीं दिखेगी, ये सिर्फ कंटेनर की विड्थ और हाइट को डिज़ाइन के हिसाब से ऑटो-एडजस्ट करेगी */}
+          {customSliderData[0] && (
+            <img 
+              src={customSliderData[0].src} 
+              alt="Structure Fallback" 
+              className="w-full h-auto invisible pointer-events-none" 
+            />
+          )}
 
           {customSliderData.map((slide, index) => {
             let positionClass = "translate-x-full opacity-0";
@@ -130,13 +155,12 @@ export default function UltimatePerfectSlider() {
                   isDragging ? '' : 'transition-all duration-500 ease-out'
                 } ${positionClass}`}
               >
+                {/* अब बिना किसी एस्पेक्ट रेशियो बाइंडिंग के इमेज 100% ओरिजिनल प्रपोर्शन में रेंडर होगी */}
                 <div className="relative w-full h-full pointer-events-none">
-                  <Image
+                  <img
                     src={slide.src}
                     alt={`Slide ${slide.id}`}
-                    fill
-                    priority={index === 0}
-                    className="object-fill sm:object-cover object-center"
+                    className="w-full h-full object-fill"
                   />
                 </div>
               </div>
@@ -145,7 +169,7 @@ export default function UltimatePerfectSlider() {
         </div>
       </div>
 
-      {/* ─── प्रिवियस (Prev) बटन: टैबलेट/मोबाइल पर छुपा हुआ, डेस्कटॉप पर स्क्रीन के कोने पर ─── */}
+      {/* ─── प्रिवियस (Prev) बटन ─── */}
       <button
         onClick={(e) => { e.stopPropagation(); prevSlide(); }}
         className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 bg-black/40 hover:bg-purple-600 text-white p-2.5 sm:p-4 rounded-full backdrop-blur-md transition-all duration-300 border border-white/10 cursor-pointer shadow-2xl hidden md:flex items-center justify-center active:scale-95"
@@ -155,7 +179,7 @@ export default function UltimatePerfectSlider() {
         </svg>
       </button>
 
-      {/* ─── नेक्स्ट (Next) बटन: टैबलेट/मोबाइल पर छुपा हुआ, डेस्कटॉप पर स्क्रीन के कोने पर ─── */}
+      {/* ─── नेक्स्ट (Next) बटन ─── */}
       <button
         onClick={(e) => { e.stopPropagation(); nextSlide(); }}
         className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 bg-black/40 hover:bg-purple-600 text-white p-2.5 sm:p-4 rounded-full backdrop-blur-md transition-all duration-300 border border-white/10 cursor-pointer shadow-2xl hidden md:flex items-center justify-center active:scale-95"
@@ -187,6 +211,35 @@ export default function UltimatePerfectSlider() {
         .scrollbar-none {
           -ms-overflow-style: none;
           scrollbar-width: none;
+        }
+
+        /* ─── हैवी नीयन स्टेडियम बबल्स सीएसएस ─── */
+        .stadium-bubble {
+          position: absolute;
+          border-radius: 50%;
+          background: #bc66ff; 
+          opacity: 0.55;
+          animation: heavyStadiumFloat 11s ease-in-out infinite;
+        }
+
+        .sb-left-1 { width: 24px; height: 24px; left: 3%; top: 15%; box-shadow: 0 0 40px 20px #a855f7, 0 0 80px 40px #ec4899; animation-delay: 0s; }
+        .sb-left-2 { width: 14px; height: 14px; left: 8%; top: 35%; box-shadow: 0 0 30px 15px #6366f1, 0 0 60px 25px #a855f7; animation-delay: -2s; animation-duration: 14s; }
+        .sb-left-3 { width: 20px; height: 20px; left: 2%; top: 50%; box-shadow: 0 0 45px 22px #ec4899, 0 0 90px 45px #6366f1; animation-delay: -4s; animation-duration: 9s; }
+        .sb-left-4 { width: 16px; height: 16px; left: 9%; top: 68%; box-shadow: 0 0 35px 18px #a855f7, 0 0 70px 35px #6366f1; animation-delay: -1s; animation-duration: 12s; }
+        .sb-left-5 { width: 22px; height: 22px; left: 4%; top: 82%; box-shadow: 0 0 40px 20px #ec4899, 0 0 80px 40px #a855f7; animation-delay: -5s; animation-duration: 15s; }
+        .sb-left-6 { width: 12px; height: 12px; left: 11%; top: 23%; box-shadow: 0 0 25px 12px #6366f1, 0 0 50px 25px #ec4899; animation-delay: -3s; animation-duration: 10s; }
+
+        .sb-right-1 { width: 26px; height: 26px; right: 3%; top: 12%; box-shadow: 0 0 45px 22px #6366f1, 0 0 90px 45px #ec4899; animation-delay: -1.5s; animation-duration: 13s; }
+        .sb-right-2 { width: 18px; height: 18px; right: 7%; top: 32%; box-shadow: 0 0 35px 18px #ec4899, 0 0 70px 35px #a855f7; animation-delay: -3.5s; }
+        .sb-right-3 { width: 22px; height: 22px; right: 4%; top: 52%; box-shadow: 0 0 40px 20px #a855f7, 0 0 80px 40px #6366f1; animation-delay: -6s; animation-duration: 11s; }
+        .sb-right-4 { width: 14px; height: 14px; right: 9%; top: 65%; box-shadow: 0 0 30px 15px #6366f1, 0 0 60px 30px #ec4899; animation-delay: -2.5s; animation-duration: 15s; }
+        .sb-right-5 { width: 20px; height: 20px; right: 2%; top: 80%; box-shadow: 0 0 38px 19px #a855f7, 0 0 76px 38px #ec4899; animation-delay: -4.5s; animation-duration: 8s; }
+        .sb-right-6 { width: 16px; height: 16px; right: 10%; top: 22%; box-shadow: 0 0 32px 16px #ec4899, 0 0 64px 32px #6366f1; animation-delay: -5.5s; animation-duration: 12s; }
+
+        @keyframes heavyStadiumFloat {
+          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+          33% { transform: translate(15px, -35px) scale(1.15); opacity: 0.8; }
+          66% { transform: translate(-15px, 30px) scale(0.9); opacity: 0.4; }
         }
       `}</style>
 

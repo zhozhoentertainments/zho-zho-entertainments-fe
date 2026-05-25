@@ -186,7 +186,7 @@ export default function Landing() {
   return (
     <div className="flex flex-col bg-[#FCEBFC]">
       {/* Services Grid Section */}
-      <section className="relative w-full py-32 overflow-hidden">
+      {/* <section className="relative w-full py-32 overflow-hidden">
         <div className="mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl">
           {sections.map((section, i) => (
             <motion.div
@@ -256,9 +256,9 @@ export default function Landing() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* Destinations Carousel */}
+   
       <section className="py-32 px-6 md:px-12 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-100/30 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -285,9 +285,12 @@ export default function Landing() {
           />
         </div>
       </section>
+      {/* <DestinationsCarousel/> */}
+
+      {/* 8888888888888888888888888888888888888888888888888888888888888888888888888888888888 */}
 
       {/* Activities Carousel */}
-      <section className="py-32 px-6 md:px-12 bg-neutral-950 text-white">
+      {/* <section className="py-32 px-6 md:px-12 bg-neutral-950 text-white">
         <div className="max-w-7xl mx-auto">
           <HorizontalCarousel 
             title={<><span className="text-purple-200">Featured</span> <span className="text-purple-400">Activities</span></>}
@@ -315,10 +318,10 @@ export default function Landing() {
             )}
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Artist Booking Categories */}
-      <section className="py-32 px-6 md:px-12 bg-[#FCEBFC]">
+      {/* <section className="py-32 px-6 md:px-12 bg-[#FCEBFC]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 space-y-4">
              <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral-900 uppercase">
@@ -344,7 +347,7 @@ export default function Landing() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Process Section */}
       {/* <section className="py-32 px-6 md:px-12 bg-white">
