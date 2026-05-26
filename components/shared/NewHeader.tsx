@@ -13,7 +13,9 @@ import {
   Facebook,
   Linkedin,
   Youtube,
-  Twitter
+  Twitter,
+  Instagram
+  
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -62,17 +64,13 @@ export default function NewHeader() {
             <div className="flex items-center gap-3 sm:gap-4">
               <span className="text-white/60 text-[10px] uppercase tracking-widest hidden md:inline">Follow Us:</span>
               <div className="flex items-center gap-2 text-white/90">
-                <a href="#" className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#A822F5] hover:text-white flex items-center justify-center transition-all">
-                  <Facebook size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#A822F5] hover:text-white flex items-center justify-center transition-all">
+               
+                <a href="https://www.linkedin.com/company/zho-zho-entertainments/" className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#A822F5] hover:text-white flex items-center justify-center transition-all">
                   <Linkedin size={12} />
                 </a>
-                <a href="#" className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#A822F5] hover:text-white flex items-center justify-center transition-all">
-                  <Youtube size={12} />
-                </a>
-                <a href="#" className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#A822F5] hover:text-white flex items-center justify-center transition-all">
-                  <Twitter size={11} />
+               
+                <a href="https://www.instagram.com/zhozho_entertainments?igsh=MWxjNWZ1a201dWU2OQ==" className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#A822F5] hover:text-white flex items-center justify-center transition-all">
+                  <Instagram size={11} />
                 </a>
               </div>
             </div>
