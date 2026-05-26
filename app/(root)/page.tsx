@@ -9,6 +9,7 @@ import myVideo from '../../videos/hero1.mp4';
 import Sponsors from "./components/Sponsors";
 import HeroSection from "./components/HeroSection";
 import WhyKhoKho from "./components/WhyKhoKho";
+import PerformedEvents from "./components/PerformedEvents";
 
 
 
@@ -83,6 +84,7 @@ export default function Home() {
       <HeroSection/>
       <Sponsors/>
       <WhyKhoKho/>
+      <PerformedEvents/>
       
 
       {/* Mobile View - Stacked Layout */}

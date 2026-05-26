@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Youtube, Phone, Mail, Globe, MapPin, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Phone, Mail, Globe, MapPin, ArrowRight , Linkedin } from 'lucide-react';
 
 // Define explicit Type Interfaces for data configurations
 interface NavLink {
@@ -38,10 +38,8 @@ const NAV_LINKS: NavLink[] = [
 ];
 
 const SOCIALS: SocialLink[] = [
-  { href: 'https://www.facebook.com/profile.php?id=61580795231859', icon: Facebook, label: 'Facebook' },
-  { href: 'https://x.com/ZhoZhoEnt', icon: XIcon, label: 'X', small: true },
-  { href: 'https://www.instagram.com/zhozho_entertainments', icon: Instagram, label: 'Instagram' },
-  { href: 'https://www.youtube.com/@ZhoZhoEntertainments', icon: Youtube, label: 'YouTube' },
+  { href: 'https://www.instagram.com/zhozho_entertainments?igsh=MWxjNWZ1a201dWU2OQ==', icon: Instagram, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/company/zho-zho-entertainments/', icon: Linkedin, label: 'Linkedin' },
 ];
 
 const CONTACTS: ContactLink[] = [
@@ -150,7 +148,7 @@ export default function NewFooter(): React.JSX.Element {
                     <Icon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="block text-[10px] font-mono font-black tracking-widest text-[#E30081]/80">
+                    <span className="block text-[10px] font-mono font-black tracking-widest text-[#B8B8B8]/80">
                       {tag}
                     </span>
                     <span className="block text-sm sm:text-[15px] font-bold text-[rgba(245,240,232,0.95)] break-all group-hover:text-[#5CE1E6] transition-colors mt-0.5">

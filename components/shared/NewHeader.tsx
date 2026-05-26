@@ -18,8 +18,8 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const teamLinks = [
-  { name: "Advisory Board", href: "/our-team/advisory-board" },
-  { name: "Board of Directors", href: "/our-team/board-of-directors" },
+  { name: "Advisory Board", href: "/ourTeam/advisoryBoard" },
+  { name: "Board of Directors", href: "/ourTeam/boardOfDirectors" },
 ];
 
 const galleryLinks = [
@@ -155,7 +155,7 @@ export default function NewHeader() {
               </Link>
 
               {/* Gallery Dropdown */}
-              <div
+              {/* <div
                 className="relative py-1.5 cursor-pointer"
                 onMouseEnter={() => setDesktopDropdown("gallery")}
                 onMouseLeave={() => setDesktopDropdown(null)}
@@ -179,7 +179,7 @@ export default function NewHeader() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </div> */}
 
               {/* Upcoming Events Dropdown */}
               {/* <div 
@@ -376,7 +376,7 @@ export default function NewHeader() {
               <div className="w-12 h-[1.5px] bg-neutral-200 my-3" />
 
               {/* Mobile Gallery Dropdown */}
-              <div className="w-full flex flex-col items-center">
+              {/* <div className="w-full flex flex-col items-center">
                 <button onClick={() => toggleMobileSubmenu("gallery")} className="flex items-center justify-center gap-1 py-3.5 w-full hover:text-[#A822F5]">
                   <span>Gallery</span>
                   <ChevronDown size={14} className={`transition-transform text-[#A822F5] ${activeMobileSubmenu === "gallery" ? "rotate-180" : ""}`} />
@@ -390,7 +390,7 @@ export default function NewHeader() {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Mobile Upcoming Events Dropdown */}
               <div className="w-full flex flex-col items-center">

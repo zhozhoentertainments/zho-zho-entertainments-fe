@@ -3,24 +3,6 @@ import React from 'react';
 
 export default function WhyKhoKhoTimeline() {
   const timelineEvents = [
-    // {
-    //   title: "India Entering New Sports Era",
-    //   date: "Phase 1: The Shift",
-    //   // icon: "/images/president-murmu.png",
-    //   // iconAlt: "President Droupadi Murmu",
-    //   image: "/partnership/1.png",
-    //   content: "From local grounds to global screens, Indian sports are evolving rapidly. After the massive commercial success of Cricket and Kabaddi, Kho Kho is primed as the next big leap in the franchise league ecosystem.",
-    //   points: [
-    //     "75M+ rural players actively participating",
-    //     "5000+ registered clubs across India",
-    //     "₹200Cr+ projected league valuation by 2026"
-    //   ],
-    //   tag: "Zho Zho Original",
-    //   // ctaText: "Explore Era",
-    //   // ctaLink: "https://example.com/era",
-    //   endorsement: "Hon'ble President Droupadi Murmu has applauded the grassroots revolution, calling Kho Kho a 'sport of the future.'",
-    //   side: "right"
-    // },
        {
       title: "India Entering New Sports Era",
       date: "the nation supports kho kho",
@@ -323,8 +305,8 @@ export default function WhyKhoKhoTimeline() {
 
                 {/* Mobile icon */}
                 <div className="md:hidden absolute left-3 top-3 z-20
-                  flex items-center justify-center bg-white w-10 h-10 rounded-full"
-                  style={{ border: '3px solid #aac65d', boxShadow: '0 2px 10px rgba(159,33,234,0.2)' }}>
+                  flex items-center justify-center bg-purple-200 w-10 h-10 rounded-full"
+                  style={{ border: '3px solid #C49FD1' }}>
                   <img
                     src={event.icon}
                     alt={event.iconAlt}
@@ -341,8 +323,8 @@ export default function WhyKhoKhoTimeline() {
                   {/* Mobile-only image inside card */}
                   {event.image && (
                     <div className="md:hidden mb-4 flex justify-center">
-                      <div className="circular-image-wrap" style={{ width: 96, height: 96 }}>
-                        <div className="circular-image-inner">
+                      <div className="" style={{ width: 96, height: 96 }}>
+                        <div className="">
                           <img
                             src={event.image}
                             alt={event.title}
