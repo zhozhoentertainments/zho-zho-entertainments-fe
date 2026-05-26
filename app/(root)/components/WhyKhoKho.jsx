@@ -1,249 +1,434 @@
 import React from 'react';
 
+
 export default function WhyKhoKhoTimeline() {
   const timelineEvents = [
-    {
+    // {
+    //   title: "India Entering New Sports Era",
+    //   date: "Phase 1: The Shift",
+    //   // icon: "/images/president-murmu.png",
+    //   // iconAlt: "President Droupadi Murmu",
+    //   image: "/partnership/1.png",
+    //   content: "From local grounds to global screens, Indian sports are evolving rapidly. After the massive commercial success of Cricket and Kabaddi, Kho Kho is primed as the next big leap in the franchise league ecosystem.",
+    //   points: [
+    //     "75M+ rural players actively participating",
+    //     "5000+ registered clubs across India",
+    //     "₹200Cr+ projected league valuation by 2026"
+    //   ],
+    //   tag: "Zho Zho Original",
+    //   // ctaText: "Explore Era",
+    //   // ctaLink: "https://example.com/era",
+    //   endorsement: "Hon'ble President Droupadi Murmu has applauded the grassroots revolution, calling Kho Kho a 'sport of the future.'",
+    //   side: "right"
+    // },
+       {
       title: "India Entering New Sports Era",
-      date: "Phase 1: The Shift",
-      icon: "/images/president-murmu.png",
-      iconAlt: "President Droupadi Murmu",
-      content: "From local grounds to global screens, Indian sports are evolving rapidly. After the massive commercial success of Cricket and Kabaddi, Kho Kho is primed as the next big leap in the franchise league ecosystem.",
+      date: "the nation supports kho kho",
+      // icon: "/images/president-murmu.png",
+      // iconAlt: "President Droupadi Murmu",
+      image: "/partnership/1.png",
+      content: "I CONVEY MY HEARTIEST CONGRATULATIONS TO BOTH THE INDIAN TEAMS, WOMEN`U+0060`S AND MEN’S, FOR WINNING THE INAUGURAL KHO KHO WORLD CUP. INDIAN PLAYERS HAVE DEMONSTRATED THEIR SUPREMACY IN THIS TRADITIONAL GAME OF OUR COUNTRY. I AM SURE THAT THE HISTORIC SUCCESS OF OUR GIRLS AND BOYS WILL INSPIRE OUR YOUTH, MAKING THE GAME MORE POPULAR. I WISH BOTH THE TEAMS SUSTAINED SUCCESS IN THE FUTURE",
       points: [
-        "75M+ rural players actively participating",
-        "5000+ registered clubs across India",
-        "₹200Cr+ projected league valuation by 2026"
+    
       ],
-      tag: "Zho Zho Original",
-      ctaText: "Explore Era",
+      tag: "sources",
+      // ctaText: "Explore Era",
+      // ctaLink: "https://example.com/era",
       endorsement: "Hon'ble President Droupadi Murmu has applauded the grassroots revolution, calling Kho Kho a 'sport of the future.'",
       side: "right"
     },
     {
       title: "Why Kho Kho? Why Now?",
-      date: "Phase 2: Market Dynamics",
-      icon: "/images/pm-modi.png",
-      iconAlt: "Prime Minister Narendra Modi",
-      content: "A game, a movement, a massive opportunity. Minimal infrastructure, low development cost, and exceptional fast-paced high accessibility make Kho Kho optimized for lightning-fast mass adoption.",
+      date: "the nation supports kho kho",
+      // icon: "/images/pm-modi.png",
+      // iconAlt: "Prime Minister Narendra Modi",
+      image: "/partnership/2.png",
+      content: "INCREDIBLY PROUD OF INDIAN MEN’S KHO KHO TEAM FOR WINNING THE KHO KHO WORLD CUP TITLE. THEIR GRIT AND DEDICATION IS COMMENDABLE. THE WIN WILL CONTRIBUTE TO FURTHER POPULARISING KHO KHO AMONG THE YOUTH",
       points: [
-        "No expensive equipment required",
-        "Playable on any terrain - urban or rural",
-        "30-minute match format perfect for TV slots",
-        "Lower franchise costs than cricket/kabaddi"
       ],
       tag: "Strategic Focus",
-      ctaText: "View Analytics",
       endorsement: "Hon'ble Prime Minister Narendra Modi has endorsed indigenous sports, highlighting Kho Kho as a vehicle for 'New India' sporting dominance.",
       side: "left"
     },
     {
       title: "Massive Momentum In Numbers",
-      date: "Phase 3: Ultimate Impact",
+      date: "Ultimate Impact",
       icon: "/images/trophy-icon.png",
       iconAlt: "Kho Kho Trophy",
+      image: "/icons/android-chrome-192x192.png",
       content: "With 64M+ total league viewership, a 43% Gen-Z audience demographic, and an industry-leading 41% female viewer engagement ratio, Kho Kho is commercially proven as the next big fast-paced sport.",
       points: [
+          "16 TEAMS",
+        "288 ATHLETES",
+        "100+ PARTNERS",
         "64M+ total league viewership",
         "43% Gen-Z audience demographic",
         "41% female viewer engagement ratio",
         "3.2M peak concurrent viewers",
-        "180+ countries broadcast reach"
+      
       ],
       tag: "64M+ Viewership",
       ctaText: "Check Stats",
+      ctaLink: "https://example.com/stats",
       endorsement: "The Hon'ble President and Vice-President have repeatedly acknowledged Kho Kho's meteoric rise.",
       side: "right"
     },
     {
-      title: "The Nation Supports The Game",
-      date: "Phase 4: Global Stage",
-      icon: "/images/govt-emblem.png",
-      iconAlt: "Government of India Support",
-      content: "Highly commended by the Hon'ble President, Vice President, and Prime Minister of India following the historic World Cup win. The sport is fully ready to scale beyond domestic boundaries.",
-      points: [
-        "Official recognition from Rashtrapati Bhavan",
-        "Khelo India program integration",
-        "World Cup 2024 Champions",
-        "10+ international federations established"
-      ],
-      tag: "Govt Backed",
-      ctaText: "Read Endorsements",
-      endorsement: "Official commendations from Rashtrapati Bhavan & PMO",
-      side: "left"
-    },
-    {
       title: "Future Global Expansion",
-      date: "Phase 5: World Domination",
-      icon: "/images/global-icon.png",
-      iconAlt: "Global Expansion",
-      content: "Kho Kho is now entering international markets with franchise leagues planned in UAE, UK, and USA. The sport's unique blend of strategy and athleticism is captivating audiences worldwide.",
+      date: " World Domination",
+      content: "Kho Kho International is dedicated to promoting and advancing Kho Kho, a thrilling and dynamic traditional sport originating in India, on a global scale.",
       points: [
-        "UAE league launching Q1 2025",
-        "UK broadcast deal with Sky Sports",
+        "61 +  Playing Countries",
+        "1 Million + Active Players Globally",
         "USA exhibition matches confirmed",
-        "Olympic inclusion bid submitted"
+        "Female Participation - One of fastest growing female sports globally"
       ],
       tag: "Global Reach",
-      ctaText: "Learn More",
-      endorsement: "Broadcast deals with international sports networks finalized for 2025 season.",
-      side: "right"
+      // ctaText: "Learn More",
+      // ctaLink: "https://example.com/global",
+      endorsement: "Broadcast deals with international sports networks finalized for 2026 season.",
+      side: "left"
     }
   ];
 
   return (
     <div className="bg-white min-h-screen py-16 px-4 font-sans selection:bg-[#f07167] selection:text-white">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+        * { font-family: 'DM Sans', sans-serif; }
+
+        .heading-font { font-family: 'Playfair Display', Georgia, serif; }
+
+        @keyframes text-focus-in {
+          0% { filter: blur(6px); opacity: 0; transform: scale(0.97); }
+          100% { filter: blur(0px); opacity: 1; transform: scale(1); }
+        }
+        @keyframes draw-underline {
+          to { stroke-dashoffset: 0; }
+        }
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spin-slow {
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse-ring {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(240,113,103,0.4), 0 0 0 0 rgba(159,33,234,0.2); }
+          50% { box-shadow: 0 0 0 8px rgba(240,113,103,0), 0 0 0 16px rgba(159,33,234,0); }
+        }
+
+        .animate-text-focus-in {
+          animation: text-focus-in 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+        .animate-draw-underline {
+          stroke-dasharray: 480;
+          stroke-dashoffset: 480;
+          animation: draw-underline 1.8s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+          animation-delay: 0.5s;
+        }
+        .timeline-card {
+          animation: fadeSlideUp 0.55s ease both;
+        }
+        .timeline-card:nth-child(1) { animation-delay: 0.05s; }
+        .timeline-card:nth-child(2) { animation-delay: 0.15s; }
+        .timeline-card:nth-child(3) { animation-delay: 0.25s; }
+        .timeline-card:nth-child(4) { animation-delay: 0.35s; }
+        .timeline-card:nth-child(5) { animation-delay: 0.45s; }
+
+        .circular-image-wrap {
+          position: relative;
+          width: 148px;
+          height: 148px;
+          flex-shrink: 0;
+        }
+        /* Spinning dashed outer ring */
+        .circular-image-wrap::before {
+          content: '';
+          position: absolute;
+          inset: -6px;
+          border-radius: 50%;
+          border: 2.5px dashed #f07167;
+          animation: spin-slow 12s linear infinite;
+          opacity: 0.6;
+        }
+        /* Solid gradient ring */
+        .circular-image-wrap::after {
+          content: '';
+          position: absolute;
+          inset: -3px;
+          border-radius: 50%;
+          background: conic-gradient(#f07167, #9F21EA, #aac65d, #f07167);
+          z-index: 0;
+        }
+        .circular-image-inner {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 3px solid white;
+          background: #f5f5f5;
+          animation: pulse-ring 3s ease-in-out infinite;
+        }
+        .circular-image-inner img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        /* Placeholder when image errors */
+        .circular-image-placeholder {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #f07167/10, #9F21EA/10);
+          font-size: 11px;
+          color: #9ca3af;
+          text-align: center;
+          letter-spacing: 0.05em;
+        }
+
+        .card-arrow-right::after {
+          content: '';
+          position: absolute;
+          top: 28px;
+          right: -12px;
+          width: 0; height: 0;
+          border-top: 12px solid transparent;
+          border-bottom: 12px solid transparent;
+          border-left: 12px solid white;
+        }
+        .card-arrow-left::after {
+          content: '';
+          position: absolute;
+          top: 28px;
+          left: -12px;
+          width: 0; height: 0;
+          border-top: 12px solid transparent;
+          border-bottom: 12px solid transparent;
+          border-right: 12px solid white;
+        }
+      `}</style>
+
       <div className="max-w-6xl mx-auto">
-        
-        {/* Header Section matching the image */}
-        <div className="text-center ">
-          {/* Authority Logos Row */}
-       
-          {/* Main Title */}
-          <h2 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 drop-shadow-sm">
-            Why  <span className="text-[#f07167]">KHO - KHO </span>
-          </h2>
-          <div className="w-28 h-1 bg-[#f07167] mx-auto mt-6 rounded-full" />
-          <p className="text-gray-600 text-sm md:text-base font-medium mt-4 max-w-2xl mx-auto">
+
+        {/* ── Header ── */}
+        <div className="text-center py-6 px-4 max-w-4xl mx-auto select-none">
+          <div className="relative inline-block text-center">
+            <h2 className="heading-font flex items-center justify-center gap-x-3 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-gray-900 uppercase">
+              <span className="text-gray-950">Why</span>
+               <span className="relative inline-block text-[#9F21EA] animate-text-focus-in tracking-wider">
+                Elite
+              </span>
+              <span className="relative inline-block text-[#9F21EA] animate-text-focus-in tracking-wider">
+                KHO - KHO
+              </span>
+            </h2>
+
+            {/* Beautiful decorative underline */}
+            <div className="w-full mt-3">
+              <svg viewBox="0 0 400 20" preserveAspectRatio="none" className="w-full h-5" xmlns="http://www.w3.org/2000/svg">
+                {/* Thick glow layer */}
+                <path d="M 10,14 C 60,6 120,18 200,11 C 280,4 340,17 390,10"
+                  fill="none" stroke="#f07167" strokeWidth="8" strokeLinecap="round" opacity="0.12" />
+                {/* Mid layer */}
+                <path d="M 10,14 C 60,6 120,18 200,11 C 280,4 340,17 390,10"
+                  fill="none" stroke="#9F21EA" strokeWidth="3.5" strokeLinecap="round"
+                  className="animate-draw-underline" />
+                {/* Fine top highlight */}
+                <path d="M 10,14 C 60,6 120,18 200,11 C 280,4 340,17 390,10"
+                  fill="none" stroke="#f07167" strokeWidth="1" strokeLinecap="round"
+                  opacity="0.5" style={{ strokeDasharray: '6 10' }} />
+                {/* Accent dots */}
+                <circle cx="10" cy="14" r="4" fill="#f07167" />
+                <circle cx="200" cy="11" r="3" fill="#9F21EA" />
+                <circle cx="390" cy="10" r="4" fill="#f07167" />
+              </svg>
+            </div>
+          </div>
+
+          <p className="mt-6 max-w-xl mx-auto text-xs sm:text-sm md:text-base text-gray-500 font-medium leading-relaxed">
             From grassroots to global glory — witness the unstoppable rise of India's fastest-growing indigenous sport.
           </p>
         </div>
 
-        {/* Main Timeline Wrapper */}
-        <div className="relative wrap overflow-hidden p-4 md:p-10 h-full">
-          
-          {/* Central Vertical Track Line */}
-          <div className="hidden md:block border-l-2 border-[#f07167]/30 absolute left-1/2 transform -translate-x-1/2 h-full top-0 z-0" />
-          
-          {/* Mobile vertical line */}
-          <div className="md:hidden absolute left-6 top-0 h-full w-0.5 bg-[#f07167]/20 z-0" />
+        {/* ── Timeline ── */}
+        <div className="relative wrap overflow-hidden p-4 md:p-10">
+
+          {/* Desktop center gradient line */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 h-full z-0"
+            style={{ width: '2px', background: 'linear-gradient(to bottom, transparent, #f07167 6%, #9F21EA 50%, #f07167 94%, transparent)' }} />
+
+          {/* Mobile left line */}
+          <div className="md:hidden absolute left-6 top-0 h-full z-0"
+            style={{ width: '2px', background: 'linear-gradient(to bottom, transparent, #f07167 6%, #9F21EA 94%, transparent)' }} />
 
           {timelineEvents.map((event, index) => {
-            const isLeftSide = event.side === 'left';
-            
-            return (
-              <div 
-                key={index} 
-                className={`relative flex flex-col md:flex-row justify-between items-start md:items-center mb-20 z-10 w-full group`}
-              >
-                {/* Spacer for desktop layout */}
-                <div className={`hidden md:block md:w-5/12 ${isLeftSide ? 'order-2' : ''}`} />
+            const isLeft = event.side === 'left';
+            // image panel goes on the OPPOSITE side of the card
+            // card is on RIGHT → image on LEFT, card is on LEFT → image on RIGHT
 
-                {/* Center Icon Badge */}
-                <div className={`absolute left-3 md:left-1/2 transform md:-translate-x-1/2 top-3 md:top-1/2 md:-translate-y-1/2 z-20 flex items-center justify-center bg-white border-4 border-[#f07167] w-16 h-16 rounded-full shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[#f07167]/30`}>
-                  {event.icon ? (
-                    <img 
-                      src={event.icon} 
-                      alt={event.iconAlt} 
-                      className="w-12 h-12 rounded-full object-cover border-2 border-gray-200"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = 'https://via.placeholder.com/48?text=Icon';
-                      }}
-                    />
+            return (
+              <div key={index} className="timeline-card relative flex flex-col md:flex-row justify-between items-center mb-20 z-10 w-full group">
+
+                {/*
+                  Layout for desktop (3 columns: image | center-dot | card):
+                  - side=right: card is in col-3, image is in col-1
+                  - side=left:  card is in col-1, image is in col-3
+                  We use explicit order classes.
+                */}
+
+                {/* ── Desktop Image Side ── */}
+                <div className={`hidden md:flex md:w-5/12 items-center justify-center px-6
+                  ${isLeft ? 'order-3' : 'order-1'}`}>
+                  {event.image ? (
+                    <div className="">
+                      <div className="">
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.parentElement.innerHTML =
+                              '<div class="circular-image-placeholder">No Image</div>';
+                          }}
+                        />
+                      </div>
+                    </div>
                   ) : (
-                    <span className="text-3xl">🏆</span>
+                    <div className="md:w-5/12" />
                   )}
                 </div>
 
-                {/* Content Block */}
-                <div className={`ml-16 md:ml-0 w-[calc(100%-4rem)] md:w-5/12 bg-white rounded-2xl shadow-xl p-6 md:p-8 relative transition-all duration-300 hover:shadow-2xl border border-gray-100 ${
-                  isLeftSide ? 'order-1' : ''
-                }`}>
-                  
-                  {/* Desktop Arrow Pointer */}
-                  <div className={`hidden md:block absolute top-8 w-0 h-0 ${
-                    isLeftSide 
-                      ? '-right-[12px] border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[12px] border-l-white border-r-0' 
-                      : '-left-[12px] border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-r-[12px] border-r-white border-l-0'
-                  }`} />
+                {/* ── Center Icon Badge ── */}
+                <div className="hidden md:flex order-2 absolute left-1/2 transform -translate-x-1/2 z-20
+                  items-center justify-center bg-purple-200 w-16 h-16 rounded-full"
+                  style={{
+                    border: '4px solid #C49FD1',
+                    boxShadow: '0 4px 24px rgba(159,33,234,0.18), 0 2px 8px rgba(240,113,103,0.15)'
+                  }}>
+                  {/* <img
+                    src={event.icon}
+                    alt={event.iconAlt}
+                    className="w-12 h-12 rounded-full object-cover"
+                    onError={(e) => { e.target.src = 'https://via.placeholder.com/48?text=⚡'; }}
+                  /> */}
+                </div>
 
-                  {/* Header Row */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gray-100 pb-4 mb-4">
-                    <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight group-hover:text-[#f07167] transition-colors">
+                {/* Mobile icon */}
+                <div className="md:hidden absolute left-3 top-3 z-20
+                  flex items-center justify-center bg-white w-10 h-10 rounded-full"
+                  style={{ border: '3px solid #aac65d', boxShadow: '0 2px 10px rgba(159,33,234,0.2)' }}>
+                  <img
+                    src={event.icon}
+                    alt={event.iconAlt}
+                    className="w-8 h-8 rounded-full object-cover"
+                    onError={(e) => { e.target.src = 'https://via.placeholder.com/32?text=⚡'; }}
+                  />
+                </div>
+
+                {/* ── Content Card ── */}
+                <div className={`ml-14 md:ml-0 w-[calc(100%-3.5rem)] md:w-5/12 bg-white rounded-2xl shadow-lg p-6 md:p-7 relative
+                  transition-all duration-300 hover:shadow-2xl border border-gray-100
+                  ${isLeft ? 'order-1 card-arrow-right' : 'order-3 card-arrow-left'}`}>
+
+                  {/* Mobile-only image inside card */}
+                  {event.image && (
+                    <div className="md:hidden mb-4 flex justify-center">
+                      <div className="circular-image-wrap" style={{ width: 96, height: 96 }}>
+                        <div className="circular-image-inner">
+                          <img
+                            src={event.image}
+                            alt={event.title}
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.parentElement.innerHTML =
+                                '<div class="circular-image-placeholder">No Image</div>';
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Header */}
+                  <div className="flex flex-wrap items-start justify-between gap-2 border-b border-gray-100 pb-4 mb-4">
+                    <h3 className="heading-font text-lg md:text-4xl font-bold text-gray-900 leading-tight group-hover:text-[#f07167] transition-colors">
                       {event.title}
                     </h3>
-                    <span className="text-[11px] font-bold bg-[#f07167]/10 text-[#f07167] px-3 py-1.5 rounded-full">
+                    <span className="text-[10px] font-bold bg-[#f07167]/10 text-[#f07167] px-3 py-1.5 rounded-full whitespace-nowrap capitalize">
                       {event.date}
                     </span>
                   </div>
 
-                  {/* Main Content */}
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-                    {event.content}
-                  </p>
+                  {/* Body */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-5">{event.content}</p>
 
-                  {/* Bullet Points Section */}
-                  <div className="mb-5 space-y-2.5">
+                  {/* Bullet Points */}
+                  <div className="mb-5 space-y-2">
                     {event.points.map((point, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 group/point">
-                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#f07167] group-hover/point:scale-150 transition-transform"></div>
-                        <span className="text-sm text-gray-700 group-hover/point:text-gray-900 transition-colors">
-                          {point}
-                        </span>
+                        <div className="mt-[7px] w-1.5 h-1.5 rounded-full bg-[#f07167] flex-shrink-0 group-hover/point:scale-150 transition-transform" />
+                        <span className="text-sm text-gray-700 group-hover/point:text-gray-900 transition-colors">{point}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Endorsement Badge */}
-                  <div className="mt-4 mb-5 flex items-center gap-2 text-[11px] bg-[#f07167]/5 p-2.5 rounded-lg border border-[#f07167]/10">
-                    <span className="text-[#f07167] text-base">🏛️</span>
-                    <span className="text-gray-600 text-xs">{event.endorsement}</span>
+                  {/* Endorsement */}
+                  <div className="mb-5 flex items-start gap-2 bg-[#f07167]/5 p-3 rounded-xl border border-[#f07167]/10">
+                    <span className="text-base flex-shrink-0">🏛️</span>
+                    <span className="text-gray-600 text-xs leading-relaxed">{event.endorsement}</span>
                   </div>
 
-                  {/* Footer Action Row */}
+                  {/* Footer */}
                   <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-gray-100">
-                    <button className="inline-flex items-center gap-2 bg-[#f07167] hover:bg-[#e05d52] text-white font-bold text-xs px-6 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95">
-                      {event.ctaText}
-                      <span className="text-base">→</span>
-                    </button>
+                    {event.ctaLink ? (
+                      <a
+                        href={event.ctaLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-[#f07167] hover:bg-[#e05d52] text-white font-semibold text-xs px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95"
+                      >
+                        {event.ctaText} <span>→</span>
+                      </a>
+                    ) : <span />}
                     <span className="text-[10px] font-mono font-bold tracking-wider text-gray-400 uppercase bg-gray-50 px-3 py-1.5 rounded-full">
-                      {event.tag}
+                      {event.tag || 'Zho Zho Original'}
                     </span>
                   </div>
                 </div>
+
               </div>
             );
           })}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-14 md:mt-20 bg-gradient-to-r from-[#f07167]/5 to-transparent rounded-3xl p-8 border border-[#f07167]/20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-black text-[#f07167] mb-2">64M+</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">Total League Viewership</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-black text-[#f07167] mb-2">43%</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">Gen-Z Audience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-black text-[#f07167] mb-2">41%</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">Female Viewers</div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-between gap-5 pt-6 border-t border-gray-200">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-[#f07167] rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-white text-2xl font-black">K</span>
+        {/* ── Stats ── */}
+        {/* <div className="mt-10 md:mt-16 bg-gradient-to-r from-[#f07167]/5 to-transparent rounded-3xl p-8 border border-[#f07167]/20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { val: '64M+', label: 'Total League Viewership' },
+              { val: '43%', label: 'Gen-Z Audience' },
+              { val: '41%', label: 'Female Viewers' },
+            ].map(({ val, label }) => (
+              <div key={label} className="text-center">
+                <div className="heading-font text-4xl md:text-5xl font-black text-[#f07167] mb-2">{val}</div>
+                <div className="text-xs text-gray-500 uppercase tracking-wider">{label}</div>
               </div>
-              <div>
-                <p className="text-gray-900 font-bold text-sm uppercase tracking-wider">Official League Partner</p>
-                <p className="text-xs text-gray-500">Powered by Zho Zho Entertainments</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <span className="text-[#f07167] text-sm font-semibold bg-[#f07167]/10 px-4 py-2 rounded-full">🏟️ 6 Franchises</span>
-              <span className="text-[#f07167] text-sm font-semibold bg-[#f07167]/10 px-4 py-2 rounded-full">🌍 15+ Countries</span>
-              <span className="text-[#f07167] text-sm font-semibold bg-[#f07167]/10 px-4 py-2 rounded-full">📅 Season 3 Announced</span>
-            </div>
+            ))}
           </div>
-        </div>
+        </div> */}
 
-        {/* Footer */}
+        {/* ── Footer ── */}
         <div className="text-center mt-12">
           <p className="text-gray-400 text-[11px] tracking-[0.2em] uppercase font-mono font-semibold">
-            ZHO ZHO ENTERTAINMENTS • PRIVATE & CONFIDENTIAL
+             • ONE CHAMPIONSHIP. MASSIVE IMPACT. LIMITLESS OPPORTUNITY
           </p>
         </div>
       </div>
