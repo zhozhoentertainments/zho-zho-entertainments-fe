@@ -300,7 +300,7 @@ export default function NewHeader() {
             {/* CTA Unit Component */}
             <div className="flex items-center gap-3 shrink-0">
               <a
-                href="tel:7857126532"
+                href="tel:918019037799"
                 className="flex items-center gap-2.5 bg-gradient-to-r from-[#2D0B5A] to-[#A822F5] text-white px-4 xl:px-5 py-2.5 xl:py-3 rounded-xl shadow-[0_6px_20_rgba(168,34,245,0.35)] hover:scale-[1.02] transition-all group shrink-0"
               >
                 <div className="w-6 h-6 xl:w-7 xl:h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-12 transition-transform">
@@ -308,7 +308,7 @@ export default function NewHeader() {
                 </div>
                 <div className="flex flex-col text-left leading-tight justify-center">
                   <span className="text-[8px] xl:text-[9px] text-white/70 uppercase tracking-widest font-black mb-0.5">Call Now</span>
-                  <span className="text-[11px] xl:text-[13px] font-black tracking-wide whitespace-nowrap">(785) 712-6532</span>
+                  <span className="text-[11px] xl:text-[13px] font-black tracking-wide whitespace-nowrap">+91 8019037799</span>
                 </div>
               </a>
 

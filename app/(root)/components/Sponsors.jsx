@@ -41,7 +41,7 @@ export default function Sponsors() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="relative bg-slate-50 py-24 lg:py-32 overflow-hidden perspective-1000">
+    <section className="relative  bg-slate-50 py-24 lg:py-32 overflow-hidden perspective-1000">
       {/* Premium Minimalist Background Grid */}
       <div className="absolute inset-0 opacity-[0.4] bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
       

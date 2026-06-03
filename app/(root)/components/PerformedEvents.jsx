@@ -327,7 +327,7 @@ export default function PerformedEvents() {
       <div style={styles.container}>
 
         {/* Centered Brand Header */}
-        <div style={styles.brandHeader}>
+        {/* <div style={styles.brandHeader}>
           <div style={styles.logoWrapper}>
             <img
               src="/orangehub/oreange-hub-logo.png"
@@ -339,7 +339,7 @@ export default function PerformedEvents() {
           <p style={styles.brandSubtitle}>
             Bringing communities together through high-impact, purpose-driven moments.
           </p>
-        </div>
+        </div> */}
 
         {/* Core Layout Split */}
         <div className="split-screen-container" style={styles.eventItemWrapper}>
