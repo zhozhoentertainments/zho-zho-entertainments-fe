@@ -13,6 +13,7 @@ import KhoKhoHistory from "./components/KhoKhoHistory";
 import PerformedEvents from "./components/PerformedEvents";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import WhyKhoKhoPartner from "./components/WhyKhoKhoPartner";
+import SponsorsLogoCarousel from "./components/SponsorsLogoCarousel.js";
 
 
 
@@ -28,6 +29,7 @@ export default function Home() {
       <Sponsors />
       {/* <WhyKhoKho/> */}
       <PerformedEvents/>
+      <SponsorsLogoCarousel />
       
 
       {/* Mobile View - Stacked Layout */}
