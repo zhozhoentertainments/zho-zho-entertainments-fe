@@ -7,7 +7,7 @@ import { FaEye, FaBullseye, FaStar, FaUsers, FaBriefcase, FaArrowRight } from 'r
 export default function AboutUs() {
   return (
     <section className="relative bg-white mt-11 text-slate-800 pt-32 pb-20 px-6 sm:px-12 md:px-20 min-h-screen overflow-hidden">
-      
+                   
       {/* Soft, Fluid Light Background Shapes & Lines */}
       <div className="absolute top-[5%] right-[-10%] w-[55vw] h-[55vw] rounded-full bg-purple-200/20 blur-[130px] pointer-events-none z-0" />
       <div className="absolute bottom-[15%] left-[-15%] w-[45vw] h-[45vw] rounded-full bg-amber-100/30 blur-[110px] pointer-events-none z-0" />
