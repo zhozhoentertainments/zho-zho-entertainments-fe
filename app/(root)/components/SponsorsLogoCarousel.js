@@ -9,14 +9,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const sponsorsLogos = [
-  { id: 1, name: "6F8A7271 Enterprise", src: "/oldevent/6F8A7271.JPG" },
-  { id: 2, name: "A__00319 Brands", src: "/oldevent/A__00319.jpg" },
-  { id: 3, name: "A__00353 Group", src: "/oldevent/A__00353.jpg" },
-  { id: 4, name: "A1910087 Ltd", src: "/oldevent/A1910087.jpg" },
-  { id: 5, name: "A1910287 Global", src: "/oldevent/A1910287.jpg" },
-  { id: 6, name: "A1918873 Media", src: "/oldevent/A1918873.jpg" },
-  { id: 7, name: "DSC02645 Network", src: "/oldevent/DSC02645.jpg" },
-  { id: 8, name: "MDI08485 Ventures", src: "/oldevent/MDI08485.jpg" }
+  { id: 1, name: "Aggreart Enterprise", src: "/old-sponsers/Aggreart.jpg" },
+  { id: 2, name: "Aggreart Brands", src: "/old-sponsers/finishing-point.png" },
+  { id: 3, name: "Aggreart Group", src: "/old-sponsers/little-once.png" },
+  { id: 4, name: "Aggreart Ltd", src: "/old-sponsers/malla-reddy-vishwavidyapeeth.jpg" },
+  { id: 5, name: "Aggreart Global", src: "/old-sponsers/shree-tmt-10krun-logo.png" },
+  { id: 6, name: "Aggreart Media", src: "/old-sponsers/sky-veda.png" },
+  { id: 7, name: "Aggreart Network", src: "/old-sponsers/Union_Bank_of_India_logo.png" },
+
 ];
 
 export default function SponsorsLogoCarousel() {
