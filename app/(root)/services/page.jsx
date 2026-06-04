@@ -1,278 +1,340 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
-  ChevronRight, 
-  ArrowRight, 
-  Sparkles, 
-  Activity, 
-  Tv, 
-  ShieldAlert, 
-  Users, 
-  TrendingUp 
+  ArrowRight,
+  Lightbulb,
+  Sliders,
+  Palette,
+  Megaphone,
+  Mic2,
+  Users,
+  CheckCircle2,
+  Sparkles,
+  Layers
 } from "lucide-react";
 
-// ─── SERVICES PARAMETERS DATA ───
-const servicesList = [
+// REAL SCREENSHOT DATA 1: OUR SIGNATURE EVENTS
+const signatureEvents = [
+  "High Energy Sports Events",
+  "Concerts & Cultural Extravaganzas",
+  "Digital & Social Media Campaigns.",
+  "Corporate Programs & Activations",
+  "Community Outreach & Social Impact Initiatives"
+];
+
+// REAL SCREENSHOT DATA 2: TYPES OF EVENTS WE ORGANIZE
+const organizedEvents = [
+  "Cause-Driven Runs & Marathons",
+  "Wellness Retreats & Immersive Experiences",
+  "Mental Health Awareness Campaigns & Workshops",
+  "Corporate Wellness Programs & Activations",
+  "Community Outreach & Social Impact Initiatives"
+];
+
+// REAL SCREENSHOT DATA 3: EXPERTISE IN EVERY DETAIL
+const expertiseData = [
   {
-    id: "01",
-    title: "Sports League Management",
-    tagline: "End-to-End Tournament Infrastructure",
-    desc: "We conceptualize, architect, and execute high-octane professional sports leagues. From team franchising layouts, player drafts, and stadium branding execution to comprehensive on-ground match day operations management.",
-    icon: <Activity className="w-6 h-6 text-[#7c3aed]" />,
-    image: "/services/league-mgmt.png",
-    perks: ["Franchise Management", "Player Auction Operations", "Stadium Operations"]
+    title: "Concept & Theme Development",
+    desc: "We specialize in curating meaningful event themes rooted in purpose — from mental health awareness to social impact — ensuring every event connects deeply with the audience.",
+    icon: <Lightbulb className="w-5 h-5 text-[#7c3aed]" />
   },
   {
-    id: "02",
-    title: "Broadcast & Media Production",
-    tagline: "Premium Live Sports Streaming Solutions",
-    desc: "Delivering multi-camera live broadcast setups, premium commentary feeds, real-time analytics graphics overlay, and social media digital highlights integration. We bring stadium energy straight to millions of screens globally.",
-    icon: <Tv className="w-6 h-6 text-[#7c3aed]" />,
-    image: "/services/broadcast.png",
-    perks: ["HD Live Streaming", "Real-Time Statistics Engine", "Highlight Packages"]
+    title: "End-to-End Event Planning",
+    desc: "From idea to execution, we manage every aspect of your event including venue coordination, vendor management, logistics, scheduling, and on-ground supervision.",
+    icon: <Sliders className="w-5 h-5 text-[#7c3aed]" />
   },
   {
-    id: "03",
-    title: "Corporate & Elite Sports Events",
-    tagline: "Bespoke Experiential Engagements",
-    desc: "Tailored sporting properties built for global corporate networks, premium brand campaigns, and community activation modules. We handle venue logistics, professional officiating, hospitality, and custom PR distributions.",
-    icon: <Sparkles className="w-6 h-6 text-[#7c3aed]" />,
-    image: "/services/corporate.png",
-    perks: ["Brand Activations", "Corporate Wellness Cups", "PR & Media Outreach"]
+    title: "Creative Design & Branding",
+    desc: "We design complete visual identities for your event — including logos, stage design, banners, digital creatives, participant kits, and all brand communication materials.",
+    icon: <Palette className="w-5 h-5 text-[#7c3aed]" />
   },
   {
-    id: "04",
-    title: "Talent & Athlete Management",
-    tagline: "Nurturing Next-Gen Indigenous Champions",
-    desc: "Our representation vertical shapes corporate commercial endorsements, personalized career roadmaps, media training modules, and strategic placement structures for professional sports athletes across top leagues.",
-    icon: <Users className="w-6 h-6 text-[#7c3aed]" />,
-    image: "/services/talent.png",
-    perks: ["Brand Endorsements", "PR & Image Consulting", "Performance Analytics"]
+    title: "Marketing & Promotions",
+    desc: "Our team handles strategic promotions across digital platforms, offline outreach, influencer engagement, and PR to maximize reach and participation.",
+    icon: <Megaphone className="w-5 h-5 text-[#7c3aed]" />
   },
   {
-    id: "05",
-    title: "Sports Marketing & Sponsorships",
-    tagline: "Maximizing Commercial Yield Frameworks",
-    desc: "Connecting premium consumer brands with highly loyal indigenous sports audiences. We build ROI-focused dynamic sponsorship integrations, stadium digital inventory placements, and experiential client zones.",
-    icon: <TrendingUp className="w-6 h-6 text-[#7c3aed]" />,
-    image: "/services/marketing.png",
-    perks: ["ROI Sponsorship Frameworks", "Digital Stadium Inventory", "Experiential Zones"]
+    title: "Content & Speaker Curation",
+    desc: "We bring subject matter experts, thought leaders, and wellness advocates to deliver value-driven sessions and talks that align with your event's theme.",
+    icon: <Mic2 className="w-5 h-5 text-[#7c3aed]" />
   },
   {
-    id: "06",
-    title: "Security & Hospitality Logistics",
-    tagline: "Seamless VIP & Spectator Operations",
-    desc: "Deploying bulletproof facility security protocols, automated entry ticketing validation loops, VIP seating tier operations, and massive crew coordination networks to ensure crowd flow optimization.",
-    icon: <ShieldAlert className="w-6 h-6 text-[#7c3aed]" />,
-    image: "/services/security.png",
-    perks: ["Crowd Optimization Loop", "VIP Tier Management", "Crew Coordination Systems"]
+    title: "Volunteer & Staffing Solutions",
+    desc: "From trained volunteers to professional support teams, we ensure smooth flow and support at every point of your event — from registration desks to post-run hospitality.",
+    icon: <Users className="w-5 h-5 text-[#7c3aed]" />
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04 }
+  }
+};
+
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (i = 0) => ({
+  hidden: { opacity: 0, y: 16 },
+  show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
-  }),
+    transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] }
+  }
 };
 
 export default function ServicesPage() {
   return (
-    <div className="w-full min-h-screen bg-[#faf9f7] text-[#1a1523] selection:bg-purple-100 overflow-x-hidden font-sans scope-zhozho-services">
+    <div className="w-full min-h-screen bg-[#faf9f7] text-[#1a1523] overflow-x-hidden font-sans scope-zhozho-awesome-portal">
       
-      {/* ─── SCOPED FONT DEFENSE ─── */}
+      {/* ─── SCOPED FONT & MATRIX PATTERN DEFENSE ─── */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&display=swap');
 
-        :root {
-          --coral: #f07167;
-          --plum: #7c3aed;
-          --bg-2: #f3f1ee;
-          --border-soft: rgba(0,0,0,0.07);
-        }
-
-        .scope-zhozho-services, 
-        .scope-zhozho-services div, 
-        .scope-zhozho-services h1, 
-        .scope-zhozho-services h2, 
-        .scope-zhozho-services h3, 
-        .scope-zhozho-services p, 
-        .scope-zhozho-services span, 
-        .scope-zhozho-services a {
+        .scope-zhozho-awesome-portal, 
+        .scope-zhozho-awesome-portal div, 
+        .scope-zhozho-awesome-portal h2, 
+        .scope-zhozho-awesome-portal h3, 
+        .scope-zhozho-awesome-portal p, 
+        .scope-zhozho-awesome-portal span, 
+        .scope-zhozho-awesome-portal a {
           font-family: 'DM Sans', sans-serif !important;
         }
 
-        .service-card-remodel {
-          background: #ffffff;
-          border: 1px solid var(--border-soft);
-          border-radius: 24px;
-          transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s, border-color 0.4s;
+        @keyframes draw-underline-curve {
+          to { stroke-dashoffset: 0; }
         }
-        .service-card-remodel:hover {
+        .animate-curve-bar {
+          stroke-dasharray: 400;
+          stroke-dashoffset: 400;
+          animation: draw-underline-curve 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .clean-stack-row {
+          background: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          border-radius: 12px;
+          transition: all 0.25s ease;
+        }
+        .clean-stack-row:hover {
+          border-color: rgba(124, 58, 237, 0.25);
+          transform: translateX(4px);
+          box-shadow: 0 8px 20px rgba(124, 58, 237, 0.03);
+        }
+
+        .premium-layout-card {
+          background: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          border-radius: 24px;
+          transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s, border-color 0.4s;
+        }
+        .premium-layout-card:hover {
           transform: translateY(-5px);
-          border-color: rgba(124,58,237,0.18);
-          box-shadow: 0 20px 48px rgba(124,58,237,0.06);
+          border-color: rgba(124, 58, 237, 0.2);
+          box-shadow: 0 20px 40px rgba(124, 58, 237, 0.05);
         }
       `}</style>
 
-      {/* ─── HERO SECTION ─── */}
-      <section className="relative flex items-end min-h-[75vh] overflow-hidden bg-white">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/services/hero.png" 
-            alt="Zho Zho Services Operations Layout"
-            fill
-            className="object-cover opacity-90"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#faf9f7]/20 to-[#faf9f7] z-10" />
-        </div>
-
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[550px] h-[220px] bg-purple-300/20 blur-[100px] z-10 pointer-events-none" />
-
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pb-16 pt-32">
-          <motion.div variants={fadeUp} initial="hidden" animate="show" className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100/80 border border-purple-200/60 text-[11px] font-bold uppercase tracking-wider text-[#7c3aed]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#7c3aed] animate-pulse" />
-              What We Deliver
-            </div>
-            <h1
-              className="font-black leading-[1.02] text-[#1a1523] tracking-tight"
-              style={{ fontSize: "clamp(3.2rem, 8vw, 5.5rem)" }}
-            >
-              Our Operational<br />
-              <span className="text-[#7c3aed]">Capabilities.</span>
-            </h1>
-            <p className="text-[#7e7898] text-lg font-normal max-w-lg leading-relaxed">
-              We engineer sports entertainment formats from zero to global broadcast tiers, blending logistics execution with raw mass engagement.
-            </p>
-            <nav className="flex items-center gap-2 text-xs font-bold text-[#7e7898] uppercase tracking-widest pt-1">
-              <Link href="/" className="hover:text-[#7c3aed] transition-colors">Home</Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-[#3d3752]">Services</span>
-            </nav>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── ALTERNATING / GRID MATRIX BLOCK ─── */}
-      <section className="py-24 bg-[#faf9f7]">
+      {/* ─── SECTION 1: OUR SIGNATURE EVENTS (IMAGE LEFT, CONTENT RIGHT) ─── */}
+      <section className="mt-40 py-24 bg-white border-b border-gray-100 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           
-          {/* Introductory Parameters */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
-            <div className="space-y-2">
-              <span className="text-[11px] font-bold tracking-[0.18em] text-[#7e7898] uppercase block">Capabilities Blueprint</span>
-              <h2 className="font-black text-3xl md:text-5xl text-[#1a1523] tracking-tight">
-                Production & <span className="text-[#7c3aed]">Management Verticals</span>
+          <div className="space-y-4 mb-16 text-center md:text-left">
+            <span className="text-[11px] font-bold text-[#7c3aed] uppercase tracking-[0.25em] block">Properties Directory</span>
+            <div className="relative inline-block pb-3">
+              <h2 className="text-3xl md:text-5xl font-black text-[#1a1523] tracking-tighter leading-none">
+                Our Signature <span className="text-[#7c3aed]">Events</span>
               </h2>
+              <div className="absolute -bottom-1 left-0 w-full h-3 max-w-[260px] md:max-w-[340px]">
+                <svg viewBox="0 0 400 18" preserveAspectRatio="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#f07167" strokeWidth="4" strokeLinecap="round" opacity="0.12" />
+                  <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" className="animate-curve-bar" />
+                </svg>
+              </div>
             </div>
-            <p className="text-[#7e7898] text-sm md:text-base max-w-md leading-relaxed">
-              A comprehensive system framework custom engineered for stadium activations, media acquisition channels, and absolute corporate scalability.
+            <p className="text-gray-500 text-sm md:text-base max-w-2xl font-normal leading-relaxed pt-2">
+              From Hyderabad to cities across India — we aim to create meaningful experiences that inspire communities to move, connect, and grow.
             </p>
           </div>
 
-          {/* Cards Dynamic System Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicesList.map((service, index) => (
-              <motion.div
-                key={service.id}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                custom={index}
-                className="service-card-remodel p-6 md:p-8 flex flex-col justify-between overflow-hidden relative group"
-              >
-                {/* Thin Top Indicator Accent on Card Hover */}
-                <div className="absolute top-0 left-8 right-8 h-[3px] bg-gradient-to-r from-[#f07167] to-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-center">
+            
+            {/* Image Placeholder on LEFT */}
+            <div className="w-full aspect-[4/3.5] rounded-3xl bg-[#f3f1ee] border border-gray-200/60 p-8 flex flex-col justify-between relative overflow-hidden shadow-sm">
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-purple-100 rounded-full blur-[70px] opacity-60" />
+              <div className="w-9 h-9 rounded-xl bg-white border border-gray-200/50 flex items-center justify-center shadow-sm">
+                <Sparkles className="w-4 h-4 text-[#7c3aed]" />
+              </div>
+              <div className="space-y-2 relative z-10 max-w-xs">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Media Space Placeholder</span>
+                <p className="text-xs font-semibold text-gray-400">Bind your production portfolio images directly into this canvas dimension box wrapper.</p>
+              </div>
+            </div>
 
-                {/* Top Section Layout */}
-                <div className="space-y-5">
-                  <div className="flex items-center justify-between">
-                    {/* Left Icon Block */}
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-purple-50 text-[#7c3aed] border border-purple-100/30 shrink-0">
-                      {service.icon}
-                    </div>
-                    {/* High Visibility Numeric Tracker */}
-                    <span className="text-xs font-black text-purple-600/90 bg-purple-50 px-2.5 py-0.5 rounded-md border border-purple-100">
-                      {service.id}
-                    </span>
+            {/* List Stack on RIGHT */}
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="space-y-3 w-full"
+            >
+              {signatureEvents.map((text, idx) => (
+                <motion.div 
+                  variants={fadeUp}
+                  key={idx} 
+                  className="clean-stack-row p-4.5 flex items-center gap-4 cursor-default"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-purple-50 text-[#7c3aed] flex items-center justify-center border border-purple-100/40 font-bold text-xs shrink-0 shadow-sm">
+                    {String(idx + 1).padStart(2, '0')}
                   </div>
+                  <span className="text-sm md:text-base font-semibold text-gray-800 tracking-tight">{text}</span>
+                </motion.div>
+              ))}
+            </motion.div>
 
-                  {/* Text Header Parameters */}
-                  <div className="space-y-1">
-                    <h3 className="font-black text-lg md:text-xl text-[#1a1523] tracking-tight group-hover:text-[#7c3aed] transition-colors duration-200">
-                      {service.title}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SECTION 2: TYPES OF EVENTS WE ORGANIZE (CONTENT LEFT, IMAGE RIGHT - ASYMMETRIC FLIP) ─── */}
+      <section className="py-24 bg-[#faf9f7] border-b border-gray-200/40 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          
+          {/* Header Layout Block */}
+          <div className="space-y-4 mb-16 text-center md:text-left">
+            <span className="text-[11px] font-bold text-[#f07167] uppercase tracking-[0.25em] block">Portfolio Matrix</span>
+            <div className="relative inline-block pb-3">
+              <h2 className="text-3xl md:text-5xl font-black text-[#1a1523] tracking-tighter leading-none">
+                Types of Events <span className="text-[#f07167]">We Organize</span>
+              </h2>
+              <div className="absolute -bottom-1 left-0 w-full h-3 max-w-[260px] md:max-w-[340px]">
+                <svg viewBox="0 0 400 18" preserveAspectRatio="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" opacity="0.12" />
+                  <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#f07167" strokeWidth="2.5" strokeLinecap="round" className="animate-curve-bar" />
+                </svg>
+              </div>
+            </div>
+            <p className="text-gray-500 text-sm md:text-base max-w-2xl font-normal leading-relaxed pt-2">
+              From Hyderabad to cities across India — we aim to create meaningful experiences that inspire communities to move, connect, and grow.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
+            
+            {/* List Stack on LEFT */}
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="space-y-3 w-full order-2 lg:order-1"
+            >
+              {organizedEvents.map((text, idx) => (
+                <motion.div 
+                  variants={fadeUp}
+                  key={idx} 
+                  className="clean-stack-row p-4.5 flex items-center gap-4 cursor-default"
+                >
+                  <div className="w-7 h-7 rounded-xl bg-purple-50 text-[#7c3aed] flex items-center justify-center border border-purple-100/40 shadow-sm shrink-0">
+                    <CheckCircle2 className="w-4 h-4" />
+                  </div>
+                  <span className="text-sm md:text-base font-semibold text-gray-800 tracking-tight">{text}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Image Placeholder on RIGHT */}
+            <div className="w-full aspect-[4/3.5] rounded-3xl bg-[#f3f1ee] border border-gray-200/60 p-8 flex flex-col justify-between relative overflow-hidden shadow-sm order-1 lg:order-2">
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-orange-100 rounded-full blur-[70px] opacity-60" />
+              <div className="w-9 h-9 rounded-xl bg-white border border-gray-200/50 flex items-center justify-center shadow-sm">
+                <Layers className="w-4 h-4 text-[#f07167]" />
+              </div>
+              <div className="space-y-2 relative z-10 max-w-xs">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Media Space Placeholder</span>
+                <p className="text-xs font-semibold text-gray-400">Bind your production portfolio images directly into this canvas dimension box wrapper.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SECTION 3: EXPERTISE IN EVERY DETAIL (CLEAN CAPSULE GRID) ─── */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+          
+          <div className="mb-16 space-y-2 text-center md:text-left">
+            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.25em] block">Execution Architecture</span>
+            <h2 className="text-3xl md:text-4xl font-black text-[#1a1523] tracking-tighter uppercase">
+              Expertise In <span className="text-[#7c3aed]">Every Detail</span>
+            </h2>
+            <div className="w-16 h-[3px] bg-[#7c3aed] rounded-full mt-3 hidden md:block" />
+          </div>
+
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {expertiseData.map((item, index) => (
+              <motion.div
+                variants={fadeUp}
+                whileHover={{ y: -5, scale: 1.01, borderColor: "rgba(124, 58, 237, 0.22)", boxShadow: "0 16px 40px rgba(124, 58, 237, 0.05)" }}
+                key={index}
+                className="premium-layout-card p-6 md:p-8 flex flex-col justify-start min-h-[190px] transition-all duration-300 cursor-default"
+              >
+                <div className="space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#faf9f7] border border-gray-200/60 flex items-center justify-center shadow-sm">
+                    {item.icon}
+                  </div>
+                  <div className="space-y-1.5">
+                    <h3 className="text-base md:text-lg font-bold text-[#1a1523] tracking-tight">
+                      {item.title}
                     </h3>
-                    <p className="text-[#f07167] text-xs font-bold tracking-wide">
-                      {service.tagline}
+                    <p className="text-gray-500 text-xs md:text-sm font-normal leading-relaxed">
+                      {item.desc}
                     </p>
                   </div>
-
-                  {/* Core Description Body Copy */}
-                  <p className="text-[#7e7898] text-sm leading-relaxed font-normal pt-1">
-                    {service.desc}
-                  </p>
                 </div>
-
-                {/* Sub-Feature Internal Attribute Chips */}
-                <div className="pt-6 mt-6 border-t border-gray-100/80 space-y-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {service.perks.map((perk, pIndex) => (
-                      <span key={pIndex} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#f3f1ee] border border-gray-200/40 text-[11px] font-bold text-[#3d3752]">
-                        <span className="w-1 h-1 rounded-full bg-[#7c3aed]" />
-                        {perk}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </section>
 
-      {/* ─── INTERACTIVE CTAs AND VALUE PROPOSITION ─── */}
-      <section className="py-28 relative overflow-hidden text-center" style={{ background: "var(--plum-pale2)" }}>
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 60% at 50% 50%, rgba(124,58,237,0.07) 0%, transparent 75%)" }} />
-        
-        <div className="relative z-10 max-w-2xl mx-auto px-6 space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-purple-100 text-[11px] font-bold uppercase tracking-wider text-[#7c3aed]">
-            Let's Collaborate
-          </div>
-          <h2 className="font-black text-4xl md:text-5xl text-[#1a1523] leading-tight tracking-tight">
-            Ready to Launch Your <span className="text-[#7c3aed]">Sports Property?</span>
+      {/* ─── SYSTEM CTA CONSOLE ─── */}
+      <section className="py-24 bg-[#faf9f7] border-t border-gray-200/50 text-center relative overflow-hidden">
+        <div className="relative z-10 max-w-xl mx-auto px-6 space-y-4">
+          <h2 className="text-2xl md:text-4xl font-black text-[#1a1523] tracking-tighter">
+            Ready to Partner With Us?
           </h2>
-          <p className="text-[#7e7898] max-w-md mx-auto text-sm md:text-base leading-relaxed">
-            Connect with our core sports advisory panel to draft your tailored franchising framework, live production workflow, or campaign mapping modules.
+          <p className="text-gray-500 text-sm max-w-xs mx-auto leading-relaxed font-normal">
+            Get in touch with our event execution core cell to seamlessly scale your next activation blueprint.
           </p>
           <div className="pt-2">
-            <Link 
+            <a 
               href="mailto:info@zhozhoentertainments.com" 
-              className="inline-flex items-center gap-3 bg-[#7c3aed] text-white px-10 py-4.5 rounded-full font-bold text-base shadow-xl shadow-purple-600/20 hover:bg-[#6d28d9] hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center gap-2 bg-[#1a1523] text-white px-8 py-3.5 rounded-xl font-bold text-xs tracking-wider uppercase shadow-md hover:bg-[#7c3aed] transition-all duration-200"
             >
-              Consult Our Core Team
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              Consult Our Team
+              <ArrowRight className="w-4 h-4 text-[#f07167]" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ─── STRUCTURAL COMPONENT FOOTER ─── */}
-      <footer className="py-10 bg-[#faf9f7] border-t border-gray-200 text-center">
-        <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-[#7e7898]">
-          Strategy Operations · Broadcast Production Architecture · Commercial Scale
+      {/* ─── BASEMENT FOOTER ─── */}
+      <footer className="py-10 bg-white border-t border-gray-100 text-center">
+        <p className="text-[10px] font-bold tracking-[0.24em] uppercase text-gray-400">
+          Zho Zho Properties · Production Frameworks · Operational Standards
         </p>
       </footer>
+
     </div>
   );
 }

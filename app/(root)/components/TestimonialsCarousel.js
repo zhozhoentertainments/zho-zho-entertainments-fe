@@ -65,11 +65,29 @@ export default function TestimonialsCarousel() {
       <div className="relative z-10 max-w-7xl mx-auto space-y-12">
         
         {/* SIMPLE CLEAN HEADER */}
-        <div className="text-center md:text-left max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 uppercase">
-            Testimonials for the Kho Kho globally
-          </h2>
-        </div>
+        <div className="text-center md:text-left max-w-4xl space-y-3">
+  {/* Subtle Top Indicator Badge */}
+  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100/70 border border-purple-200/50 text-[10px] font-black uppercase tracking-widest text-[#7c3aed]">
+    Global Endorsements
+  </div>
+  
+  {/* Main Heading Container */}
+  <div className="relative inline-block pb-4">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 uppercase leading-none">
+      Testimonials for <span className="text-[#7c3aed]">Kho Kho globally</span>
+    </h2>
+    
+    {/* Premium Half Underline Dynamic Curve Layer */}
+    <div className="absolute -bottom-1 left-0 md:left-0 mx-auto md:mx-0 w-full h-3 max-w-[280px] sm:max-w-[340px] md:max-w-[420px]">
+      <svg viewBox="0 0 400 18" preserveAspectRatio="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        {/* Shadow Track Line */}
+        <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#f07167" strokeWidth="4" strokeLinecap="round" opacity="0.12" />
+        {/* Active Animated Curve Line */}
+        <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#f07167" strokeWidth="2.5" strokeLinecap="round" className="animate-curve-bar" />
+      </svg>
+    </div>
+  </div>
+</div>
 
         {/* CAROUSEL WRAPPER WITH LEFT/RIGHT CENTER BUTTONS */}
         <div className="relative w-full px-0 md:px-14 group">
