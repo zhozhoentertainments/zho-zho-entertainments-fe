@@ -139,80 +139,68 @@ export default function NewHeader() {
             {/* Desktop Navigation */}
             <nav className="hidden xl:flex items-center xl:pl-8 gap-5 lg:gap-6 xl:gap-8 text-[13px] font-black uppercase tracking-[0.12em] text-neutral-800">
 
-              <Link 
-                href="/" 
-                className={`relative py-1.5 transition-colors duration-200 group ${
-                  isActive("/") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
-                }`}
+              <Link
+                href="/"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
               >
                 Home
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 shadow-[0_2px_8px_rgba(168,34,245,0.4)] ${
-                  isActive("/") ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 shadow-[0_2px_8px_rgba(168,34,245,0.4)] ${isActive("/") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
 
-              <Link 
-                href="/our-team" 
-                className={`relative py-1.5 transition-colors duration-200 group ${
-                  isActive("/our-team") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
-                }`}
+              <Link
+                href="/our-team"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/our-team") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
               >
                 Our Team
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${
-                  isActive("/our-team") ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/our-team") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
 
-              <Link 
-                href="/aboutUs" 
-                className={`relative py-1.5 transition-colors duration-200 group ${
-                  isActive("/aboutUs") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
-                }`}
+              <Link
+                href="/aboutUs"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/aboutUs") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
               >
                 About Us
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${
-                  isActive("/aboutUs") ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/aboutUs") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
 
-              <Link 
-                href="/sponsors" 
-                className={`relative py-1.5 transition-colors duration-200 group ${
-                  isActive("/sponsors") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
-                }`}
+              <Link
+                href="/sponsors"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/sponsors") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
               >
                 Sponsors
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${
-                  isActive("/sponsors") ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/sponsors") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
 
-              <Link 
-                href="/volunteers" 
-                className={`relative py-1.5 transition-colors duration-200 group ${
-                  isActive("/volunteers") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
-                }`}
+              <Link
+                href="/volunteers"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/volunteers") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
               >
                 Volunteers
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${
-                  isActive("/volunteers") ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/volunteers") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
 
-              <Link 
-                href="/services" 
-                className={`relative py-1.5 transition-colors duration-200 group ${
-                  isActive("/services") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
-                }`}
+              <Link
+                href="/services"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/services") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
               >
                 Services
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${
-                  isActive("/services") ? "w-full" : "w-0 group-hover:w-full"
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/services") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
               </Link>
 
               {/* Upcoming Events Dropdown */}
-              <div
+              {/* <div
                 className="relative py-1.5 cursor-pointer group"
                 onMouseEnter={() => setDesktopDropdown("events")}
                 onMouseLeave={() => {
@@ -295,7 +283,17 @@ export default function NewHeader() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </div> */}
+              <Link
+                href="/our-gallery"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/our-gallery") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                  }`}
+              >
+                Our Gallary
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/our-gallery") ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
+              </Link>
+
             </nav>
 
             {/* CTA Unit Component */}
@@ -346,95 +344,100 @@ export default function NewHeader() {
 
             {/* Mobile Menu Nav Links */}
             <div className="w-full max-w-xs flex flex-col items-center gap-1 text-center text-[13px] font-black uppercase tracking-[0.14em] text-neutral-700">
-              <Link 
-                href="/" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`w-full py-3.5 rounded-xl transition-colors ${
-                  isActive("/") 
-                    ? "text-[#A822F5] bg-[#A822F5]/5" 
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                }`}
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
               >
                 Home
               </Link>
 
               {/* Mobile Team Dropdown */}
               <div className="w-full flex flex-col items-center">
-                <button 
-                  onClick={() => toggleMobileSubmenu("team")} 
-                  className={`flex items-center justify-center gap-1 py-3.5 w-full rounded-xl transition-colors ${
-                    isActive("/ourTeam/advisoryBoard") || isActive("/ourTeam/boardOfDirectors")
-                      ? "text-[#A822F5] bg-[#A822F5]/5"
-                      : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                  }`}
+                {/* <button
+                  onClick={() => toggleMobileSubmenu("team")}
+                  className={`flex items-center justify-center gap-1 py-3.5 w-full rounded-xl transition-colors ${isActive("/ourTeam/advisoryBoard") || isActive("/ourTeam/boardOfDirectors")
+                    ? "text-[#A822F5] bg-[#A822F5]/5"
+                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                    }`}
                 >
                   <span>Our Team</span>
                   <ChevronDown size={14} className={`transition-transform duration-200 text-[#A822F5] ${activeMobileSubmenu === "team" ? "rotate-180" : ""}`} />
-                </button>
-                {activeMobileSubmenu === "team" && (
+                </button> */}
+                {/* {activeMobileSubmenu === "team" && (
                   <div className="flex flex-col items-center bg-neutral-100 w-11/12 rounded-xl py-1 mt-0.5">
                     {teamLinks.map((item) => (
-                      <Link 
-                        key={item.name} 
-                        href={item.href} 
-                        onClick={() => setIsMobileMenuOpen(false)} 
-                        className={`text-[11px] font-bold py-2.5 w-full text-center normal-case rounded-lg transition-colors ${
-                          isActive(item.href)
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`text-[11px] font-bold py-2.5 w-full text-center normal-case rounded-lg transition-colors ${isActive(item.href)
                             ? "text-[#A822F5] bg-[#A822F5]/10"
                             : "text-neutral-500 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                        }`}
+                          }`}
                       >
                         {item.name}
                       </Link>
                     ))}
+
                   </div>
-                )}
+                )} */}
+
+                <Link
+                  href="/our-team"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/aboutUs")
+                    ? "text-[#A822F5] bg-[#A822F5]/5"
+                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                    }`}
+                >
+                  Our Team
+                </Link>
               </div>
 
-              <Link 
-                href="/aboutUs" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`w-full py-3.5 rounded-xl transition-colors ${
-                  isActive("/aboutUs") 
-                    ? "text-[#A822F5] bg-[#A822F5]/5" 
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                }`}
+              <Link
+                href="/aboutUs"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/aboutUs")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
               >
                 About Us
               </Link>
 
-              <Link 
-                href="/sponsors" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`w-full py-3.5 rounded-xl transition-colors ${
-                  isActive("/sponsors") 
-                    ? "text-[#A822F5] bg-[#A822F5]/5" 
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                }`}
+              <Link
+                href="/sponsors"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/sponsors")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
               >
                 Sponsors
               </Link>
 
-              <Link 
-                href="/volunteers" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`w-full py-3.5 rounded-xl transition-colors ${
-                  isActive("/volunteers") 
-                    ? "text-[#A822F5] bg-[#A822F5]/5" 
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                }`}
+              <Link
+                href="/volunteers"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/volunteers")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
               >
                 Volunteers
               </Link>
 
-              <Link 
-                href="/services" 
-                onClick={() => setIsMobileMenuOpen(false)} 
-                className={`w-full py-3.5 rounded-xl transition-colors ${
-                  isActive("/services") 
-                    ? "text-[#A822F5] bg-[#A822F5]/5" 
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                }`}
+              <Link
+                href="/services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/services")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
               >
                 Services
               </Link>
@@ -442,16 +445,15 @@ export default function NewHeader() {
               <div className="w-12 h-[1.5px] bg-neutral-200 my-3" />
 
               {/* Mobile Upcoming Events Dropdown */}
-              <div className="w-full flex flex-col items-center">
-                <button 
-                  onClick={() => toggleMobileSubmenu("sports")} 
-                  className={`flex items-center justify-center gap-1 py-3.5 w-full rounded-xl transition-colors ${
-                    isActive("/objectives/SportsManagement") || 
-                    isActive("/events/sports/rifle-shooting") || 
-                    isActive("/events/cultural")
+              {/* <div className="w-full flex flex-col items-center">
+                <button
+                  onClick={() => toggleMobileSubmenu("sports")}
+                  className={`flex items-center justify-center gap-1 py-3.5 w-full rounded-xl transition-colors ${isActive("/objectives/SportsManagement") ||
+                      isActive("/events/sports/rifle-shooting") ||
+                      isActive("/events/cultural")
                       ? "text-[#A822F5] bg-[#A822F5]/5"
                       : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                  }`}
+                    }`}
                 >
                   <span>Upcoming Events</span>
                   <ChevronDown size={14} className={`transition-transform text-[#A822F5] ${activeMobileSubmenu === "sports" ? "rotate-180" : ""}`} />
@@ -459,43 +461,40 @@ export default function NewHeader() {
                 {activeMobileSubmenu === "sports" && (
                   <div className="flex flex-col items-center bg-neutral-100 w-11/12 rounded-xl p-3 mt-0.5">
                     <span className="text-[10px] font-black text-[#A822F5] mb-1">Sports Events</span>
-                    <Link 
-                      href="/objectives/SportsManagement" 
-                      onClick={() => setIsMobileMenuOpen(false)} 
-                      className={`text-[11px] font-bold py-1 w-full text-center normal-case rounded-lg transition-colors ${
-                        isActive("/objectives/SportsManagement")
+                    <Link
+                      href="/objectives/SportsManagement"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-[11px] font-bold py-1 w-full text-center normal-case rounded-lg transition-colors ${isActive("/objectives/SportsManagement")
                           ? "text-[#A822F5] bg-[#A822F5]/10"
                           : "text-neutral-400 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                      }`}
+                        }`}
                     >
                       Kho Kho
                     </Link>
-                    <Link 
-                      href="/events/sports/rifle-shooting" 
-                      onClick={() => setIsMobileMenuOpen(false)} 
-                      className={`text-[11px] font-bold py-1 w-full text-center normal-case rounded-lg transition-colors ${
-                        isActive("/events/sports/rifle-shooting")
+                    <Link
+                      href="/events/sports/rifle-shooting"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-[11px] font-bold py-1 w-full text-center normal-case rounded-lg transition-colors ${isActive("/events/sports/rifle-shooting")
                           ? "text-[#A822F5] bg-[#A822F5]/10"
                           : "text-neutral-400 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                      }`}
+                        }`}
                     >
                       Rifle Shooting
                     </Link>
                     <div className="w-1/3 h-[1px] bg-neutral-200 my-2" />
-                    <Link 
-                      href="/events/cultural" 
-                      onClick={() => setIsMobileMenuOpen(false)} 
-                      className={`text-[11px] font-bold py-1 w-full text-center rounded-lg transition-colors ${
-                        isActive("/events/cultural")
+                    <Link
+                      href="/events/cultural"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-[11px] font-bold py-1 w-full text-center rounded-lg transition-colors ${isActive("/events/cultural")
                           ? "text-[#A822F5] bg-[#A822F5]/10"
                           : "text-neutral-400 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                      }`}
+                        }`}
                     >
                       Cultural Events
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
 
             </div>
           </motion.div>

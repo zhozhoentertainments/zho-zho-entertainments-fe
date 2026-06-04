@@ -12,7 +12,7 @@ import {
 
 export default function KhoKhoHistory() {
   return (
-    <section className="relative w-full bg-slate-50 text-slate-800 font-sans overflow-hidden py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+    <section className="relative w-full bg-slate-50 text-slate-800 font-sans overflow-hidden py-24 px-4 sm:px-6 lg:px-8 ">
       
       {/* 1. SEAMLESS RIGHT-SIDE WORLD CUP IMAGE SECTION */}
       <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 z-0 opacity-20 lg:opacity-100 pointer-events-none">

@@ -78,22 +78,22 @@ export default function EliteChampionship() {
                 </span>
               </h1>
               <p className="text-emerald-400 font-mono text-xs sm:text-sm tracking-widest uppercase font-bold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping" /> India’s Fastest Growing Sport. Built for the Next Gen.
+                <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping" /> India's Fastest Growing Sport. Built for the Next Gen.
               </p>
               <p className="text-slate-300 text-sm sm:text-base max-w-xl font-medium leading-relaxed">
-                Experience the &quot;Sport of Our Soil&quot; – Telangana’s Pride and India’s Next Sporting Movement.
+                Experience the "Sport of Our Soil" – Telangana's Pride and India's Next Sporting Movement.
               </p>
             </div>
 
             {/* UNIFIED DESIGN FOR TIMELINE & VENUE */}
             <div className="grid sm:grid-cols-2 gap-4 max-w-2xl w-full">
-              {/* Timeline Card */}
-              <div className="group bg-slate-900/40 backdrop-blur-md p-5 rounded-2xl border border-white/[0.06] hover:border-yellow-500/40 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] transition-all duration-300 flex flex-col justify-between h-28">
+              {/* Timeline Card - ANIMATED BORDER GLOW */}
+              <div className="group bg-slate-900/40 backdrop-blur-md p-5 rounded-2xl border-2 border-yellow-500/40 shadow-[0_0_20px_rgba(234,179,8,0.25)] animate-border-pulse flex flex-col justify-between h-28">
                 <div className="flex justify-between items-center">
                   <div className="p-2 rounded-xl bg-slate-950 border border-white/5 text-yellow-400">
                     <Calendar className="w-4 h-4" />
                   </div>
-                  <span className="text-[9px] font-mono tracking-widest text-slate-500 uppercase">Schedule</span>
+                  <span className="text-[9px] font-mono tracking-widest text-slate-500 uppercase">upcoming event</span>
                 </div>
                 <div>
                   <p className="text-lg font-black text-white tracking-wide uppercase">AUGUST 2026</p>
@@ -133,7 +133,7 @@ export default function EliteChampionship() {
               </div>
               <div>
                 <p className="text-base sm:text-xl font-black text-white tracking-tight">16 Elite Teams</p>
-                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">8 Men&apos;s & 8 Women&apos;s</p>
+                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">8 Men's & 8 Women's</p>
               </div>
             </div>
 
@@ -147,7 +147,7 @@ export default function EliteChampionship() {
               </div>
               <div>
                 <p className="text-base sm:text-xl font-black text-white tracking-tight">288 Athletes</p>
-                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">India&apos;s Top Tier Pros</p>
+                <p className="text-[10px] sm:text-xs text-slate-400 font-medium">India's Top Tier Pros</p>
               </div>
             </div>
 
@@ -197,13 +197,34 @@ export default function EliteChampionship() {
       {/* 4. FUTURISTIC MINIMAL FOOTER */}
       <footer className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-6 pt-4 border-t border-white/[0.05] flex flex-col sm:flex-row justify-between items-center gap-2">
         <p className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">
-          &quot;Sport of Our Soil&quot; — Telangana&apos;s Pride
+          "Sport of Our Soil" — Telangana's Pride
         </p>
         <p className="text-[10px] text-slate-400 font-black uppercase tracking-wider">
           Organized by ZHO ZHO Entertainments
         </p>
       </footer>
 
+      {/* Add this style tag for the animation - ONLY TAILWCSS UTILITIES */}
+      <style jsx global>{`
+        @keyframes borderGlow {
+          0% {
+            border-color: rgba(234, 179, 8, 0.2);
+            box-shadow: 0 0 8px rgba(234, 179, 8, 0.1);
+          }
+          50% {
+            border-color: rgba(234, 179, 8, 0.8);
+            box-shadow: 0 0 28px rgba(234, 179, 8, 0.45);
+          }
+          100% {
+            border-color: rgba(234, 179, 8, 0.2);
+            box-shadow: 0 0 8px rgba(234, 179, 8, 0.1);
+          }
+        }
+        
+        .animate-border-pulse {
+          animation: borderGlow 2.5s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
