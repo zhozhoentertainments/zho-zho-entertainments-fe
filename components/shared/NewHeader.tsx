@@ -131,7 +131,7 @@ export default function NewHeader() {
                   )}
                 </AnimatePresence>
               </div> */}
-                <Link href="/aboutUs" className="relative py-1.5 hover:text-[#A822F5] transition-colors duration-200 group">
+                <Link href="/our-team" className="relative py-1.5 hover:text-[#A822F5] transition-colors duration-200 group">
                 Our Team
                 <span className="absolute bottom-0 left-0 w-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 group-hover:w-full" />
               </Link>

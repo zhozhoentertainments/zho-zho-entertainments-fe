@@ -1,170 +1,313 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Target, Eye, Star, Users, Briefcase, ChevronRight } from "lucide-react";
-import Header from "@/components/shared/Header";
+import React, { useEffect, useState } from 'react';
+import { Eye, Target, Star, Users, Sparkles, ArrowRight, ChevronRight } from 'lucide-react';
 
-const AboutPage = () => {
+/* ==========================================================================
+   FUTURE INDEPENDENT COMPONENTS START HERE
+   ========================================================================== */
+
+/**
+ * FUTURE CARD COMPONENT
+ * Future Path: @/components/AboutCard.tsx
+ */
+interface AboutCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const AboutCard = ({ icon, title, description }: AboutCardProps) => {
   return (
-    <div className="min-h-screen bg-white text-neutral-900 font-sans overflow-x-hidden">
-      {/* Header Wrapper */}
-      {/* <div className="fixed top-0 left-0 right-0 z-[110] w-full">
-        <Header />
-      </div> */}
-
-      {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-        
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop"
-            alt="Hero Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/60 via-white/20 to-black/80 backdrop-blur-md z-10" />
+    <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm transition-all duration-500 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-purple-200 flex flex-col justify-between text-left group">
+      <div>
+        <div className="w-10 h-10 bg-[#f8f2fe] text-[#a824f2] rounded-xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#a824f2] group-hover:text-white">
+          {icon}
         </div>
-        
-        
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-200/40 blur-[120px] rounded-full z-0" />
-        
-        <div className="relative z-20 text-center px-4 mt-20">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-neutral-950">
-            ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">US</span>
-          </h1>
-          <nav className="flex items-center justify-center gap-3 text-xs md:text-sm font-bold text-white/70 uppercase tracking-[0.2em]">
-            <Link href="/" className="hover:text-purple-400 transition-colors">Home</Link>
-            <ChevronRight className="w-4 h-4 text-white/30" />
-            <span className="text-white">About Us</span>
-          </nav>
-        </div>
-      </section>
+        <h4 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-[#a824f2]">{title}</h4>
+        <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+};
 
-      {/* Introduction Section */}
-      <section className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 border border-purple-200 text-purple-700 text-sm font-bold tracking-widest uppercase">
-              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse" />
-              Our Story
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-neutral-950">
-              More Than Moments — <br />
-              <span className="text-purple-600">We Create Movements</span>
-            </h2>
-            <p className="text-lg md:text-xl text-neutral-600 leading-relaxed">
-              Zho Zho Entertainments is a new-generation event management company redefining how events are conceptualized and delivered. With a dynamic approach and a strong focus on innovation, we specialize in curating and executing a diverse range of events—including high-energy sports events, vibrant cultural experiences, and professionally managed government and corporate engagements.
-            </p>
-            <p className="text-lg text-neutral-500">
-              Driven by creativity, precision, and a deep understanding of audience engagement, Zho Zho Entertainments brings together strategic planning and flawless execution to create impactful, memorable experiences. Our team is committed to delivering excellence at every stage, making us a trusted partner for brands, institutions, and organizations looking to make a lasting impression. 
-            </p>
-          </div>
-          <div className="relative group animate-in fade-in slide-in-from-right-8 duration-1000">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-purple-200 to-fuchsia-200 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-700" />
-            <div className="relative aspect-video lg:aspect-square rounded-3xl overflow-hidden border border-neutral-200 shadow-xl bg-purple-50">
-              <Image
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop"
-                alt="Our Story"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Vision & Mission Section */}
-      <section className="py-24 bg-[#FCEBFC] relative border-y border-purple-100">
-        <div className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Vision Card */}
-          <div id="vision" className="group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 hover:border-purple-400 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 blur-3xl group-hover:bg-purple-200 transition-all" />
-            <div className="relative z-10 space-y-6">
-              <div className="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform duration-500">
-                <Eye size={32} />
-              </div>
-              <h3 className="text-3xl font-bold text-neutral-950">Our Vision</h3>
-              <p className="text-neutral-600 text-lg leading-relaxed">
-                To be a leading, diversified entertainment organisation recognised for creative excellence, technological innovation, and social impact — shaping the future of entertainment across sports, music, culture, gaming, travel, and live experiences </p>
-            </div>
-          </div>
+/**
+ * 1. HERO BANNER & STATS ROW
+ * Future Path: @/components/AboutHero.tsx
+ */
+const AboutHero = () => {
+  return (
+    <section className="bg-white pt-24 pb-12 text-center max-w-5xl mx-auto px-6 space-y-6">
+      {/* Title with entry animation */}
+      <h1 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-tight animate-[fadeInDown_0.8s_ease-out]">
+        More than moments <br />
+        We create <span className="text-[#a824f2]">movements</span> ✨
+      </h1>
+      
+      {/* Description text with staggered slide-in */}
+      <p className="text-gray-500 max-w-3xl mx-auto text-base md:text-md leading-relaxed font-normal px-4 animate-[fadeIn_1s_ease-out_0.2s_both]">
+        Zho Zho Entertainments is a new-generation event management company redefining how events are 
+        conceptualized and delivered. We bring together strategic planning and flawless execution to create 
+        impactful, memorable experiences.
+      </p>
 
-          {/* Mission Card */}
-          <div id="mission" className="group relative p-8 md:p-12 rounded-[2.5rem] bg-white border border-purple-100 hover:border-purple-400 transition-all duration-500 shadow-lg hover:shadow-2xl overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-fuchsia-100 blur-3xl group-hover:bg-fuchsia-200 transition-all" />
-            <div className="relative z-10 space-y-6">
-              <div className="w-16 h-16 rounded-2xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-600 group-hover:scale-110 transition-transform duration-500">
-                <Target size={32} />
-              </div>
-              <h3 className="text-3xl font-bold text-neutral-950">Our Mission</h3>
-              <p className="text-neutral-600 text-lg leading-relaxed">
-                To build a world-class entertainment enterprise that produces, promotes, and delivers exceptional creative experiences. We envision of becoming a <span className="text-purple-600 font-bold">₹100 Cr</span> brand that inspires action and connection nationwide. </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Buttons with micro-interactions */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+        <a href="#story" className="w-full sm:w-auto bg-[#a824f2] text-white px-8 py-3.5 rounded-full font-medium shadow-md shadow-purple-500/10 hover:bg-[#931ed7] transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 group text-sm">
+          Read Our Story <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+        </a>
+        <a href="/services" className="w-full sm:w-auto border border-[#a824f2] text-[#a824f2] px-8 py-3.5 rounded-full font-medium hover:bg-[#f8f2fe] transition-all duration-300 transform hover:scale-105 active:scale-95 text-center text-sm">
+          Our Services
+        </a>
+      </div>
 
-      {/* Why Choose Us Section */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex flex-col items-center">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-950">Why Choose Us?</h2>
-          <p className="text-neutral-500 text-lg max-w-2xl mx-auto">
-            We deliver excellence through a combination of leadership, community, and creative execution.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+      {/* Stats Divider Line and Metrics Row */}
+      <div className="max-w-4xl mx-auto px-6 py-8 border-t border-gray-100 mt-16 animate-[fadeIn_1.2s_ease-out_0.6s_both]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 text-center">
           {[
-            {
-              icon: <Star className="text-yellow-600" />,
-              title: "Purpose-Driven Leadership",
-              desc: "Highly committed leadership focused on creating events that matter and drive real-world impact."
-            },
-            {
-              icon: <Users className="text-purple-600" />,
-              title: "Strong Support Network",
-              desc: "A vast network of volunteers, sports professionals, and dedicated partner organizations."
-            },
-            {
-              icon: <Briefcase className="text-fuchsia-600" />,
-              title: "Flawless Execution",
-              desc: "Seamless planning, creative execution, and outstanding event experiences from concept to reality."
-            }
-          ].map((item, index) => (
-            <div key={index} className="p-8 rounded-3xl bg-white border border-neutral-100 hover:bg-neutral-50 transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6">
-                {item.icon}
-              </div>
-              <h4 className="text-xl font-bold mb-4 text-neutral-900">{item.title}</h4>
-              <p className="text-neutral-600 leading-relaxed">{item.desc}</p>
+            { label: "PAN-India", sub: "15+ Cities" },
+            { label: "100K+", sub: "Participants" },
+            { label: "50M+", sub: "Digital Reach" },
+            { label: "4.8★", sub: "Partner Rating" }
+          ].map((stat, i) => (
+            <div key={i} className="space-y-0.5 group cursor-default">
+              <div className="text-2xl font-black text-[#a824f2] transition-transform duration-300 group-hover:scale-110 inline-block">{stat.label}</div>
+              <div className="text-xs text-gray-400 font-medium tracking-wide">{stat.sub}</div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+};
 
-      {/* CTA Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-purple-600 to-fuchsia-700 p-12 md:p-20 text-center shadow-2xl">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay" />
-          <div className="relative z-10 space-y-8">
-            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
-              Ready to create something <br /> extraordinary?
-            </h2>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link  href="/">
-               <button className="px-8 py-4 bg-white text-purple-700 rounded-full font-bold hover:scale-105 transition-all flex items-center gap-2 shadow-xl ">
-                Our Services <ArrowRight size={20} />
-              </button>
-              </Link>
-             
+
+/**
+ * 2. WHY PARTNER / CORE GRID
+ * Future Path: @/components/AboutCoreGrid.tsx
+ */
+const AboutCoreGrid = () => {
+  return (
+    <section id="story" className="bg-[#faf8fc] py-20 px-6 overflow-hidden">
+      <div className="max-w-6xl mx-auto space-y-12">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Why Partner With Us?</h2>
+          <div className="w-12 h-1 bg-[#a824f2] mx-auto rounded-full transition-all duration-500 hover:w-24" />
+        </div>
+
+        {/* Top 2 Columns Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Card 1 */}
+          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:border-purple-200 text-left group">
+            <div className="space-y-4">
+              <div className="w-10 h-10 bg-[#f8f2fe] text-[#a824f2] rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#a824f2] group-hover:text-white">
+                <Star size={20} />
+              </div>
+              <span className="inline-block bg-[#f8f2fe] text-[#a824f2] px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">
+                Growth Vision
+              </span>
+              <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#a824f2]">PAN-India Scale</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                We specialize in curating and executing a diverse range of events—including high-energy sports events, vibrant cultural experiences, and professionally managed corporate engagements across the country.
+              </p>
+            </div>
+            <div className="text-xs font-bold text-[#a824f2] uppercase tracking-wider pt-6 border-t border-gray-50 mt-4">
+              300% Growth YoY
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:border-purple-200 text-left group">
+            <div className="space-y-4">
+              <div className="w-10 h-10 bg-[#f8f2fe] text-[#a824f2] rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#a824f2] group-hover:text-white">
+                <Users size={20} />
+              </div>
+              <span className="inline-block bg-[#f8f2fe] text-[#a824f2] px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">
+                Audience
+              </span>
+              <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-[#a824f2]">Engaged & Diverse</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Our approach delivers unmatched engagement, bringing together strategic planning and execution making us a trusted partner for brands looking to make a lasting impression.
+              </p>
+            </div>
+            <div className="text-xs font-bold text-[#a824f2] uppercase tracking-wider pt-6 border-t border-gray-50 mt-4">
+              100K+ Strong Community
             </div>
           </div>
         </div>
-      </section>
-    </div>
+
+        {/* Bottom 3 Columns Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Dark Filled Accent Card */}
+          <div className="bg-gradient-to-br from-[#4c1d95] to-[#6d28d9] text-white p-8 rounded-2xl shadow-xl flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-2 hover:shadow-purple-900/30 text-left group">
+            <div className="space-y-4">
+              <div className="w-10 h-10 bg-white/10 text-purple-200 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <Sparkles size={20} />
+              </div>
+              <h3 className="text-xl font-bold">Cause-Driven Visibility</h3>
+              <p className="text-purple-100/80 text-sm leading-relaxed">
+                With a dynamic approach and a strong focus on innovation, we shape the future of entertainment across culture, gaming, and sports.
+              </p>
+            </div>
+            <div className="text-xs font-bold text-cyan-300 uppercase tracking-wider pt-8">
+              IMPACT FIRST
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:border-purple-200 text-left group">
+            <div className="space-y-4">
+              <div className="w-10 h-10 bg-[#f8f2fe] text-[#a824f2] rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#a824f2] group-hover:text-white">
+                <Eye size={20} />
+              </div>
+              <h3 className="text-xl font-bold transition-colors duration-300 group-hover:text-[#a824f2]">High-Value Exposure</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                We ensure premium visibility across physical spaces, creative event collaterals, media coverage, and all integrated digital platforms.
+              </p>
+            </div>
+            <div className="flex gap-2 pt-6">
+              {["Logo", "Digital", "Media"].map((tag, i) => (
+                <span key={i} className="bg-gray-50 text-gray-500 text-[10px] px-2 py-1 rounded transition-colors duration-300 group-hover:bg-purple-50 group-hover:text-[#a824f2]">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Card 5 */}
+          <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:border-purple-200 text-left group">
+            <div className="space-y-4">
+              <div className="w-10 h-10 bg-[#f8f2fe] text-[#a824f2] rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#a824f2] group-hover:text-white">
+                <Target size={20} />
+              </div>
+              <h3 className="text-xl font-bold transition-colors duration-300 group-hover:text-[#a824f2]">Proven ROI</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Precision planning combined with data intelligence outputs ensures perfect delivery benchmarks and seamless retention rates.
+              </p>
+            </div>
+            <div className="text-xs font-bold text-[#a824f2] uppercase tracking-wider pt-6 border-t border-gray-50 mt-4">
+              4.8★ Partner Rating
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+
+/**
+ * 3. STRATEGIC GOALS / IMPACT BLOCK
+ * Future Path: @/components/AboutGoals.tsx
+ */
+const AboutGoals = () => {
+  return (
+    <section className="bg-white py-24 px-6 border-b border-gray-100">
+      <div className="max-w-5xl mx-auto text-center space-y-16">
+        <div className="space-y-3">
+          <span className="bg-[#f8f2fe] text-[#a824f2] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+            Sponsorship Tiers
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">Choose Your Impact Level</h2>
+          <p className="text-gray-400 text-sm">Tailored packages for brands of all sizes</p>
+        </div>
+
+        {/* Large Curved Banner Block with subtle bounce hover */}
+        <div className="bg-gradient-to-br from-[#120324] to-[#240647] p-8 md:p-12 rounded-[2rem] text-left text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-8 relative overflow-hidden transition-all duration-500 transform hover:scale-[1.01] hover:shadow-purple-900/20 group">
+          <div className="space-y-4 max-w-2xl relative z-10">
+            <span className="inline-block bg-[#a824f2] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">
+              Title Sponsor
+            </span>
+            <h3 className="text-2xl md:text-3xl font-bold">Maximum Brand Presence</h3>
+            <p className="text-purple-200/70 text-sm leading-relaxed">
+              Complete brand integration across all platforms — event collaterals, T-shirts, medals, press releases, opening/closing ceremonies, and more.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {["Logo Priority", "Stage Naming", "VIP Access"].map((feat, i) => (
+                <span key={i} className="bg-white/10 text-white text-[11px] px-3 py-1 rounded-full transition-colors duration-300 group-hover:bg-[#a824f2]/30">{feat}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="relative z-10">
+            <a href="/contact" className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold text-sm shadow-md hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap">
+              Inquire Now →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+/**
+ * 4. FOUR COLUMN CAPABILITIES BLOCK
+ * Future Path: @/components/AboutCapabilities.tsx
+ */
+const AboutCapabilities = () => {
+  const tiers = [
+    { title: "Our Vision", desc: "To be a leading, diversified entertainment organisation recognised for creative excellence, technological innovation, and social impact across live experiences.", tags: ["Innovation", "Creative"] },
+    { title: "Our Mission", desc: "To build a world-class entertainment enterprise that produces, promotes, and delivers exceptional experiences, becoming a ₹100 Cr brand.", tags: ["Enterprise", "Scale"] },
+    { title: "Purpose Leadership", desc: "Highly committed core management focused heavily on building interactive events that matter and drive real-world community impact.", tags: ["Strategy", "Impact"] },
+    { title: "Support Networks", desc: "A vast integrated network of volunteers, on-ground sports professionals, and deeply dedicated execution partner organizations.", tags: ["On-Ground", "Network"] },
+  ];
+
+  return (
+    <section className="max-w-7xl mx-auto px-6 py-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {tiers.map((tier, idx) => (
+          <AboutCard 
+            key={idx}
+            icon={<Sparkles size={20} />}
+            title={tier.title}
+            description={tier.desc}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+/* ==========================================================================
+   MAIN PAGE ROUTE
+   ========================================================================== */
+
+const AboutPage = () => {
+  return (
+    <>
+      {/* Inject Injectable Keyframe Animations via global style tag natively */}
+      <style jsx global>{`
+        @keyframes fadeInDown {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
+
+      <main className="min-h-screen mt-21 bg-white text-gray-950 antialiased selection:bg-[#f8f2fe] selection:text-[#a824f2]">
+        
+        {/* 1. HERO BANNER WITH STATS */}
+        <AboutHero />
+
+        {/* 2. CORE CARDS GRID */}
+        <AboutCoreGrid />
+
+        {/* 3. STRATEGIC CURVED BANNER */}
+        <AboutGoals />
+
+        {/* 4. FOUR COLUMN CAPABILITIES */}
+        <AboutCapabilities />
+
+      </main>
+    </>
   );
 };
 
