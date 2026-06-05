@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
+import {
   ArrowRight,
   Lightbulb,
   Sliders,
@@ -87,7 +87,7 @@ const fadeUp = {
 export default function ServicesPage() {
   return (
     <div className="w-full min-h-screen bg-[#faf9f7] text-[#1a1523] overflow-x-hidden font-sans scope-zhozho-awesome-portal">
-      
+
       {/* ─── SCOPED FONT & MATRIX PATTERN DEFENSE ─── */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&display=swap');
@@ -139,7 +139,7 @@ export default function ServicesPage() {
       {/* ─── SECTION 1: OUR SIGNATURE EVENTS (IMAGE LEFT, CONTENT RIGHT) ─── */}
       <section className="mt-40 py-24 bg-white border-b border-gray-100 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-          
+
           <div className="space-y-4 mb-16 text-center md:text-left">
             <span className="text-[11px] font-bold text-[#7c3aed] uppercase tracking-[0.25em] block">Properties Directory</span>
             <div className="relative inline-block pb-3">
@@ -159,21 +159,29 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-center">
-            
-            {/* Image Placeholder on LEFT */}
-            <div className="w-full aspect-[4/3.5] rounded-3xl bg-[#f3f1ee] border border-gray-200/60 p-8 flex flex-col justify-between relative overflow-hidden shadow-sm">
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-purple-100 rounded-full blur-[70px] opacity-60" />
-              <div className="w-9 h-9 rounded-xl bg-white border border-gray-200/50 flex items-center justify-center shadow-sm">
+
+            {/* Image on LEFT */}
+            <div className="relative w-full aspect-[4/3.5] rounded-3xl overflow-hidden border border-gray-200/60 shadow-sm">
+
+              {/* Background Glow */}
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-purple-100 rounded-full blur-[70px] opacity-60 z-10" />
+
+              {/* Image */}
+              <img
+                src="/mission.jpg"
+                alt="Our Signature Events"
+                className="w-full h-full object-cover"
+              />
+
+              {/* Optional Badge */}
+              <div className="absolute top-5 left-5 z-20 w-10 h-10 rounded-xl bg-white/90 backdrop-blur border border-gray-200/50 flex items-center justify-center shadow-sm">
                 <Sparkles className="w-4 h-4 text-[#7c3aed]" />
               </div>
-              <div className="space-y-2 relative z-10 max-w-xs">
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Media Space Placeholder</span>
-                <p className="text-xs font-semibold text-gray-400">Bind your production portfolio images directly into this canvas dimension box wrapper.</p>
-              </div>
+
             </div>
 
             {/* List Stack on RIGHT */}
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="show"
@@ -181,15 +189,18 @@ export default function ServicesPage() {
               className="space-y-3 w-full"
             >
               {signatureEvents.map((text, idx) => (
-                <motion.div 
+                <motion.div
                   variants={fadeUp}
-                  key={idx} 
+                  key={idx}
                   className="clean-stack-row p-4.5 flex items-center gap-4 cursor-default"
                 >
                   <div className="w-7 h-7 rounded-lg bg-purple-50 text-[#7c3aed] flex items-center justify-center border border-purple-100/40 font-bold text-xs shrink-0 shadow-sm">
-                    {String(idx + 1).padStart(2, '0')}
+                    {String(idx + 1).padStart(2, "0")}
                   </div>
-                  <span className="text-sm md:text-base font-semibold text-gray-800 tracking-tight">{text}</span>
+
+                  <span className="text-sm md:text-base font-semibold text-gray-800 tracking-tight">
+                    {text}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
@@ -201,7 +212,7 @@ export default function ServicesPage() {
       {/* ─── SECTION 2: TYPES OF EVENTS WE ORGANIZE (CONTENT LEFT, IMAGE RIGHT - ASYMMETRIC FLIP) ─── */}
       <section className="py-24 bg-[#faf9f7] border-b border-gray-200/40 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-          
+
           {/* Header Layout Block */}
           <div className="space-y-4 mb-16 text-center md:text-left">
             <span className="text-[11px] font-bold text-[#f07167] uppercase tracking-[0.25em] block">Portfolio Matrix</span>
@@ -222,9 +233,9 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
-            
+
             {/* List Stack on LEFT */}
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="show"
@@ -232,9 +243,9 @@ export default function ServicesPage() {
               className="space-y-3 w-full order-2 lg:order-1"
             >
               {organizedEvents.map((text, idx) => (
-                <motion.div 
+                <motion.div
                   variants={fadeUp}
-                  key={idx} 
+                  key={idx}
                   className="clean-stack-row p-4.5 flex items-center gap-4 cursor-default"
                 >
                   <div className="w-7 h-7 rounded-xl bg-purple-50 text-[#7c3aed] flex items-center justify-center border border-purple-100/40 shadow-sm shrink-0">
@@ -246,15 +257,18 @@ export default function ServicesPage() {
             </motion.div>
 
             {/* Image Placeholder on RIGHT */}
-            <div className="w-full aspect-[4/3.5] rounded-3xl bg-[#f3f1ee] border border-gray-200/60 p-8 flex flex-col justify-between relative overflow-hidden shadow-sm order-1 lg:order-2">
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-orange-100 rounded-full blur-[70px] opacity-60" />
-              <div className="w-9 h-9 rounded-xl bg-white border border-gray-200/50 flex items-center justify-center shadow-sm">
-                <Layers className="w-4 h-4 text-[#f07167]" />
-              </div>
-              <div className="space-y-2 relative z-10 max-w-xs">
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Media Space Placeholder</span>
-                <p className="text-xs font-semibold text-gray-400">Bind your production portfolio images directly into this canvas dimension box wrapper.</p>
-              </div>
+            <div className="w-full aspect-[4/3.5] rounded-3xl border border-gray-200/60 relative overflow-hidden shadow-sm order-1 lg:order-2 flex items-center justify-center">
+
+              {/* Orange Glow */}
+              <div className="absolute -top-12 -right-12 w-84 h-84 bg-orange-400 rounded-full blur-[70px] opacity-30" />
+
+              {/* Logo */}
+              <img
+                src="/logo.png"
+                alt="Events"
+                className="w-48 h-48 object-contain relative z-10"
+              />
+
             </div>
 
           </div>
@@ -264,7 +278,7 @@ export default function ServicesPage() {
       {/* ─── SECTION 3: EXPERTISE IN EVERY DETAIL (CLEAN CAPSULE GRID) ─── */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-          
+
           <div className="mb-16 space-y-2 text-center md:text-left">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.25em] block">Execution Architecture</span>
             <h2 className="text-3xl md:text-4xl font-black text-[#1a1523] tracking-tighter uppercase">
@@ -273,7 +287,7 @@ export default function ServicesPage() {
             <div className="w-16 h-[3px] bg-[#7c3aed] rounded-full mt-3 hidden md:block" />
           </div>
 
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -317,8 +331,8 @@ export default function ServicesPage() {
             Get in touch with our event execution core cell to seamlessly scale your next activation blueprint.
           </p>
           <div className="pt-2">
-            <a 
-              href="mailto:info@zhozhoentertainments.com" 
+            <a
+              href="mailto:info@zhozhoentertainments.com"
               className="inline-flex items-center gap-2 bg-[#1a1523] text-white px-8 py-3.5 rounded-xl font-bold text-xs tracking-wider uppercase shadow-md hover:bg-[#7c3aed] transition-all duration-200"
             >
               Consult Our Team

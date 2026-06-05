@@ -63,7 +63,7 @@ const cardFade = {
 
 export default function RecentActivities() {
   return (
-    <section className="py-24 bg-[#faf9f7] font-sans relative overflow-hidden scope-recent-activities w-full">
+    <section className="py-24 font-sans relative overflow-hidden scope-recent-activities w-full">
       
       {/* SCOPED FONT DEFENSE */}
       <style>{`

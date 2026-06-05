@@ -10,7 +10,9 @@ import {
   Flame,
   Zap,
   Clock,
-  ArrowRight
+  ArrowRight,
+  ShoppingBag,
+  Sparkles
 } from 'lucide-react';
 
 export default function EliteChampionship() {
@@ -179,9 +181,29 @@ export default function EliteChampionship() {
               </div>
             </div>
 
-            {/* Full-width Unified Broadcast Box */}
+            {/* BOX 1: THE CREATOR ZONE (Vibrant Rose/Pink Creator Aura) */}
+            <div className="col-span-2 bg-gradient-to-r from-rose-950/40 via-slate-950/80 to-slate-950 p-4 rounded-2xl border border-rose-500/20 flex items-center gap-3 shadow-lg hover:border-rose-500/50 transition-all duration-300">
+              <div className="p-2 rounded-xl bg-rose-500/10 text-rose-400 flex-shrink-0 border border-rose-500/10">
+                <Sparkles className="w-4 h-4 animate-pulse" />
+              </div>
+              <p className="text-[11px] sm:text-xs font-medium text-rose-200 leading-normal">
+                <span className="font-black text-white uppercase tracking-wider mr-1">The Creator Zone:</span> Engage directly with top digital creators in our dedicated Creator Zone.
+              </p>
+            </div>
+
+            {/* BOX 2: EAT, SHOP, AND DISCOVER (Vibrant Emerald Lifestyle Aura) */}
+            <div className="col-span-2 bg-gradient-to-r from-emerald-950/30 via-slate-950/80 to-slate-950 p-4 rounded-2xl border border-emerald-500/20 flex items-center gap-3 shadow-lg hover:border-emerald-500/50 transition-all duration-300">
+              <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 flex-shrink-0 border border-emerald-500/10">
+                <ShoppingBag className="w-4 h-4 animate-pulse" />
+              </div>
+              <p className="text-[11px] sm:text-xs font-medium text-emerald-200 leading-normal">
+                <span className="font-black text-white uppercase tracking-wider mr-1">Eat, Shop, and Discover:</span> Fuel up at our curated dining area, offering a diverse variety of food and drink options to keep you energized throughout the four-day event.
+              </p>
+            </div>
+
+            {/* BOX 3: LIVE BROADCAST STREAM (Original Deep Purple Aura) */}
             <div className="col-span-2 bg-gradient-to-r from-purple-950/40 via-slate-950/80 to-slate-950 p-4 rounded-2xl border border-purple-500/20 flex items-center gap-3 shadow-lg hover:border-purple-500/50 transition-all duration-300">
-              <div className="p-2 rounded-xl bg-purple-500/10 text-purple-400 flex-shrink-0">
+              <div className="p-2 rounded-xl bg-purple-500/10 text-purple-400 flex-shrink-0 border border-purple-500/10">
                 <Tv className="w-4 h-4 animate-pulse" />
               </div>
               <p className="text-[11px] sm:text-xs font-medium text-purple-200 leading-normal">

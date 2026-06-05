@@ -2,76 +2,80 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { FaLinkedinIn, FaTwitter, FaGlobe, FaTimes } from "react-icons/fa";
+import { FaTimes, FaUserAlt, FaUsers, FaAward } from "react-icons/fa";
 
-// 1. Dummy Dynamic Data
+// Team data structure with explicit image configurations
 const teamData = [
   {
     id: 1,
     name: "Mondira Jaisimha",
     role: "Advisory Board",
-    category: "leadership",
-    bio: "Former Senior Advocacy Director at Heroes Project with deep background in HIV awareness, education, and entertainment. Co-runs Cura Servitium, an eldercare company.A passionate advocate closely involved with stray animals welfare, singing (Hyderabad Voices), and theatre.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500",
-    // socials: { linkedin: "#", twitter: "#", website: "#" },
+    bio: "Former Senior Advocacy Director at Heroes Project with deep background in HIV awareness, education, and entertainment. Co-runs Cura Servitium, an eldercare company. A passionate advocate closely involved with stray animals welfare, singing (Hyderabad Voices), and theatre.",
+    imageUrl: "/monindra.jpeg",
     roles: ["Social Impact", "Eldercare", "Theatre"],
+    aspectClass: "aspect-[4/5]" 
   },
   {
     id: 2,
     name: "Prof. (Dr.) Venkateshwarlu N",
     role: "Advisory Board",
-    category: "management",
-    bio: "Professor of Law and Dean Faculty of Law, Satavahana University. Former Jt. Secretary, Legal Bureau, UGC New Delhi.Expertise in Corporate and Securities Laws, ADR, ODR, IT Law, IPR, and Human Rights with extensive academic and administrative experience.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=500",
-    // socials: { linkedin: "#", twitter: "#" },
+    bio: "Professor of Law and Dean Faculty of Law, Satavahana University. Former Jt. Secretary, Legal Bureau, UGC New Delhi. Expertise in Corporate and Securities Laws, ADR, ODR, IT Law, IPR, and Human Rights with extensive academic and administrative experience.",
     roles: ["Law & IPR", "Human Rights", "ADR/ODR"],
+    aspectClass: "aspect-[4/5]"
   },
 ];
 
 export default function OurTeam() {
-  const [activeTab, setActiveTab] = useState("all");
   const [activeModalMember, setActiveModalMember] = useState(null);
   const canvasRef = useRef(null);
 
-  // Connection Network Background Animation
+  // Dynamically calculating stats to avoid looking hardcoded/dummy
+  const totalAdvisors = teamData.length;
+  const totalExpertiseTags = Array.from(
+    new Set(teamData.flatMap((member) => member.roles || []))
+  ).length;
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
     let animationFrameId;
     let particles = [];
-    const particleCount = 45; // Density of the connectivity network
+    const particleCount = 40; 
+    const connectionDistance = 135; 
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     class Particle {
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.6; // Soft productivity flow speed
-        this.vy = (Math.random() - 0.5) * 0.6;
-        this.radius = Math.random() * 2 + 1.5;
+        this.x = Math.random() * window.innerWidth;
+        this.y = Math.random() * window.innerHeight;
+        this.vx = (Math.random() - 0.5) * 0.5; 
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 1.2 + 1.2;
       }
 
       update() {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Bounce back smoothly from edges
-        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+        if (canvas) {
+          if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+          if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+        }
       }
 
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(138, 57, 225, 0.25)"; // Purple brand color node
+        ctx.fillStyle = "rgba(138, 57, 225, 0.2)";
         ctx.fill();
       }
     }
@@ -91,14 +95,13 @@ export default function OurTeam() {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          // If nodes get close, draw a connecting dynamic bridge line
-          if (distance < 120) {
+          if (distance < connectionDistance) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            // Opacity scales up dynamically when nodes draw near (High connection strength)
-            ctx.strokeStyle = `rgba(138, 57, 225, ${0.12 * (1 - distance / 120)})`;
-            ctx.lineWidth = 1;
+            const alpha = (1 - distance / connectionDistance) * 0.12;
+            ctx.strokeStyle = `rgba(138, 57, 225, ${alpha})`;
+            ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
@@ -106,6 +109,7 @@ export default function OurTeam() {
     };
 
     const animate = () => {
+      if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((p) => {
@@ -127,186 +131,193 @@ export default function OurTeam() {
     };
   }, []);
 
-  //   const filteredTeam = activeTab === 'all'
-  //     ? teamData
-  //     : teamData.filter(member => member.category === activeTab);
+  const renderProfileAsset = (member) => {
+    if (!member.imageUrl || member.imageUrl.includes("logo") || member.imageUrl === "") {
+      return (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-purple-50 to-indigo-50/40 p-6 text-center">
+          <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 shadow-inner mb-3">
+            <FaUserAlt size={22} />
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <Image
+        src={member.imageUrl}
+        alt={member.name}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+        priority={member.id <= 3}
+      />
+    );
+  };
 
   return (
-    // Relative wrapper with overflow hidden to safely bound animated backdrops
-    <section className="relative bg-white pt-32 mt-11 pb-20 px-6 sm:px-12 min-h-screen overflow-hidden transition-all duration-300">
-      {/* 1. Interactive Connection Network Layer */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none z-0 opacity-80"
-      />
+    <section className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-[#FAFAFB] min-h-screen selection:bg-purple-100 selection:text-purple-900 overflow-hidden">
+      {/* Dynamic Network Background */}
+      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
 
-      {/* 2. Abstract Blurred Glow Meshes representing dynamic output/productivity sparks */}
-      <div className="absolute top-[10%] left-[-10%] w-[45vw] h-[45vw] rounded-full bg-purple-200/30 blur-[120px] pointer-events-none z-0 animate-pulse duration-[6000ms]" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-violet-200/20 blur-[100px] pointer-events-none z-0" />
+      {/* Atmospheric Blur Layers */}
+      <div className="absolute top-[-5%] right-[-5%] w-[40vw] h-[40vw] bg-purple-200/15 rounded-full blur-[130px] pointer-events-none z-0 animate-pulse duration-[10000ms]" />
+      <div className="absolute bottom-[-5%] left-[-5%] w-[30vw] h-[30vw] bg-indigo-100/25 rounded-full blur-[110px] pointer-events-none z-0" />
 
-      {/* Primary Section Layout Wrap */}
-      <div className="relative max-w-7xl mx-auto text-center z-10">
-        {/* Header Elements */}
-        <span className="text-sm font-semibold tracking-widest text-[#8A39E1] uppercase bg-purple-50 px-4 py-1.5 rounded-full">
-          Our Team
-        </span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#0B0214] mt-4 mb-3 tracking-tight">
-          The Minds Behind the Magic
-        </h2>
-        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-12">
-          We are a diverse collective of innovators, creators, and leaders
-          dedicated to bringing purpose and passion to life.
-        </p>
+      {/* Layout Content Wrapper - mt-20 Added for header clearing */}
+      <div className="relative max-w-6xl mx-auto z-10 mt-20">
+        
+        {/* Header Block */}
+        <div className="text-center mb-16 flex flex-col items-center">
+          <span className="text-[10px] font-bold tracking-widest text-purple-700 uppercase bg-purple-50 border border-purple-100/80 px-3 py-1 rounded-full inline-block shadow-sm mb-4">
+            Our Leadership
+          </span>
+          
+          {/* Symmetrical Underlined Header Structure */}
+          <div className="relative inline-block pb-5 mb-5">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+              Our Advisory Members
+            </h2>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[3.5px] bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-400 rounded-full" />
+          </div>
+     
+        </div>
 
-        {/* Dynamic Filter Tabs
-        <div className="flex flex-wrap justify-center items-center gap-3 mb-16">
-          {['all', 'leadership', 'management', 'operations'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2 text-sm font-medium rounded-full border transition-all capitalize duration-200 ${
-                activeTab === tab
-                  ? 'bg-[#8A39E1] text-white border-[#8A39E1] shadow-lg shadow-purple-500/20'
-                  : 'bg-transparent text-gray-600 border-gray-300 hover:border-[#8A39E1] hover:text-[#8A39E1]'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* Clean, Non-Dummy Live Metrics Summary Box */}
+        {/* <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 mb-16 max-w-xl mx-auto bg-white border border-slate-200/60 py-4 px-8 rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+          <div className="flex items-center gap-3">
+            <FaUsers className="text-purple-600 text-lg" />
+            <div className="text-left">
+              <span className="block text-lg font-extrabold text-slate-800 leading-none">{totalAdvisors}</span>
+              <span className="text-xs text-slate-400 font-medium">Active Board Members</span>
+            </div>
+          </div>
+          <div className="w-px h-8 bg-slate-200 hidden sm:block" />
+          <div className="flex items-center gap-3">
+            <FaAward className="text-purple-600 text-lg" />
+            <div className="text-left">
+              <span className="block text-lg font-extrabold text-slate-800 leading-none">{totalExpertiseTags}+</span>
+              <span className="text-xs text-slate-400 font-medium">Core Industry Domains</span>
+            </div>
+          </div>
         </div> */}
 
-        {/* Dynamic Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
+        {/* Profile Card Matrix Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
           {teamData.map((member) => (
             <div
               key={member.id}
-              className="group relative bg-[#f5f2fa] border border-[#e2daee] rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-purple-500/10 text-left flex flex-col justify-between"
+              onClick={() => setActiveModalMember(member)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveModalMember(member);
+                }
+              }}
+              className="group relative bg-white border border-slate-200/80 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_rgba(138,57,225,0.05)] text-left flex flex-col justify-between max-w-sm mx-auto w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-purple-500/40"
             >
               <div>
-                {/* Profile Image Wrapper */}
-                <div className="relative w-full h-80 mb-6 overflow-hidden rounded-2xl bg-purple-100/60">
-                  <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    fill
-                    sizes="(max-w-7xl) 33vw, 100vw"
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
-                    priority={member.id <= 3}
-                  />
+                <div className={`relative w-full ${member.aspectClass || "aspect-[4/5]"} mb-5 overflow-hidden rounded-xl bg-slate-50 border border-slate-100`}>
+                  {renderProfileAsset(member)}
                 </div>
 
-                {/* MODIFICATION: Name & Designation stacked on the left, Know More button perfectly aligned on the right */}
-             <div className="space-y-4 text-left">
-                  {/* Name spans completely to the left, taking full width */}
-                  <h3 className="text-xl font-black text-[#0A0515] transition-colors duration-200 group-hover:text-[#8A39E1] w-full block">
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-slate-800 transition-colors duration-200 group-hover:text-purple-700">
                     {member.name}
                   </h3>
-                  
-                  {/* Bottom info strip layout */}
-                  <div className="flex items-center gap-4 pt-1">
-                    {/* Know More aligns perfectly directly to the left side of the role */}
-
-                    {/* Role / Designation title element follows on the right */}
-                    <p className="text-sm font-medium text-slate-600">
-                      {member.role}
-                    </p>
-                    <button
-                      onClick={() => setActiveModalMember(member)}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-[#8A39E1] hover:text-[#0A0515] transition-colors uppercase tracking-wider group/btn whitespace-nowrap"
-                    >
-                      Know More
-                      <span className="transform translate-x-0 group-hover/btn:translate-x-1 transition-transform duration-200">
-                        &rarr;
-                      </span>
-                    </button>
-                  </div>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    {member.role}
+                  </p>
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-4">
+              {/* Tags Area */}
+              <div className="mt-5 pt-4 border-t border-slate-100 flex flex-col gap-4">
                 {member.roles && member.roles.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-200/80">
+                  <div className="flex flex-wrap gap-1.5">
                     {member.roles.map((role, idx) => (
                       <span
                         key={idx}
-                        className="pointer-events-none inline-flex items-center text-xs font-semibold px-3 py-1 bg-white text-slate-600 border border-slate-200 rounded-lg select-none shadow-sm"
+                        className="text-[10px] font-bold px-2.5 py-0.5 bg-slate-50 text-slate-600 border border-slate-200/60 rounded-md select-none"
                       >
                         {role}
                       </span>
                     ))}
                   </div>
                 )}
-              </div>
 
-              {/* Bottom Action Area */}
-              {/* <div className="mt-6 flex flex-col gap-4">
-                {member.socials && Object.keys(member.socials).length > 0 && (
-                  <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80">
-                    {member.socials.linkedin && (
-                      <a
-                        href={member.socials.linkedin}
-                        className="text-slate-500 hover:text-white transition-colors p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-[#8A39E1] hover:border-[#8A39E1] shadow-sm"
-                        aria-label="LinkedIn"
-                      >
-                        <FaLinkedinIn size={14} />
-                      </a>
-                    )}
-                    {member.socials.twitter && (
-                      <a
-                        href={member.socials.twitter}
-                        className="text-slate-500 hover:text-white transition-colors p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-[#8A39E1] hover:border-[#8A39E1] shadow-sm"
-                        aria-label="Twitter"
-                      >
-                        <FaTwitter size={14} />
-                      </a>
-                    )}
-                    {member.socials.website && (
-                      <a
-                        href={member.socials.website}
-                        className="text-slate-500 hover:text-white transition-colors p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-[#8A39E1] hover:border-[#8A39E1] shadow-sm"
-                        aria-label="Website"
-                      >
-                        <FaGlobe size={14} />
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div> */}
+                {/* Interactive CTA Pill */}
+                <div className="w-full inline-flex items-center justify-center gap-1.5 text-xs font-bold text-white bg-purple-600 group-hover:bg-purple-700 shadow-md shadow-purple-600/10 py-2.5 px-4 rounded-xl transition-all duration-300 tracking-wide pointer-events-none">
+                  Know More
+                  <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200 text-sm font-light">
+                    &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Dynamic Pop-up Modal */}
+      {/* Profile Detail Pop-up Modal */}
       {activeModalMember && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <div className="relative w-full max-w-lg bg-[#1c1430] border border-[#2b2046] rounded-3xl p-6 md:p-8 shadow-2xl text-left transform scale-100 transition-all">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm"
+          onClick={() => setActiveModalMember(null)}
+        >
+          <div
+            className="relative w-full max-w-md bg-white border border-slate-200 rounded-2xl p-6 shadow-2xl text-left transform scale-100 transition-all duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setActiveModalMember(null)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800/30 hover:bg-slate-800/60 transition-colors"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 rounded-xl hover:bg-slate-50 transition-colors"
             >
-              <FaTimes size={16} />
+              <FaTimes size={13} />
             </button>
 
-            <div className="flex items-center gap-4 mb-6">
-              <div className="relative w-20 h-20 overflow-hidden rounded-2xl bg-slate-700 flex-shrink-0">
-                <img
-                  src={activeModalMember.imageUrl}
-                  alt={activeModalMember.name}
-                  className="w-full h-full object-cover"
-                />
+            {/* Profile Row */}
+            <div className="flex items-center gap-4 mb-5">
+              <div className="relative w-16 h-16 overflow-hidden rounded-xl bg-slate-50 border border-slate-100 flex-shrink-0">
+                {!activeModalMember.imageUrl || activeModalMember.imageUrl.includes("logo") ? (
+                  <div className="w-full h-full flex items-center justify-center bg-purple-50 text-purple-600">
+                    <FaUserAlt size={16} />
+                  </div>
+                ) : (
+                  <img
+                    src={activeModalMember.imageUrl}
+                    alt={activeModalMember.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                )}
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">
+              <div className="space-y-0.5">
+                <h3 className="text-xl font-extrabold text-slate-900">
                   {activeModalMember.name}
                 </h3>
-                <p className="text-sm font-medium text-[#b87cf8]">
+                <p className="text-xs font-bold text-purple-600 uppercase tracking-wider">
                   {activeModalMember.role}
                 </p>
               </div>
             </div>
 
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed bg-slate-950/40 p-4 rounded-xl border border-slate-800/40 mb-2">
+            {/* Tags in Modal */}
+            {activeModalMember.roles && (
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {activeModalMember.roles.map((role, idx) => (
+                  <span
+                    key={idx}
+                    className="text-[10px] font-bold px-2 py-0.5 bg-purple-50 text-purple-700 border border-purple-100 rounded-md"
+                  >
+                    {role}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Bio Text area */}
+            <p className="text-slate-600 text-sm leading-relaxed bg-slate-50/70 p-4 rounded-xl border border-slate-100 italic font-normal">
               "{activeModalMember.bio}"
             </p>
           </div>

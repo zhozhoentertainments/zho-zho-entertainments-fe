@@ -27,7 +27,7 @@ export default function Home() {
       <WhyKhoKhoPartner/>
       <KhoKhoHistory/>
       <Sponsors />
-      <RecentActivities />
+      {/* <RecentActivities /> */}
       <TestimonialsCarousel/>
       {/* <WhyKhoKho/>  the timeline code*/}
       <PerformedEvents/>

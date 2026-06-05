@@ -128,7 +128,7 @@ const fadeUp = {
 export default function EventVolunteersPage() {
   return (
     <div className="w-full min-h-screen bg-[#faf9f7] text-[#1a1523] selection:bg-purple-100 overflow-x-hidden font-sans scope-zhozho-volunteers">
-      
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
 
@@ -206,7 +206,7 @@ export default function EventVolunteersPage() {
       <section className="relative flex items-end min-h-[85vh] overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/volunteers/hero.png"
+            src="/volunteer.jpg"
             alt="Volunteers Arena Hero"
             fill
             className="object-cover opacity-90"
@@ -246,7 +246,7 @@ export default function EventVolunteersPage() {
       <section className="py-24" style={{ background: "var(--bg-2)" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 items-center">
-            
+
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="space-y-4">
               <span className="text-[11px] font-bold tracking-[0.18em] text-[#7e7898] uppercase block">Operational Strength</span>
               <p className="font-bold text-[#1a1523] text-2xl md:text-4xl leading-snug tracking-tight">
@@ -283,7 +283,7 @@ export default function EventVolunteersPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
+
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="space-y-6">
               <div>
                 <span className="text-[11px] font-bold tracking-[0.18em] text-[#7e7898] uppercase block mb-2">Gate Guidelines</span>
@@ -328,7 +328,7 @@ export default function EventVolunteersPage() {
       <section className="py-24 bg-[#faf9f7] border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            
+
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="relative rounded-3xl overflow-hidden aspect-[3/4] lg:max-h-[520px] shadow-xl lg:sticky lg:top-16">
               <Image
                 src="/volunteers/role.png"
@@ -364,53 +364,52 @@ export default function EventVolunteersPage() {
       </section>
 
       {/* ─── 3. BENEFITS FOR VOLUNTEERS ─── */}
-      <section className="py-24 bg-white border-t border-gray-100/60">
+      <section className="py-24 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
-            
-            <div className="space-y-4 lg:sticky lg:top-24">
-              <span className="text-[11px] font-bold tracking-[0.18em] text-[#7e7898] uppercase block">Value Handshake</span>
-              <h2 className="font-black text-3xl md:text-5xl text-[#1a1523] leading-tight tracking-tight">
-                Benefits for <span className="text-[#7c3aed]">Volunteers</span>
-              </h2>
-              <p className="text-[#7e7898] text-sm md:text-base leading-relaxed max-w-sm pt-1">
-                Industrial acknowledgment, structural reference layers, and curated merchandise loops inside high-tier sports management.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {benefits.map((b, i) => (
-                <div key={i} className="b-card-updated p-6 relative overflow-hidden flex items-center justify-between gap-4 border border-gray-100 shadow-sm min-h-[135px]">
-                  
-                  <div className="flex items-center gap-4 h-full">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-purple-50 text-[#7c3aed] border border-purple-100/30 shrink-0 shadow-sm">
-                      {b.icon}
-                    </div>
+          <div className="max-w-2xl mb-12">
+            <span className="text-[11px] font-bold tracking-[0.18em] text-[#7e7898] uppercase block mb-3">
+              Volunteer Benefits
+            </span>
 
-                    <div className="space-y-0.5">
-                      <h4 className="font-bold text-sm md:text-base text-[#1a1523] tracking-tight">{b.title}</h4>
-                      <p className="text-[#7e7898] text-xs font-normal leading-normal">{b.desc}</p>
-                    </div>
-                  </div>
+            <h2 className="font-black text-3xl md:text-5xl text-[#1a1523] leading-tight tracking-tight">
+              Why Join The Crew?
+            </h2>
 
-                  <div className="absolute top-3 right-4 select-none">
-                    <span className="font-black text-sm md:text-base text-purple-600/90 tracking-tight bg-purple-50 px-2 py-0.5 rounded-md border border-purple-100">
-                      {b.num}
-                    </span>
-                  </div>
-
-                </div>
-              ))}
-            </div>
-
+            <p className="mt-4 text-[#7e7898] text-sm md:text-base leading-relaxed">
+              Gain practical experience, industry exposure, recognition,
+              and access to future opportunities.
+            </p>
           </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+            {benefits.map((b, i) => (
+              <div
+                key={i}
+                className="group bg-[#faf9ff] border border-purple-100/50 rounded-2xl p-6 hover:bg-white hover:shadow-md hover:border-purple-200 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white text-[#7c3aed] flex items-center justify-center border border-purple-100 mb-4">
+                  {b.icon}
+                </div>
+
+                <h3 className="font-bold text-[#1a1523] text-base mb-2">
+                  {b.title}
+                </h3>
+
+                <p className="text-sm text-[#7e7898] leading-relaxed">
+                  {b.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
       {/* ─── 4. THE CREW SELECTION & DEPLOYMENT FLOW (DUPLICATE COUNTING REMOVED) ─── */}
       <section className="py-28 bg-[#faf9f7] border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-          
+
           <div className="text-center mb-24 max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-200/60 text-[10px] font-bold uppercase tracking-widest text-[#7c3aed]">
               Roadmap to Field
@@ -431,15 +430,15 @@ export default function EventVolunteersPage() {
           <div className="relative">
             {/* Center Timeline Spine Line */}
             <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px]"
-                 style={{ background: 'linear-gradient(to bottom, transparent, var(--coral) 8%, var(--plum) 50%, var(--coral) 92%, transparent)' }} />
-            
+              style={{ background: 'linear-gradient(to bottom, transparent, var(--coral) 8%, var(--plum) 50%, var(--coral) 92%, transparent)' }} />
+
             <div className="md:hidden absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-[#f07167] via-[#7c3aed] to-transparent" />
 
             {volunteerProcess.map((event, index) => {
               const isLeft = event.side === 'left';
               return (
                 <div key={index} className="relative flex flex-col md:flex-row justify-between items-start md:items-center mb-24 w-full group">
-                  
+
                   {/* Outer Primary Counting Box (Only Counting Element Left) */}
                   <div className={`hidden md:flex md:w-[45%] items-center justify-center px-6 ${isLeft ? 'order-3' : 'order-1'}`}>
                     <div className="w-32 h-32 rounded-full flex items-center justify-center bg-gradient-to-br from-white to-[#f3f1ee] border-2 border-purple-200 shadow-sm transition-transform duration-300 group-hover:scale-105">
@@ -469,7 +468,7 @@ export default function EventVolunteersPage() {
                     <h3 className="font-black text-xl md:text-2xl text-[#1a1523] mb-3 tracking-tight group-hover:text-[#7c3aed] transition-colors">
                       {event.title}
                     </h3>
-                    
+
                     <p className="text-sm text-[#7e7898] leading-relaxed mb-6">{event.content}</p>
 
                     {event.points.length > 0 && (
@@ -500,7 +499,7 @@ export default function EventVolunteersPage() {
       {/* ─── ACTION TRIGGER (CTA) ─── */}
       <section className="py-28 relative overflow-hidden text-center" style={{ background: "var(--plum-pale2)" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 65% 60% at 50% 50%, rgba(124,58,237,0.07) 0%, transparent 75%)" }} />
-        
+
         <div className="relative z-10 max-w-2xl mx-auto px-6 space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-purple-100 text-[11px] font-bold uppercase tracking-wider text-[#7c3aed]">
             Ready to apply?
@@ -512,8 +511,8 @@ export default function EventVolunteersPage() {
             Send us your operational profile / resume. Our coordination cell will reach out to schedule your induction phase.
           </p>
           <div className="pt-2">
-            <Link 
-              href="mailto:info@zhozhoentertainments.com" 
+            <Link
+              href="mailto:info@zhozhoentertainments.com"
               className="inline-flex items-center gap-3 bg-[#7c3aed] text-white px-10 py-4.5 rounded-full font-bold text-base shadow-xl shadow-purple-600/20 hover:bg-[#6d28d9] hover:-translate-y-0.5 transition-all duration-200"
             >
               Send Your Resume
