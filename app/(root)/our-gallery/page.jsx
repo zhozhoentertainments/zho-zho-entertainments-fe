@@ -16,18 +16,28 @@ import {
 
 // ─── YOUR IMAGES ───
 const realGalleryImages = [
-    { id: 1, src: "/oldevent/_DSF0359.jpg", alt: "Championship Live Action" },
-    { id: 2, src: "/oldevent/6F8A7271.JPG", alt: "Tournament Ground Segment" },
-    { id: 3, src: "/oldevent/end.JPG", alt: "Closing Ceremony Track" },
-    { id: 4, src: "/oldevent/IMGL0018.JPG", alt: "Team Distribution Lineup" },
-    { id: 5, src: "/oldevent/india.JPG", alt: "National Format Activation" },
-    { id: 6, src: "/oldevent/introduction-to-kho-kho.jpg", alt: "Introduction Blueprint Presentation" },
-    { id: 7, src: "/oldevent/troffy.JPG", alt: "Official Winners Trophy Ceremony" },
-    { id: 8, src: "/bangalore.jpg", alt: "Bangalore Hub Stadium" },
-    { id: 9, src: "/chennai.jpg", alt: "Chennai Operations Center" },
-    { id: 10, src: "/Delhi.jpg", alt: "Delhi Arena Track Showcase" },
-    { id: 11, src: "/Dance-6.jpg", alt: "Cultural Performance Opener" },
-    { id: 12, src: "/3d.png", alt: "3D Venue Asset Layout Mapping" }
+    // --- Fan Village Images Added at the Top ---
+    { id: 1, src: "/fan-village/_DSF0262.jpg", alt: "Fan Village Selfie Point with Traditional Attire" },
+ 
+    { id: 7, src: "/fan-village/0D6A9747.jpg", alt: "Kho Kho Photo Booth Installation with Dancers" },
+    { id: 8, src: "/fan-village/0D6A9757.jpg", alt: "Artists Performing Martial Arts or Folk Dance on Stage" },
+    { id: 10, src: "/fan-village/A19I9026.jpg", alt: "Traditional Gujarati Garba or Folk Dance Group" },
+    { id: 11, src: "/fan-village/DSC00023.jpg", alt: "Traditional Group Dance Performance on Lawn" },
+    { id: 12, src: "/fan-village/MDI08153.jpg", alt: "Kho Kho India 2025 Creative Selfie Corner" },
+    { id: 13, src: "/fan-village/MDI08175.jpg", alt: "Cultural Artist Posing in Front of Village Backdrop" },
+
+    // --- Existing Old Event Images (IDs incremented dynamically) ---
+    { id: 14, src: "/oldevent/_DSF0359.jpg", alt: "Championship Live Action" },
+    { id: 15, src: "/oldevent/6F8A7271.JPG", alt: "Tournament Ground Segment" },
+    { id: 16, src: "/oldevent/end.JPG", alt: "Closing Ceremony Track" },
+    { id: 17, src: "/oldevent/IMGL0018.JPG", alt: "Team Distribution Lineup" },
+    { id: 18, src: "/oldevent/india.JPG", alt: "National Format Activation" },
+    { id: 19, src: "/oldevent/introduction-to-kho-kho.jpg", alt: "Introduction Blueprint Presentation" },
+    { id: 20, src: "/oldevent/troffy.JPG", alt: "Official Winners Trophy Ceremony" },
+    { id: 21, src: "/bangalore.jpg", alt: "Bangalore Hub Stadium" },
+    { id: 22, src: "/chennai.jpg", alt: "Chennai Operations Center" },
+  
+    { id: 24, src: "/Dance-6.jpg", alt: "Cultural Performance Opener" },
 ];
 
 const IMAGES_PER_PAGE = 6;

@@ -8,53 +8,46 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const testimonialsData = [
-  {
+ {
     id: 1,
-    name: "Rajesh Kumar",
-    role: "Former National Athlete",
-    comment: "Zhozho Entertainment has completely revolutionized how traditional Indian sports are presented. Seeing Kho Kho on a global arena with a world-class prize pool is a dream come true.",
+    name: "Sudhanshu Mittal",
+    role: "President, Kho Kho Federation of India (KKFI)",
+    comment: "Kho Kho is an indigenous sport that has risen from the mud to the mat. The ultimate goal is to take this traditional Indian game to the Asian Games and eventually the Olympics. The global interest we are seeing now is unprecedented.",
     rating: 5
   },
   {
     id: 2,
-    name: "Ananya Reddy",
-    role: "Sports Journalist & Analyst",
-    comment: "The presentation and high-octane production scale of the Elite Kho Kho Championship match the commercial standards of global cricket leagues. Over 64M+ digital streams prove its massive impact.",
+    name: "Sarika Kale",
+    role: "Arjuna Awardee & Former Indian Women's Kho Kho Captain",
+    comment: "The introduction of professional leagues and financial backing has completely changed the lives of players. Earlier, families hesitated to send girls into sports, but now they see a secure future and immense pride in Kho Kho.",
     rating: 5
   },
   {
     id: 3,
-    name: "Vikram Rathore",
-    role: "Managing Director, KVBR Arena",
-    comment: "Hosting the 1st Edition at Yousufguda Indoor Stadium was seamless. The crowd engagement, structural layout management, and overall coordination by the Zhozho crew were absolutely elite.",
+    name: "Tenzing Niyogi",
+    role: "CEO & League Commissioner, Ultimate Kho Kho",
+    comment: "We always knew Kho Kho had massive potential because of its relentless speed and agility. By packaging it with high-octane broadcast tech, shorter formats, and dynamic presentation, we have captured both rural and urban youth audiences.",
     rating: 5
   },
   {
     id: 4,
-    name: "Srinivas Rao",
-    role: "State Coach, Telangana",
-    comment: "An exceptional corporate leap forward for our grassroots sport. The ₹30.5 Lakh prize pool is not just a reward; it is fueling the bright future and professional security for hundreds of athletes.",
+    name: "Ramji Kashyap",
+    role: "Star Indian Kho Kho Player (Ultimate Kho Kho Player of the Tournament)",
+    comment: "Playing on mats under stadium lights with millions watching on TV felt like a dream. This sport has given players like me an identity, financial stability, and the chance to show our speed and skills to the entire nation.",
     rating: 5
   },
   {
     id: 5,
-    name: "Meera Deshmukh",
-    role: "Gen-Z Digital Content Creator",
-    comment: "As a digital-first creator, the speed, energy, and relentless tactical pace of Kho Kho matches kept my audience pinned down. Absolutely phenomenal organization and visual branding!",
+    name: "Sumit Bhatia",
+    role: "Sports Analyst & Commentator",
+    comment: "The sheer athleticism required in Kho Kho—sudden drops, dives, and explosive sprints—makes it one of the most camera-friendly sports. The digital viewership numbers prove that India is ready to consume non-cricket sports passionately.",
     rating: 5
   },
   {
     id: 6,
-    name: "Amit Sharma",
-    role: "Lead Sponsor Consultant",
-    comment: "The massive footfall of 80,000+ live spectators combined with OTT broadcasting provides unparalleled premium visibility for corporate partners. This tournament is India's next big sporting movement.",
-    rating: 5
-  },
-  {
-    id: 7,
-    name: "Preeti Naidu",
-    role: "Tech Stack Architect",
-    comment: "Attended the grand finale live in Hyderabad. The mix of traditional soil spirit with futuristic stadium lighting and entertainment systems created an unforgettable fan experience.",
+    name: "Karan Mendon",
+    role: "Professional Kho Kho Athlete",
+    comment: "From being considered a schoolyard game to seeing corporate brands invest in us, the transformation is incredible. The level of fitness and scientific training we undergo now matches international sports standards.",
     rating: 5
   }
 ];

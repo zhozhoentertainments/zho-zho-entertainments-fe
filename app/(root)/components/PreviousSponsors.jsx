@@ -94,6 +94,7 @@ export default function SponsorsPage() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = 'mailto:info@zhozhoentertainments.com?subject=Sponsorship Deck Request&body=Hi Team,%0D%0A%0D%0AI\'m interested in sponsorship opportunities. Please share the sponsorship deck.%0D%0A%0D%0ARegards,%0D%0A[Your Name]%0D%0A[Company Name]'}
               className="inline-flex items-center gap-2 bg-[#961FDE] text-white border-none rounded-lg px-6 py-3 text-[13px] font-semibold cursor-pointer"
             >
               <Mail size={14} /> Get Sponsorship Deck
@@ -101,6 +102,7 @@ export default function SponsorsPage() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = 'tel:+918019037799'}
               className="inline-flex items-center gap-2 bg-white text-[#120323] border border-[rgba(18,3,35,0.12)] rounded-lg px-6 py-3 text-[13px] font-semibold cursor-pointer"
             >
               <Phone size={14} /> Schedule a Call
@@ -191,16 +193,6 @@ export default function SponsorsPage() {
         <div className="max-w-[1100px] mx-auto text-center">
 
           <div className="flex justify-center items-center flex-wrap gap-10">
-            {/* {TRUSTED_BRANDS.map((brand) => (
-              <motion.span
-                key={brand}
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                className="text-base font-bold tracking-[0.02em] text-[rgba(18,3,35,0.35)] cursor-pointer"
-              >
-                {brand}
-              </motion.span>
-            ))} */}
             <SponsorsLogoCarousel />
           </div>
         </div>
@@ -339,6 +331,7 @@ export default function SponsorsPage() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = 'mailto:info@zhozhoentertainments.com'}
               className="inline-flex items-center gap-2 bg-[#961FDE] text-white rounded-lg px-6 py-3 text-[13px] font-semibold cursor-pointer border-none"
             >
               <Mail size={14} /> Get Sponsorship Deck
@@ -346,6 +339,7 @@ export default function SponsorsPage() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = 'tel:+918019037799'}
               className="inline-flex items-center gap-2 bg-white/10 text-white rounded-lg px-6 py-3 text-[13px] font-semibold cursor-pointer border border-white/20"
             >
               <Phone size={14} /> Schedule a Call
@@ -353,9 +347,9 @@ export default function SponsorsPage() {
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-4 text-xs text-white/40">
-            <span>partners@orangehub.co.in</span>
+            <span>info@zhozhoentertainments.com</span>
             <span>•</span>
-            <span>+91 98765 43210</span>
+            <span>+91 8019037799</span>
             <span>•</span>
             <span>Response within 24h</span>
           </div>

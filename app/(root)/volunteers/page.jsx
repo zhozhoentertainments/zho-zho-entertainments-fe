@@ -243,7 +243,7 @@ export default function EventVolunteersPage() {
       </section>
 
       {/* ─── 0. INTRO SECTION ─── */}
-      <section className="py-24" style={{ background: "var(--bg-2)" }}>
+      {/* <section className="py-24" style={{ background: "var(--bg-2)" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 items-center">
 
@@ -277,7 +277,7 @@ export default function EventVolunteersPage() {
 
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ─── 1. ELIGIBILITY CRITERIA (LEFT SIDE CONTENT) ─── */}
       <section className="py-24 bg-white">
