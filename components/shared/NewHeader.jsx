@@ -442,6 +442,18 @@ export default function NewHeader() {
                 Services
               </Link>
 
+              <Link
+                href="/our-gallery"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/services")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
+              >
+                Our Gallary
+              </Link>
+
+
               <div className="w-12 h-[1.5px] bg-neutral-200 my-3" />
 
               {/* Mobile Upcoming Events Dropdown */}
