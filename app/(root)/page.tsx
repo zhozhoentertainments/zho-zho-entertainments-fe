@@ -14,7 +14,8 @@ import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import WhyKhoKhoPartner from "./components/WhyKhoKhoPartner";
 import SponsorsLogoCarousel from "./components/SponsorsLogoCarousel.js";
 import ServicesPage from "./components/ServicesPage.js";
-import RecentActivities from "./components/RecentActivities.jsx";
+// import RecentActivities from "./components/RecentActivities.jsx";
+import PressGallery from "./components/PressGallery.jsx";
 
 
 
@@ -33,6 +34,8 @@ export default function Home() {
       <PerformedEvents/>
       <ServicesPage/>
       <SponsorsLogoCarousel />
+      <PressGallery/>
+
     </div>
   );
 }

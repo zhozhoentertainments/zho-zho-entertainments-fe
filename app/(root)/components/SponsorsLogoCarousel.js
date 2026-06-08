@@ -31,7 +31,7 @@ export default function SponsorsLogoCarousel() {
           <div className="flex items-center gap-3 text-left">
             <div>
               <h3 className="text-2xl md:text-3xl font-black text-slate-950 tracking-tight relative inline-block">
-                Reach Out Sponsorship
+               Our Sponsors 
                 <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-orange-500 to-transparent rounded-full"></span>
               </h3>
             </div>

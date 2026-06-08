@@ -16,28 +16,50 @@ import {
 
 // ─── YOUR IMAGES ───
 const realGalleryImages = [
-    // --- Fan Village Images Added at the Top ---
-    { id: 1, src: "/fan-village/_DSF0262.jpg", alt: "Fan Village Selfie Point with Traditional Attire" },
- 
-    { id: 7, src: "/fan-village/0D6A9747.jpg", alt: "Kho Kho Photo Booth Installation with Dancers" },
-    { id: 8, src: "/fan-village/0D6A9757.jpg", alt: "Artists Performing Martial Arts or Folk Dance on Stage" },
-    { id: 10, src: "/fan-village/A19I9026.jpg", alt: "Traditional Gujarati Garba or Folk Dance Group" },
-    { id: 11, src: "/fan-village/DSC00023.jpg", alt: "Traditional Group Dance Performance on Lawn" },
-    { id: 12, src: "/fan-village/MDI08153.jpg", alt: "Kho Kho India 2025 Creative Selfie Corner" },
-    { id: 13, src: "/fan-village/MDI08175.jpg", alt: "Cultural Artist Posing in Front of Village Backdrop" },
+  // --- PURANI IMAGES (KHO-KHO & CULTURAL) ---
+  { id: 14, src: "/oldevent/_DSF0359.jpg", alt: "Championship Live Action" },
+  { id: 15, src: "/oldevent/6F8A7271.JPG", alt: "Tournament Ground Segment" },
+  { id: 16, src: "/oldevent/end.JPG", alt: "Closing Ceremony Track" },
+  { id: 17, src: "/oldevent/IMGL0018.JPG", alt: "Team Distribution Lineup" },
+  { id: 18, src: "/oldevent/india.JPG", alt: "National Format Activation" },
+  { id: 19, src: "/oldevent/introduction-to-kho-kho.jpg", alt: "Introduction Blueprint Presentation" },
+  { id: 20, src: "/oldevent/troffy.JPG", alt: "Official Winners Trophy Ceremony" },  
+//   { id: 24, src: "/Dance-6.jpg", alt: "Cultural Performance Opener" },
 
-    // --- Existing Old Event Images (IDs incremented dynamically) ---
-    { id: 14, src: "/oldevent/_DSF0359.jpg", alt: "Championship Live Action" },
-    { id: 15, src: "/oldevent/6F8A7271.JPG", alt: "Tournament Ground Segment" },
-    { id: 16, src: "/oldevent/end.JPG", alt: "Closing Ceremony Track" },
-    { id: 17, src: "/oldevent/IMGL0018.JPG", alt: "Team Distribution Lineup" },
-    { id: 18, src: "/oldevent/india.JPG", alt: "National Format Activation" },
-    { id: 19, src: "/oldevent/introduction-to-kho-kho.jpg", alt: "Introduction Blueprint Presentation" },
-    { id: 20, src: "/oldevent/troffy.JPG", alt: "Official Winners Trophy Ceremony" },
-    { id: 21, src: "/bangalore.jpg", alt: "Bangalore Hub Stadium" },
-    { id: 22, src: "/chennai.jpg", alt: "Chennai Operations Center" },
+  // --- NAYI IMAGES (SCREENSHOT SE EXTRACTED) ---
+//   { id: 25, src: "/oldevent/8S4A4196.JPG", alt: "Event Action Shot 4196" },
+  { id: 26, src: "/oldevent/8S4A4916.JPG", alt: "Event Action Shot 4916" },
+  { id: 27, src: "/oldevent/8S4A4917.JPG", alt: "Event Action Shot 4917" },
+//   { id: 28, src: "/oldevent/8S4A4919.JPG", alt: "Event Action Shot 4919" },
+  { id: 29, src: "/oldevent/8S4A4920.JPG", alt: "Event Action Shot 4920" },
+  { id: 30, src: "/oldevent/8S4A4927.JPG", alt: "Event Action Shot 4927" },
+  { id: 31, src: "/oldevent/8S4A4943.JPG", alt: "Event Action Shot 4943" },
+//   { id: 32, src: "/oldevent/8S4A4977.JPG", alt: "Event Action Shot 4977" },
+  { id: 33, src: "/oldevent/8S4A4991.JPG", alt: "Event Action Shot 4991" },
+  { id: 34, src: "/oldevent/8S4A5042.JPG", alt: "Event Action Shot 5042" },
+  { id: 35, src: "/oldevent/8S4A5060.JPG", alt: "Event Action Shot 5060" },
+  { id: 36, src: "/oldevent/8S4A5065.JPG", alt: "Event Action Shot 5065" },
+  { id: 37, src: "/oldevent/8S4A5074.JPG", alt: "Event Action Shot 5074" },
+  { id: 38, src: "/oldevent/8S4A5088.JPG", alt: "Event Action Shot 5088" },
+  { id: 39, src: "/oldevent/8S4A5095.JPG", alt: "Event Action Shot 5095" },
+  { id: 40, src: "/oldevent/8S4A5098.JPG", alt: "Event Action Shot 5098" },
+  { id: 41, src: "/oldevent/8S4A5104.JPG", alt: "Event Action Shot 5104" },
+  { id: 42, src: "/oldevent/8S4A5125.JPG", alt: "Event Action Shot 5125" },
+  { id: 43, src: "/oldevent/8S4A5149.JPG", alt: "Event Action Shot 5149" },
+  { id: 44, src: "/oldevent/8S4A5183.JPG", alt: "Event Action Shot 5183" },
+  { id: 45, src: "/oldevent/8S4A5186.JPG", alt: "Event Action Shot 5186" },
+  { id: 46, src: "/oldevent/8S4A5187.JPG", alt: "Event Action Shot 5187" },
+  { id: 47, src: "/oldevent/8S4A5233.JPG", alt: "Event Action Shot 5233" },
+  { id: 48, src: "/oldevent/8S4A5236.JPG", alt: "Event Action Shot 5236" },
+  { id: 49, src: "/oldevent/8S4A5240.JPG", alt: "Event Action Shot 5240" },
+  { id: 50, src: "/oldevent/8S4A5252.JPG", alt: "Event Action Shot 5252" },
+  { id: 51, src: "/oldevent/8S4A5256.JPG", alt: "Event Action Shot 5256" },
+  { id: 52, src: "/oldevent/8S4A5306.JPG", alt: "Event Action Shot 5306" },
+  { id: 53, src: "/oldevent/8S4A5384.JPG", alt: "Event Action Shot 5384" },
   
-    { id: 24, src: "/Dance-6.jpg", alt: "Cultural Performance Opener" },
+  // --- EXTRA IMAGES FROM THE BOTTOM ---
+  { id: 54, src: "/oldevent/medals.JPG", alt: "Official Medals Ceremony" },
+  { id: 55, src: "/oldevent/team-event.JPG", alt: "Team Event Group Showcase" }
 ];
 
 const IMAGES_PER_PAGE = 6;
@@ -126,7 +148,7 @@ export default function GalleryPage() {
                         transition={{ delay: 0.2 }}
                         className="inline-block text-[11px] font-bold text-[#7c3aed] uppercase tracking-[0.3em] mb-4 bg-purple-50 px-4 py-2 rounded-full"
                     >
-                        Asset Operations Log
+                        zho zho event Gallery 
                     </motion.span>
 
                     <motion.h1

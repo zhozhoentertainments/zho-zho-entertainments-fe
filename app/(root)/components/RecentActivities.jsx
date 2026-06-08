@@ -26,16 +26,16 @@ const recentEvents = [
     segments: [
       { num: "01", label: "5K Fun Run/Walk", sub: "Untimed. For everyone to participate and show support." },
       { num: "02", label: "10K Timed Run", sub: "For those who want to challenge themselves with tracked timing." },
-      { num: "03", label: "Virtual Run", sub: "For those who can't make it but still want to contribute." }
+      // { num: "03", label: "Virtual Run", sub: "For those who can't make it but still want to contribute." }
     ]
   },
   {
-    type: "1st Edition Blueprint",
+    type: "UPCOMING- 1st Edition Blueprint  ",
     title: "Elite Kho Kho Championship",
     tagline: "India's Fastest Growing Sport. Built For The Next Gen.",
     quote: "Experience the 'Sport of Our Soil' – Telangana's Pride and India's Next Sporting Movement.",
     timeline: "AUGUST 2026 (4 Days of Action)",
-    venue: "Yousufguda Stadium, KVBR Indoor Arena, Hyd",
+    venue: "Hyderabad",
     isDark: true,
     hasSegments: false,
     stats: [

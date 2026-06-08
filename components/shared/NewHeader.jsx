@@ -56,13 +56,10 @@ export default function NewHeader() {
         <div className="w-full bg-[#120324] text-white/90 text-[11px] font-medium tracking-wide border-b border-[#A822F5]/20 pt-3 pb-7 xl:pb-8">
           <div className="w-full max-w-[92%] xl:max-w-[85%] mx-auto px-4 flex justify-between items-center">
             <div className="flex items-center gap-4 sm:gap-6">
-              <span className="flex items-center gap-1.5 hover:text-[#A822F5] transition-colors cursor-default">
-                <MapPin size={13} className="text-[#A822F5] hidden sm:inline" />
-                <span className="hidden sm:inline">Flat No: 102, Sai Kiran Apartments, Ameerpet , Hyderabad, TS - 500038</span>
-              </span>
-              <a href="mailto:info@Snowly.com" className="flex items-center gap-1.5 hover:text-[#A822F5] transition-colors">
-                <Mail size={13} className="text-[#A822F5]" />
-                <span>info@zhozhoentertainments.com</span>
+              
+              <a href="mailto:info@zhozhoentertainments.com" className="flex items-center gap-1.5 hover:text-[#A822F5] transition-colors">
+                <Mail size={16} className="text-[#A822F5]" />
+                <span className="text-md">info@zhozhoentertainments.com</span>
               </a>
             </div>
 
@@ -103,7 +100,7 @@ export default function NewHeader() {
                   rel="noopener noreferrer"
                   className="w-6 h-6 rounded-full bg-white/10 hover:bg-black hover:text-blue-600 flex items-center justify-center transition-all duration-300"
                 >
-                  <Twitter size={16} />
+                  <X size={16} />  {/* Changed from Twitter to X */}
                 </a>
                 <a
                   href="https://youtube.com/@zhozhoentertainments"
@@ -150,22 +147,22 @@ export default function NewHeader() {
               </Link>
 
               <Link
-                href="/our-team"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/our-team") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                href="/mental-health-matters"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/mental-health-matters") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
                   }`}
               >
-                Our Team
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/our-team") ? "w-full" : "w-0 group-hover:w-full"
+                Mental Health Matters
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 shadow-[0_2px_8px_rgba(168,34,245,0.4)] ${isActive("/mental-health-matters") ? "w-full" : "w-0 group-hover:w-full"
                   }`} />
               </Link>
 
               <Link
-                href="/aboutUs"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/aboutUs") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                href="/about-us"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/about-us") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
                   }`}
               >
                 About Us
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/aboutUs") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/about-us") ? "w-full" : "w-0 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -386,22 +383,23 @@ export default function NewHeader() {
                   </div>
                 )} */}
 
-                <Link
-                  href="/our-team"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/aboutUs")
-                    ? "text-[#A822F5] bg-[#A822F5]/5"
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                    }`}
-                >
-                  Our Team
-                </Link>
+
               </div>
+               <Link
+                href="/mental-health-matters"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/mental-health-matters")
+                  ? "text-[#A822F5] bg-[#A822F5]/5"
+                  : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
+                  }`}
+              >
+                Mental Health Matters
+              </Link>
 
               <Link
                 href="/aboutUs"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/aboutUs")
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/about-us")
                   ? "text-[#A822F5] bg-[#A822F5]/5"
                   : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
                   }`}
@@ -456,57 +454,7 @@ export default function NewHeader() {
 
               <div className="w-12 h-[1.5px] bg-neutral-200 my-3" />
 
-              {/* Mobile Upcoming Events Dropdown */}
-              {/* <div className="w-full flex flex-col items-center">
-                <button
-                  onClick={() => toggleMobileSubmenu("sports")}
-                  className={`flex items-center justify-center gap-1 py-3.5 w-full rounded-xl transition-colors ${isActive("/objectives/SportsManagement") ||
-                      isActive("/events/sports/rifle-shooting") ||
-                      isActive("/events/cultural")
-                      ? "text-[#A822F5] bg-[#A822F5]/5"
-                      : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                    }`}
-                >
-                  <span>Upcoming Events</span>
-                  <ChevronDown size={14} className={`transition-transform text-[#A822F5] ${activeMobileSubmenu === "sports" ? "rotate-180" : ""}`} />
-                </button>
-                {activeMobileSubmenu === "sports" && (
-                  <div className="flex flex-col items-center bg-neutral-100 w-11/12 rounded-xl p-3 mt-0.5">
-                    <span className="text-[10px] font-black text-[#A822F5] mb-1">Sports Events</span>
-                    <Link
-                      href="/objectives/SportsManagement"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-[11px] font-bold py-1 w-full text-center normal-case rounded-lg transition-colors ${isActive("/objectives/SportsManagement")
-                          ? "text-[#A822F5] bg-[#A822F5]/10"
-                          : "text-neutral-400 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                        }`}
-                    >
-                      Kho Kho
-                    </Link>
-                    <Link
-                      href="/events/sports/rifle-shooting"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-[11px] font-bold py-1 w-full text-center normal-case rounded-lg transition-colors ${isActive("/events/sports/rifle-shooting")
-                          ? "text-[#A822F5] bg-[#A822F5]/10"
-                          : "text-neutral-400 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                        }`}
-                    >
-                      Rifle Shooting
-                    </Link>
-                    <div className="w-1/3 h-[1px] bg-neutral-200 my-2" />
-                    <Link
-                      href="/events/cultural"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-[11px] font-bold py-1 w-full text-center rounded-lg transition-colors ${isActive("/events/cultural")
-                          ? "text-[#A822F5] bg-[#A822F5]/10"
-                          : "text-neutral-400 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                        }`}
-                    >
-                      Cultural Events
-                    </Link>
-                  </div>
-                )}
-              </div> */}
+
 
             </div>
           </motion.div>

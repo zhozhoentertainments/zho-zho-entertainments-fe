@@ -115,7 +115,7 @@ export default function EliteChampionship() {
                 </div>
                 <div>
                   <p className="text-lg font-black text-white tracking-wide truncate uppercase">YOUSUFGUDA STADIUM</p>
-                  <p className="text-[11px] text-slate-400 font-medium mt-0.5">KVBR Indoor Arena, Hyd</p>
+                  <p className="text-[11px] text-slate-400 font-medium mt-0.5">Hyderabad</p>
                 </div>
               </div>
             </div>

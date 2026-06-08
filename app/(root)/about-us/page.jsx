@@ -16,14 +16,15 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import RecentActivities from "../components/RecentActivities.jsx";
+import OurTeam from "../components/OurTeam.jsx";
 
 export default function AboutUs() {
   const canvasRef = useRef(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    { src: "/flag.jpg", alt: "Event Production" },
-    { src: "/team-mascot.JPG", alt: "Global Entertainment" },
+    { src: "/events/team-event.JPG", alt: "Event Production" },
+    { src: "/events/medals.JPG", alt: "Global Entertainment" },
   ];
 
   // Auto rotate images
@@ -140,7 +141,7 @@ export default function AboutUs() {
           <div className="w-20 h-1 bg-gradient-to-r from-[#8A39E1] to-amber-400 mx-auto mt-4 rounded-full" />
         </div>
 
-       
+
 
         {/* Our Narrative Section with Image */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
@@ -205,8 +206,8 @@ export default function AboutUs() {
                     key={idx}
                     onClick={() => setCurrentImageIndex(idx)}
                     className={`transition-all duration-300 rounded-full ${idx === currentImageIndex
-                        ? "w-6 h-2 bg-[#8A39E1]"
-                        : "w-2 h-2 bg-gray-300 hover:bg-[#8A39E1]/50"
+                      ? "w-6 h-2 bg-[#8A39E1]"
+                      : "w-2 h-2 bg-gray-300 hover:bg-[#8A39E1]/50"
                       }`}
                   />
                 ))}
@@ -217,7 +218,7 @@ export default function AboutUs() {
 
         {/* LEFT-RIGHT SPLIT SECTION - Both sections same style with enhanced hover */}
         <div className="grid lg:grid-cols-2 gap-8 mb-20">
-          
+
           {/* LEFT SIDE - Our Core Pillars */}
           <div className="bg-white rounded-2xl border border-purple-100 p-6 shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-purple-300">
             <div className="text-center mb-6">
@@ -330,7 +331,7 @@ export default function AboutUs() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#0B0214] mb-1 group-hover:text-amber-600 transition-colors duration-300">Strong Support Network
-</h3>
+                    </h3>
                     <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                       A vast, energized ecosystem of volunteers, professionals, and strategic partners.
                     </p>
@@ -357,7 +358,32 @@ export default function AboutUs() {
         </div>
       </div>
 
+
+
+      <OurTeam />
       <RecentActivities />
+      <div class="w-full max-w-5xl mx-auto py-10 px-6 bg-white border-y border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left select-none">
+
+        <div class="font-sans tracking-tight">
+          <span class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900">
+            Orangehub
+          </span>
+          <span class="text-xl sm:text-2xl md:text-3xl font-light text-slate-400 mx-2">
+            is now
+          </span>
+          <span class="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            Zho-Zho Entertainments
+          </span>
+        </div>
+
+        <div class="flex-shrink-0">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider text-purple-700 uppercase bg-purple-50 border border-purple-100">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
+            Official
+          </span>
+        </div>
+
+      </div>
 
       <style jsx>{`
         @keyframes spin-slow {
