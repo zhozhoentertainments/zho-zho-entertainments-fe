@@ -56,7 +56,7 @@ export default function NewHeader() {
         <div className="w-full bg-[#120324] text-white/90 text-[11px] font-medium tracking-wide border-b border-[#A822F5]/20 pt-3 pb-7 xl:pb-8">
           <div className="w-full max-w-[92%] xl:max-w-[85%] mx-auto px-4 flex justify-between items-center">
             <div className="flex items-center gap-4 sm:gap-6">
-              
+
               <a href="mailto:info@zhozhoentertainments.com" className="flex items-center gap-1.5 hover:text-[#A822F5] transition-colors">
                 <Mail size={16} className="text-[#A822F5]" />
                 <span className="text-md">info@zhozhoentertainments.com</span>
@@ -134,160 +134,110 @@ export default function NewHeader() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center xl:pl-8 gap-5 lg:gap-6 xl:gap-8 text-[13px] font-black uppercase tracking-[0.12em] text-neutral-800">
+            <nav className="hidden xl:flex items-center xl:pl-8 gap-5 lg:gap-6 xl:gap-8 text-[13px] uppercase tracking-[0.12em]">
 
+              {/* HOME */}
               <Link
                 href="/"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Home
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 shadow-[0_2px_8px_rgba(168,34,245,0.4)] ${isActive("/") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/")
+                    ? "w-full bg-[#A822F5] shadow-[0_2px_8px_rgba(168,34,245,0.4)]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
+              {/* MENTAL HEALTH MATTERS */}
               <Link
                 href="/mental-health-matters"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/mental-health-matters") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/mental-health-matters")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Mental Health Matters
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 shadow-[0_2px_8px_rgba(168,34,245,0.4)] ${isActive("/mental-health-matters") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/mental-health-matters")
+                    ? "w-full bg-[#A822F5] shadow-[0_2px_8px_rgba(168,34,245,0.4)]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
+              {/* ABOUT US */}
               <Link
                 href="/about-us"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/about-us") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/about-us")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 About Us
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/about-us") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/about-us")
+                    ? "w-full bg-[#A822F5]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
+              {/* SPONSORS */}
               <Link
                 href="/sponsors"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/sponsors") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/sponsors")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Sponsors
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/sponsors") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/sponsors")
+                    ? "w-full bg-[#A822F5]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
+              {/* VOLUNTEERS */}
               <Link
                 href="/volunteers"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/volunteers") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/volunteers")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Volunteers
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/volunteers") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/volunteers")
+                    ? "w-full bg-[#A822F5]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
+              {/* SERVICES */}
               <Link
                 href="/services"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/services") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/services")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Services
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/services") ? "w-full" : "w-0 group-hover:w-full"
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/services")
+                    ? "w-full bg-[#A822F5]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
-              {/* Upcoming Events Dropdown */}
-              {/* <div
-                className="relative py-1.5 cursor-pointer group"
-                onMouseEnter={() => setDesktopDropdown("events")}
-                onMouseLeave={() => {
-                  setDesktopDropdown(null);
-                  setIsSportsOpen(false);
-                }}
-              >
-                <span className={`flex items-center gap-1 transition-colors duration-200 group-hover:text-[#A822F5] ${
-                  desktopDropdown === "events" ? "text-[#A822F5]" : "text-neutral-800"
-                } ${isActive("/objectives/SportsManagement") || isActive("/events/cultural") ? "text-[#A822F5]" : ""}`}>
-                  Upcoming Events <ChevronDown size={12} className="text-[#A822F5] opacity-80" />
-                </span>
-                <AnimatePresence>
-                  {desktopDropdown === "events" && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.15, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-[#FDFBF7] border border-[#A822F5]/20 p-1.5 rounded-xl shadow-lg z-[110] flex flex-col"
-                    >
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsSportsOpen(!isSportsOpen);
-                        }}
-                        className={`flex items-center justify-between w-full px-4 py-2.5 text-[12px] font-black uppercase tracking-wider rounded-lg text-left transition-all duration-150 ${
-                          isSportsOpen
-                            ? "bg-[#A822F5] text-white"
-                            : "text-neutral-600 hover:text-white hover:bg-[#A822F5]"
-                        }`}
-                      >
-                        <span>Sports Events</span>
-                        <ChevronDown size={12} className={`transition-transform duration-200 ${isSportsOpen ? "rotate-180" : ""}`} />
-                      </button>
-
-                      <AnimatePresence>
-                        {isSportsOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="bg-neutral-50/80 border border-neutral-200/50 rounded-lg mx-1 my-1 flex flex-col overflow-hidden"
-                          >
-                            <Link
-                              href="/objectives/SportsManagement"
-                              className={`px-5 py-2 text-[11px] font-bold transition-all duration-150 tracking-wide ${
-                                isActive("/objectives/SportsManagement")
-                                  ? "text-[#A822F5] bg-[#A822F5]/10"
-                                  : "text-neutral-500 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                              }`}
-                            >
-                              • Kho Kho
-                            </Link>
-                            <Link
-                              href="/events/sports/rifle-shooting"
-                              className={`px-5 py-2 text-[11px] font-bold transition-all duration-150 tracking-wide ${
-                                isActive("/events/sports/rifle-shooting")
-                                  ? "text-[#A822F5] bg-[#A822F5]/10"
-                                  : "text-neutral-500 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                              }`}
-                            >
-                              • Rifle Shooting
-                            </Link>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-
-                      <Link
-                        href="/events/cultural"
-                        className={`block px-4 py-2.5 text-[12px] font-black uppercase tracking-wider rounded-lg transition-all duration-150 mt-0.5 ${
-                          isActive("/events/cultural")
-                            ? "bg-[#A822F5] text-white"
-                            : "text-neutral-600 hover:text-white hover:bg-[#A822F5]"
-                        }`}
-                      >
-                        Cultural Events
-                      </Link>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div> */}
+              {/* OUR GALLERY */}
               <Link
                 href="/our-gallery"
-                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/our-gallery") ? "text-[#A822F5]" : "hover:text-[#A822F5]"
+                className={`relative py-1.5 transition-colors duration-200 group ${isActive("/our-gallery")
+                    ? "text-[#A822F5] font-black"
+                    : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
-                Our Gallary
-                <span className={`absolute bottom-0 left-0 h-[2.5px] bg-[#A822F5] transition-all duration-200 ${isActive("/our-gallery") ? "w-full" : "w-0 group-hover:w-full"
+                Our Gallery
+                <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/our-gallery")
+                    ? "w-full bg-[#A822F5]"
+                    : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -385,7 +335,7 @@ export default function NewHeader() {
 
 
               </div>
-               <Link
+              <Link
                 href="/mental-health-matters"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/mental-health-matters")
