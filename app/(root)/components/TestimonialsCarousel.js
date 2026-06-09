@@ -1,196 +1,365 @@
-import React from 'react';
+'use client';
+
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const testimonialsData = [
- {
-    id: 1,
-    name: "Sudhanshu Mittal",
-    role: "President, Kho Kho Federation of India (KKFI)",
-    comment: "Kho Kho is an indigenous sport that has risen from the mud to the mat. The ultimate goal is to take this traditional Indian game to the Asian Games and eventually the Olympics. The global interest we are seeing now is unprecedented.",
-    rating: 5
-  },
-  {
-    id: 2,
-    name: "Sarika Kale",
-    role: "Arjuna Awardee & Former Indian Women's Kho Kho Captain",
-    comment: "The introduction of professional leagues and financial backing has completely changed the lives of players. Earlier, families hesitated to send girls into sports, but now they see a secure future and immense pride in Kho Kho.",
-    rating: 5
-  },
-  {
-    id: 3,
-    name: "Tenzing Niyogi",
-    role: "CEO & League Commissioner, Ultimate Kho Kho",
-    comment: "We always knew Kho Kho had massive potential because of its relentless speed and agility. By packaging it with high-octane broadcast tech, shorter formats, and dynamic presentation, we have captured both rural and urban youth audiences.",
-    rating: 5
-  },
-  {
-    id: 4,
-    name: "Ramji Kashyap",
-    role: "Star Indian Kho Kho Player (Ultimate Kho Kho Player of the Tournament)",
-    comment: "Playing on mats under stadium lights with millions watching on TV felt like a dream. This sport has given players like me an identity, financial stability, and the chance to show our speed and skills to the entire nation.",
-    rating: 5
-  },
-  {
-    id: 5,
-    name: "Sumit Bhatia",
-    role: "Sports Analyst & Commentator",
-    comment: "The sheer athleticism required in Kho Kho—sudden drops, dives, and explosive sprints—makes it one of the most camera-friendly sports. The digital viewership numbers prove that India is ready to consume non-cricket sports passionately.",
-    rating: 5
-  },
-  {
-    id: 6,
-    name: "Karan Mendon",
-    role: "Professional Kho Kho Athlete",
-    comment: "From being considered a schoolyard game to seeing corporate brands invest in us, the transformation is incredible. The level of fitness and scientific training we undergo now matches international sports standards.",
-    rating: 5
-  }
+  { id: 1, name: "NARENDRA MODI", role: "PRIME MINISTER OF INDIA", comment: "INCREDIBLY PROUD OF INDIAN MEN'S KHO KHO TEAM FOR WINNING THE KHO KHO WORLD CUP TITLE. THEIR GRIT AND DEDICATION IS COMMENDABLE. THE WIN WILL CONTRIBUTE TO FURTHER POPULARISING KHO KHO AMONG THE YOUTH" },
+  { id: 2, name: "DROUPADI MURMU", role: "PRESIDENT OF INDIA", comment: "I CONVEY MY HEARTIEST CONGRATULATIONS TO BOTH THE INDIAN TEAMS, WOMEN'S AND MEN'S, FOR WINNING THE INAUGURAL KHO KHO WORLD CUP. INDIAN PLAYERS HAVE DEMONSTRATED THEIR SUPREMACY IN THIS TRADITIONAL GAME OF OUR COUNTRY. I AM SURE THAT THE HISTORIC SUCCESS OF OUR GIRLS AND BOYS WILL INSPIRE OUR YOUTH, MAKING THE GAME MORE POPULAR. I WISH BOTH THE TEAMS SUSTAINED SUCCESS IN THE FUTURE" },
+  { id: 3, name: "JAGDEEP DHANKHAR", role: "VICE PRESIDENT OF INDIA", comment: "HEARTIEST CONGRATULATIONS TO THE INDIAN MEN'S AND WOMEN'S KHO KHO TEAMS ON THEIR OUTSTANDING VICTORY IN THE INAUGURAL #KHOKHOWORLDCUP! THEIR SKILL AND DEDICATION HAVE SHOWCASED INDIA'S EXCELLENCE IN THIS TRADITIONAL SPORT ON A GLOBAL PLATFORM. THIS HISTORIC ACHIEVEMENT WILL INSPIRE COUNTLESS YOUNG INDIANS AND INFUSE NEW ENERGY IN THE PURSUIT OF KHO KHO." },
+  { id: 4, name: "SALMAN KHAN", role: "INDIAN ACTOR", comment: "THE WORLD'S FIRST EVER KHO KHO WORLD CUP IS GOING TO BE PLAYED ON INDIAN SOIL. WHEN THE WORLD COMES TOGETHER, THEN INDIA WILL FLY. #THEWORLDGOESKHO" },
+  { id: 5, name: "TIGER SHROFF", role: "INDIAN ACTOR & YOUTH ICON", comment: "The sheer athleticism required in Kho Kho—sudden drops, dives, and explosive sprints—makes it one of the most camera-friendly sports. The digital viewership numbers prove that India is ready to consume non-cricket sports passionately." },
+  { id: 6, name: "Sachin Tendulkar", role: "Former Cricketer", comment: "Hello everyone, India is set to host the historic first edition of the Kho Kho World Cup in New Delhi. It is indeed a proud moment for India and all Indian sports. I know this competition is going to be a big one. My best wishes to all the participating teams in this competition, with a special wish for my Indian team. All the very best, Jai Hind" },
+  { id: 7, name: "Sergey Bubka", role: "IOC Member", comment: "Hello everyone, I wish the best of luck to all the teams, men and women who will compete in the inaugural Kho Kho World Cup in New Delhi. I trust you all will compete with passion and determination and of course, uphold fairness and respect for your opponents. This is an important moment for Kho Kho and I believe this will be a fantastic show. Good luck." },
+  { id: 8, name: "Neeraj Chopra", role: "Olympic Gold Medalist, Javelin Thrower", comment: "Hello everyone, Let's all join in with Kho Kho Kho. The world's best Kho Kho World Cup is coming to Delhi which will be watched by the world from 13th-19th January. #TheWorldGoesKho" },
+  { id: 9, name: "The Great Khali", role: "Former Wrestler", comment: "Our nation is all set to host the first-ever Kho Kho World Cup in Delhi on 13th January. Teams from all across the globe are coming! Kho Kho is a sport that is connected to our motherland. So friends, let's support our players and hope they win the World Cup. Best of luck to everyone, Jai Hind, Jai Bharat." },
+  { id: 10, name: "Bhaichung Bhutia", role: "Former Footballer", comment: "India's traditional sport, Kho Kho, is going international for the first time. I would like to congratulate the federation on this wonderful initiative and wish all participating teams all the best. I am sure Team India is going to do very very well in this tournament. All the best team India! #TheWorldGoesKho" },
+  { id: 11, name: "Sunil Gavaskar", role: "Former Cricketer", comment: "Hi, I want to wish the best of luck to everyone involved in the Kho Kho World Cup. To all the participants, enjoy yourself, have fun, and play with great sporting spirit. Thank you very much" },
+  { id: 12, name: "Mary Kom", role: "Boxer", comment: "Hello, sports fans, I am delighted that the World Kho Kho Championship is taking place in New Delhi and it's going to be big. Celebrate this thrilling Indigenous sport as the world's best teams battle it out! Don't miss out, join us and cheer for your favorites! #TheWorldGoesKho" },
+  { id: 13, name: "Deepa Malik", role: "Para Athlete", comment: "Namaste, As an Indian athlete, it fills me with immense pride to announce that a traditional game rooted in our country's soil, Kho Kho, a game most of us have played at least once in our lives, will see its first-ever World Cup being hosted in India." },
+  { id: 14, name: "Abhinav Bindra", role: "Olympic Gold Medalist, Former Shooter", comment: "I'm thrilled to share my excitement about the inaugural Kho Kho World Cup 2025. This historic event brings together 24 nations to celebrate one of India's most traditional yet dynamic sports. Kho Kho has evolved into a modern, fast-paced, and strategic game that showcases exceptional teamwork, agility, and determination. Together let's show the world why the world goes kho." },
+];
+
+function getInitials(name) {
+  return name.trim().split(/\s+/).map((n) => n[0]).join('').slice(0, 2).toUpperCase();
+}
+
+const avatarPalette = [
+  { bg: '#FFF0E6', color: '#C2410C' },
+  { bg: '#F3E8FF', color: '#7E22CE' },
+  { bg: '#FEF3C7', color: '#B45309' },
+  { bg: '#EDE9FE', color: '#6D28D9' },
+  { bg: '#FFE8D6', color: '#EA580C' },
+];
+
+const cardAccents = [
+  { role: '#EA580C', bar: 'linear-gradient(90deg,#EA580C,#FB923C)', dot: '#FDBA74', dotHover: '#EA580C', quoteBg: '#FEF0E6', borderHover: '#FB923C', shadow: 'rgba(234,88,12,0.12)', scrollThumb: '#FDBA74' },
+  { role: '#A021EB', bar: 'linear-gradient(90deg,#A021EB,#C084FC)', dot: '#D8B4FE', dotHover: '#A021EB', quoteBg: '#F3E8FF', borderHover: '#C084FC', shadow: 'rgba(160,33,235,0.12)', scrollThumb: '#D8B4FE' },
 ];
 
 export default function TestimonialsCarousel() {
+  const swiperRef = useRef(null);
+
   return (
-    <section className="relative w-full bg-slate-50 text-slate-800 font-sans overflow-hidden py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
-      <div className="relative z-10 max-w-7xl mx-auto space-y-12">
+    <>
+      <style>{`
+        /* ── SECTION ── */
+        .ts-section {
+          background: #FFFFFF;
+          padding: 88px 16px 80px;
+          position: relative;
+          overflow: hidden;
+        }
+        @media(min-width:640px){ .ts-section{ padding: 88px 24px 80px; } }
+        @media(min-width:1024px){ .ts-section{ padding: 96px 40px 88px; } }
+
+        .ts-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(ellipse 600px 400px at 5% 0%, rgba(234,88,12,0.06) 0%, transparent 70%),
+            radial-gradient(ellipse 500px 400px at 95% 100%, rgba(160,33,235,0.06) 0%, transparent 70%);
+          pointer-events: none;
+        }
+
+        .ts-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+
+        /* ── HEADER ── */
+        .ts-eyebrow {
+          display: inline-flex; align-items: center; gap: 10px;
+          margin-bottom: 14px;
+        }
+        .ts-eyebrow-pill {
+          display: flex; align-items: center; gap: 7px;
+          padding: 5px 14px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, #FFF0E6, #F3E8FF);
+          border: 1px solid rgba(160,33,235,0.15);
+        }
+        .ts-eyebrow-dot {
+          width: 6px; height: 6px; border-radius: 50%;
+          background: linear-gradient(135deg, #EA580C, #A021EB);
+          flex-shrink: 0;
+        }
+        .ts-eyebrow-text {
+          font-size: 10px; font-weight: 800;
+          text-transform: uppercase; letter-spacing: 0.25em;
+          background: linear-gradient(90deg, #EA580C, #A021EB);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .ts-heading {
+          font-size: clamp(2.1rem, 5vw, 3.8rem);
+          font-weight: 900;
+          text-transform: uppercase;
+          color: #111827;
+          line-height: 1.0;
+          letter-spacing: -0.025em;
+          margin: 0 0 14px;
+        }
+        .ts-heading-game {
+          position: relative;
+          display: inline-block;
+          background: linear-gradient(90deg, #EA580C 0%, #A021EB 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .ts-heading-game::after {
+          content: '';
+          position: absolute;
+          bottom: -4px; left: 0;
+          width: 100%; height: 3px;
+          border-radius: 99px;
+          background: linear-gradient(90deg, #EA580C, #A021EB);
+          opacity: 0.35;
+        }
+        .ts-subtext {
+          font-size: 15px; color: #4B5563; font-weight: 500;
+          max-width: 680px; line-height: 1.6; margin: 0;
+        }
+        .ts-subtext strong {
+          color: #111827;
+          font-weight: 700;
+        }
+
+        /* ── CARD ── */
+        .ts-card {
+          background: #FFFFFF;
+          border: 1.5px solid #F3F4F6;
+          border-radius: 20px;
+          padding: 28px 24px 22px;
+          display: flex; flex-direction: column;
+          height: 420px; 
+          position: relative; overflow: hidden;
+          transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+          cursor: default; user-select: none;
+        }
+        .ts-card-topbar {
+          position: absolute;
+          top: 0; left: 18px; right: 18px;
+          height: 3px; border-radius: 0 0 5px 5px;
+          opacity: 0; transition: opacity 0.25s;
+        }
+        .ts-card:hover .ts-card-topbar { opacity: 1; }
+        .ts-card-quotebg {
+          position: absolute; top: 10px; right: 14px;
+          font-size: 84px; font-family: Georgia, serif;
+          line-height: 1; pointer-events: none;
+          transition: color 0.25s;
+          z-index: 0;
+        }
+
+        .ts-avatar-row { display: flex; align-items: center; gap: 13px; margin-bottom: 15px; flex-shrink: 0; }
+        .ts-avatar {
+          width: 44px; height: 44px; border-radius: 12px;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 12px; font-weight: 900; flex-shrink: 0; letter-spacing: 0.05em;
+        }
+        .ts-role {
+          font-size: 9px; font-weight: 800;
+          text-transform: uppercase; letter-spacing: 0.2em;
+          margin-bottom: 3px;
+        }
+        .ts-name {
+          font-size: 13px; font-weight: 900;
+          color: #111827; text-transform: uppercase;
+          letter-spacing: 0.04em;
+        }
+        .ts-shadow-line { height: 1px; background: #F3F4F6; margin-bottom: 15px; flex-shrink: 0; }
         
-        {/* SIMPLE CLEAN HEADER */}
-        <div className="text-center md:text-left max-w-4xl space-y-3">
-  {/* Subtle Top Indicator Badge */}
-  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100/70 border border-purple-200/50 text-[10px] font-black uppercase tracking-widest text-[#7c3aed]">
-    Global Endorsements
-  </div>
-  
-  {/* Main Heading Container */}
-  <div className="relative inline-block pb-4">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 uppercase leading-none">
-      Testimonials for <span className="text-[#7c3aed]">Kho Kho globally</span>
-    </h2>
-    
-    {/* Premium Half Underline Dynamic Curve Layer */}
-    <div className="absolute -bottom-1 left-0 md:left-0 mx-auto md:mx-0 w-full h-3 max-w-[280px] sm:max-w-[340px] md:max-w-[420px]">
-      <svg viewBox="0 0 400 18" preserveAspectRatio="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        {/* Shadow Track Line */}
-        <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#f07167" strokeWidth="4" strokeLinecap="round" opacity="0.12" />
-        {/* Active Animated Curve Line */}
-        <path d="M10,12 C90,4 180,14 240,9 C290,5 340,11 390,7" fill="none" stroke="#f07167" strokeWidth="2.5" strokeLinecap="round" className="animate-curve-bar" />
-      </svg>
-    </div>
-  </div>
-</div>
+        /* ── SCROLLVIEW FOR COMMENT ── */
+        .ts-scroll-container {
+          flex: 1;
+          overflow-y: auto;
+          margin-bottom: 12px;
+          padding-right: 6px;
+          position: relative;
+          z-index: 1;
+        }
+        .ts-comment { font-size: 13.5px; color: #4B5563; line-height: 1.72; margin: 0; }
+        
+        .ts-scroll-container::-webkit-scrollbar {
+          width: 4px;
+        }
+        .ts-scroll-container::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .ts-scroll-container::-webkit-scrollbar-thumb {
+          background: transparent; 
+          border-radius: 10px;
+          transition: background 0.3s;
+        }
+        .ts-card:hover .ts-scroll-container::-webkit-scrollbar-thumb {
+          background: var(--scroll-color, #E5E7EB);
+        }
 
-        {/* CAROUSEL WRAPPER WITH LEFT/RIGHT CENTER BUTTONS */}
-        <div className="relative w-full px-0 md:px-14 group">
-          
-          {/* DESKTOP ONLY LEFT BUTTON - Aligned via precise CSS parameters */}
-          <button
-            className="testimonial-swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-30 p-3.5 bg-white border border-slate-200 rounded-full text-slate-600 hover:text-slate-950 hover:border-slate-400 hover:shadow-lg transition-all active:scale-95 hidden md:flex items-center justify-center disabled:opacity-30"
-            aria-label="Previous testimonials"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
+        .ts-dots {
+          display: flex; gap: 5px;
+          margin-top: auto; padding-top: 13px;
+          border-top: 1px solid #F9FAFB; flex-shrink: 0;
+        }
+        .ts-dot { width: 6px; height: 6px; border-radius: 50%; transition: background 0.25s; }
 
-          {/* SWIPER CONTAINER ELEMENT */}
+        /* ── SWIPER TRACK ADJUSTMENTS ── */
+        .ts-swiper {
+          padding: 16px 4px 24px !important; 
+          margin-top: -16px;
+        }
+        .ts-swiper .swiper-slide { height: auto !important; }
+        .ts-swiper .swiper-wrapper { align-items: stretch !important; }
+
+        /* ── CONTROLS ── */
+        .ts-controls {
+          display: flex; align-items: center; justify-content: center;
+          gap: 16px; margin-top: 32px;
+        }
+        .ts-nav-btn {
+          width: 52px; height: 52px; border-radius: 50%;
+          border: none;
+          display: flex; align-items: center; justify-content: center;
+          cursor: pointer; flex-shrink: 0;
+          transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+          color: #fff;
+        }
+        .ts-nav-btn:hover { opacity: 0.88; box-shadow: 0 8px 28px rgba(0,0,0,0.18); }
+        .ts-nav-btn:active { transform: scale(0.91); }
+        .ts-nav-prev { background: linear-gradient(135deg, #EA580C, #F97316); box-shadow: 0 4px 16px rgba(234,88,12,0.35); }
+        .ts-nav-next { background: linear-gradient(135deg, #A021EB, #B84CF7); box-shadow: 0 4px 16px rgba(160,33,235,0.35); }
+
+        /* ── PAGINATION ── */
+        .ts-pagination {
+          display: flex !important; align-items: center;
+          justify-content: center; gap: 6px;
+          position: static !important; bottom: auto !important;
+        }
+        .ts-pagination .swiper-pagination-bullet {
+          width: 8px !important; height: 8px !important;
+          border-radius: 999px !important; opacity: 1 !important;
+          margin: 0 !important;
+          background: #E5E7EB !important;
+          transition: all 0.3s ease !important;
+        }
+        .ts-pagination .swiper-pagination-bullet-active {
+          width: 28px !important;
+          background: linear-gradient(90deg, #EA580C, #A021EB) !important;
+        }
+      `}</style>
+
+      <section className="ts-section">
+        <div className="ts-inner">
+
+          {/* ── HEADER WITH DYNAMIC DESCRIPTION ── */}
+          <div style={{ marginBottom: '52px' }}>
+            <div className="ts-eyebrow">
+              <div className="ts-eyebrow-pill">
+                <span className="ts-eyebrow-dot" />
+                <span className="ts-eyebrow-text">Global Endorsements</span>
+              </div>
+            </div>
+            <h2 className="ts-heading">
+              Voices for{' '}
+              <span className="ts-heading-game">the Game</span>
+            </h2>
+            <p className="ts-subtext">
+              Backed by the Honorable <strong>Prime Minister</strong>, the <strong>President of India</strong>, legendary <strong>cricketers</strong>, and prominent <strong>Bollywood actors</strong>—celebrating Kho Kho's historic global rise.
+            </p>
+          </div>
+
+          {/* ── SWIPER ── */}
           <Swiper
-            modules={[Autoplay, Navigation, Pagination]}
+            modules={[Autoplay, Pagination]}
+            onSwiper={(swiper) => { swiperRef.current = swiper; }}
             loop={true}
-            loopedSlides={3}
-            loopAdditionalSlides={3}
-            watchSlidesProgress={true}
             grabCursor={true}
-            spaceBetween={24}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
-            }}
-            navigation={{
-              prevEl: '.testimonial-swiper-prev',
-              nextEl: '.testimonial-swiper-next',
-            }}
-            pagination={{
-              clickable: true,
-              el: '.testimonial-swiper-pagination'
-            }}
+            spaceBetween={20}
+            autoplay={{ delay: 5500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            pagination={{ clickable: true, el: '.ts-pagination' }}
             breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
+              320:  { slidesPerView: 1 },
+              600:  { slidesPerView: 1.12 },
+              768:  { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
-            className="w-full h-auto !pb-4"
+            className="ts-swiper w-full"
           >
-            {testimonialsData.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between h-64 group transition-all duration-300 hover:border-slate-300 hover:shadow-md select-none">
-                  
-                  <div className="space-y-4">
-                    {/* Rating Stars Row */}
-                    <div className="flex items-center gap-0.5">
-                      {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+            {testimonialsData.map((item, i) => {
+              const pal    = avatarPalette[i % avatarPalette.length];
+              const accent = cardAccents[i % 2];
+              const initials = getInitials(item.name);
+
+              return (
+                <SwiperSlide key={item.id}>
+                  <div
+                    className="ts-card"
+                    style={{ '--scroll-color': accent.scrollThumb }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.borderColor = accent.borderHover;
+                      e.currentTarget.style.boxShadow   = `0 12px 32px ${accent.shadow}`;
+                      e.currentTarget.style.transform   = 'translateY(-8px)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.borderColor = '#F3F4F6';
+                      e.currentTarget.style.boxShadow   = 'none';
+                      e.currentTarget.style.transform   = 'translateY(0)';
+                    }}
+                  >
+                    {/* Top gradient bar */}
+                    <div className="ts-card-topbar" style={{ background: accent.bar }} />
+
+                    {/* Ghost quote */}
+                    <span className="ts-card-quotebg" style={{ color: accent.quoteBg }} aria-hidden="true">"</span>
+
+                    {/* Avatar row */}
+                    <div className="ts-avatar-row">
+                      <div className="ts-avatar" style={{ background: pal.bg, color: pal.color }}>
+                        {initials}
+                      </div>
+                      <div style={{ minWidth: 0 }}>
+                        <p className="ts-role" style={{ color: accent.role }}>{item.role}</p>
+                        <h4 className="ts-name">{item.name}</h4>
+                      </div>
+                    </div>
+
+                    <div className="ts-shadow-line" />
+                    
+                    {/* Scrollable text container */}
+                    <div className="ts-scroll-container">
+                      <p className="ts-comment">{item.comment}</p>
+                    </div>
+
+                    <div className="ts-dots">
+                      {[...Array(5)].map((_, j) => (
+                        <span key={j} className="ts-dot" style={{ background: accent.dot }} />
                       ))}
                     </div>
-
-                    {/* Testimonial Statement */}
-                    <p className="text-sm font-medium text-slate-600 leading-relaxed italic line-clamp-4 group-hover:text-slate-950 transition-colors duration-300">
-                      &ldquo;{item.comment}&rdquo;
-                    </p>
                   </div>
-
-                  {/* Profile Identification Card */}
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-100 flex-shrink-0">
-                    <div className="w-9 h-9 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 text-xs border border-slate-200">
-                      {item.name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-950 tracking-wide uppercase">
-                        {item.name}
-                      </h4>
-                      <p className="text-[11px] font-medium text-slate-400">
-                        {item.role}
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
 
-          {/* DESKTOP ONLY RIGHT BUTTON - Aligned via precise CSS parameters */}
-          <button
-            className="testimonial-swiper-next absolute right-0 top-1/2 -translate-y-1/2 z-30 p-3.5 bg-white border border-slate-200 rounded-full text-slate-600 hover:text-slate-950 hover:border-slate-400 hover:shadow-lg transition-all active:scale-95 hidden md:flex items-center justify-center disabled:opacity-30"
-            aria-label="Next testimonials"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* UNIFIED NAVIGATION DESK (PERFECTLY CENTER-ALIGNED ON MOBILE) */}
-        <div className="flex flex-col items-center justify-center gap-4 pt-2">
-          
-          {/* Custom Dots Pagination Render Element */}
-          <div className="testimonial-swiper-pagination flex items-center justify-center gap-1.5 [&>.swiper-pagination-bullet-active]:!w-5 [&>.swiper-pagination-bullet-active]:!bg-slate-800 [&>.swiper-pagination-bullet]:!h-1.5 [&>.swiper-pagination-bullet]:!rounded-full [&>.swiper-pagination-bullet]:!transition-all [&>.swiper-pagination-bullet]:!duration-300 [&>.swiper-pagination-bullet]:!bg-slate-300" />
-
-          {/* Mobile Only Control Triggers */}
-          <div className="flex md:hidden items-center justify-center gap-4 w-full max-w-xs mx-auto">
-            <button className="testimonial-swiper-prev p-2.5 bg-white border border-slate-200 rounded-xl text-slate-500 active:scale-95 transition-all flex items-center justify-center shadow-sm">
-              <ChevronLeft className="w-4 h-4" />
+          {/* ── BOTTOM CONTROLS ── */}
+          <div className="ts-controls">
+            <button className="ts-nav-btn ts-nav-prev" onClick={() => swiperRef.current?.slidePrev()} aria-label="Previous">
+              <ChevronLeft size={22} />
             </button>
-            <span className="text-[10px] font-mono font-black text-slate-400 tracking-widest uppercase select-none">
-              Swipe Grid
-            </span>
-            <button className="testimonial-swiper-next p-2.5 bg-white border border-slate-200 rounded-xl text-slate-500 active:scale-95 transition-all flex items-center justify-center shadow-sm">
-              <ChevronRight className="w-4 h-4" />
+
+            <div className="ts-pagination" />
+
+            <button className="ts-nav-btn ts-nav-next" onClick={() => swiperRef.current?.slideNext()} aria-label="Next">
+              <ChevronRight size={22} />
             </button>
           </div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

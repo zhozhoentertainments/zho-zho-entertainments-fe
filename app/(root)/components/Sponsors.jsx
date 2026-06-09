@@ -1,186 +1,231 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Sparkles, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { Sparkles, Award, Target, Landmark } from "lucide-react";
+import { motion } from "framer-motion";
 
-const partnersData = [
+// Swiper Core and Modules
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+// Import Swiper Styles
+import "swiper/css";
+
+const basePartners = [
   {
     id: 1,
     name: "Sports Authority of Telangana",
     logo: "/partnership/sports-authority-of-telangana.png",
-    defaultBorder: "border-amber-400/40 bg-amber-50/30",
-    hoverBorder: "group-hover:border-amber-500",
-    glow: "group-hover:shadow-[0_0_40px_rgba(245,158,11,0.25)]",
-    gradient: "from-amber-400 to-orange-500",
-    desc: "Official institutional event endorsement"
+    zone: "State Institutional Body",
+    bgAccent: "group-hover:bg-amber-500/[0.02]",
+    borderGlow: "group-hover:border-amber-500/30",
+    dotColor: "bg-amber-400"
   },
   {
     id: 2,
     name: "Kho Kho Federation of India",
     logo: "/partnership/kkfi.png",
-    defaultBorder: "border-blue-400/40 bg-blue-50/30",
-    hoverBorder: "group-hover:border-blue-500",
-    glow: "group-hover:shadow-[0_0_40px_rgba(59,130,246,0.25)]",
-    gradient: "from-blue-400 to-indigo-500",
-    desc: "National scale championship federation alliance"
+    zone: "National Apex Body",
+    bgAccent: "group-hover:bg-blue-500/[0.02]",
+    borderGlow: "group-hover:border-blue-500/30",
+    dotColor: "bg-blue-500"
   },
   {
     id: 3,
     name: "Telangana Kho Kho Association",
     logo: "/partnership/kho-kho-telangana.png",
-    defaultBorder: "border-violet-400/40 bg-violet-50/30",
-    hoverBorder: "group-hover:border-violet-500",
-    glow: "group-hover:shadow-[0_0_40px_rgba(124,58,237,0.25)]",
-    gradient: "from-violet-400 to-fuchsia-500",
-    desc: "Regional sports execution network alignment"
-  },
+    zone: "Regional Affiliate Unit",
+    bgAccent: "group-hover:bg-violet-500/[0.02]",
+    borderGlow: "group-hover:border-violet-500/30",
+    dotColor: "bg-violet-500"
+  }
 ];
 
+// Duplicating the array to guarantee Swiper loop mechanics never freeze up with 3 items
+const partnersData = [...basePartners, ...basePartners, ...basePartners, ...basePartners];
+
 export default function Sponsors() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <section className="relative  bg-slate-50 py-24 lg:py-32 overflow-hidden perspective-1000">
-      {/* Premium Minimalist Background Grid */}
-      <div className="absolute inset-0 opacity-[0.4] bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
-      
-      {/* Clean Smooth Ambient Vector Glows */}
-      <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-gradient-to-tr from-violet-200/40 to-fuchsia-200/40 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-gradient-to-tr from-amber-100/40 to-pink-100/40 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative bg-[#fafafa] py-12 sm:py-20 overflow-hidden perspective-1000">
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        
-        {/* Header Block */}
-        <div className="text-left max-w-3xl mb-20 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/80 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-violet-600 animate-pulse" />
-            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-slate-500">
-              Institutional Network
-            </span>
-          </div>
-          <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-none">
-            Validated by <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 pb-2">
-              Leadership
-              {/* Premium absolute underline */}
-              <span className="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 rounded-full" />
-            </span>
-          </h2>
-          <p className="text-slate-500 text-base max-w-xl leading-relaxed font-medium mt-2">
-            Building premium experiences, elite brand partnerships, and monumental corporate entertainment setups backed by solid organizational trust.
-          </p>
-        </div>
+      {/* Premium Minimal Tech Grid background overlay */}
+      <div className="absolute inset-0 opacity-[0.25] bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
 
-        {/* Master Content Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Left Column: Highly Animated, Rotated Photo Component (7-Columns) */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <div 
-              className="relative w-full cursor-pointer select-none transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={{
-                transform: isHovered 
-                  ? "rotate(0deg) scale(1.02) translateY(-8px)" 
-                  : "rotate(-2deg) scale(1) translateY(0px)",
-                transformStyle: "preserve-3d"
+      {/* Soft Cinematic Dynamic Mesh Glows */}
+      <div className="absolute top-12 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-violet-200/30 to-fuchsia-200/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-12 right-10 w-[400px] h-[400px] bg-gradient-to-tr from-amber-100/30 to-pink-100/20 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full space-y-16 z-10">
+
+        {/* TOP INTERACTIVE SPLIT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          {/* Left Column: Big Scale Image with Mobile & Desktop Responsive Framer Motion Tilt */}
+          {/* Left Column: Big Scale Image Container */}
+          <div className="lg:col-span-7 w-full relative">
+            <motion.div
+              // 1. Initial state me card -3 degree tilted rahega
+              initial={{ opacity: 0, y: 20, rotate: -3 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              // 2. Hover par saari rotations 0 ho jayengi aur card bilkul seedha ho jayega
+              whileHover={{
+                rotate: 0,    // Yeh card ka main -3 angle seedha karega
+                rotateY: 0,
+                rotateX: 0,
+                rotateZ: 0,
+                scale: 1.04   // Seedha hone ke saath card smoothly bada dikhega
               }}
+              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} // Fast and premium responsive transition
+              style={{ transformStyle: "preserve-3d" }}
+              className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-[28px] overflow-hidden bg-white shadow-[0_25px_60px_rgba(0,0,0,0.08)] border border-slate-200/80 p-3 group cursor-pointer"
             >
-              {/* Backside Shadow Decking Effect */}
-              <div className="absolute inset-0 bg-slate-900/5 rounded-[32px] translate-x-3 translate-y-3 blur-md -z-10 transition-transform duration-700 ease-out" />
-              
-              {/* Main Premium Picture Border Container */}
-              <div className="relative rounded-[32px] overflow-hidden bg-white border border-slate-200/80 p-3 shadow-xl transition-all duration-500">
-                
-                {/* Image Element */}
-                <div className="relative overflow-hidden rounded-[22px] aspect-[4/3] bg-slate-100">
-                  <Image 
-                    src="/inaugration-image.jpeg" 
-                    alt="Zho Zho Entertainments Recognition Meet" 
-                    fill
-                    className="object-cover transition-transform duration-[1000ms] ease-out scale-100 group-hover:scale-105"
-                    priority
-                  />
-                  {/* Glassmorphism Dynamic Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-90' : 'opacity-70'}`} />
-                </div>
-                
-                {/* Floating Modern Information Tag */}
-                <div className="absolute bottom-8 left-8 right-8 backdrop-blur-xl bg-white/90 border border-white/40 p-5 rounded-2xl shadow-xl transform transition-transform duration-700 ease-out">
-                  <div className="flex justify-between items-center">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Strategic Alliance</span>
-                      </div>
-                      <h4 className="text-md font-black text-slate-900">A proud moment for Indian Kho Kho</h4>
-                    </div>
-                    {/* <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-white shadow-md">
-                      <ArrowUpRight className="w-5 h-5" />
-                    </div> */}
-                  </div>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/5 to-transparent rounded-[24px] pointer-events-none -z-10" />
 
+              <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-slate-100 shadow-inner">
+                <Image
+                  src="/inaugration-image.jpeg"
+                  alt="Validating Sports Leadership Portal Meet"
+                  fill
+                  priority
+                  // 3. Yahan se group-hover:scale ko hata diya hai taaki image card ke sath hi match kare aur alag se tilt jitter na kare
+                  className="object-cover transition-transform duration-500 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
               </div>
-            </div>
-
-            {/* Custom Business-Aligned Description underneath image */}
-            <div className={`mt-8 flex items-start gap-3 transition-all duration-700 ease-out ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-50 -translate-y-2'}`}>
-              <ShieldCheck className="w-5 h-5 text-violet-600 mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                Our collaborative framework helps scale premium corporate properties, large-scale public entertainment events, and elite athletic championships with precision management and verified execution standards.
-              </p>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Column: Clean Sponsor List (Aligned from the exact top) (5-Columns) */}
-          <div className="lg:col-span-5 flex flex-col justify-start space-y-5">
-            <div className="pb-2 border-b border-slate-200/60">
-              <span className="text-xs font-black uppercase tracking-[0.15em] text-violet-600">
-                Our Trusted Premium Sponsors
+          {/* Right Column: High-End Editorial Typography Box */}
+          <div className="lg:col-span-5 space-y-5 text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/80 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-violet-600 animate-pulse" />
+              <span className="text-[9px] font-black tracking-[0.25em] uppercase text-slate-500">
+                Institutional Network
               </span>
             </div>
-            
-            {partnersData.map((partner) => (
-              <div
-                key={partner.id}
-                className="group relative flex items-center bg-white border border-slate-200/70 rounded-2xl p-5 transition-all duration-300 hover:bg-slate-50/50 hover:shadow-md hover:-translate-y-0.5 cursor-pointer"
-              >
-                {/* Bigger Premium Circular Logo Component (Increased from w-20 h-20 to w-28 h-28) */}
-                <div className={`relative w-28 h-28 rounded-full border-2 flex items-center justify-center p-3 transition-all duration-500 group-hover:scale-105 flex-shrink-0 ${partner.defaultBorder} ${partner.hoverBorder} ${partner.glow}`}>
-                  <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${partner.gradient} opacity-0 group-hover:opacity-10 blur-md transition-all duration-500`} />
-                  <div className="absolute inset-1 rounded-full border border-dashed border-slate-300/60 group-hover:rotate-90 group-hover:border-slate-400/40 transition-all duration-700 pointer-events-none" />
-                  
-                  {/* Upgraded internal container sizing */}
-                  <div className="relative w-18 h-18 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={72}
-                      height={72}
-                      className="object-contain filter drop-shadow-sm transition-all duration-300"
-                    />
+
+            <div className="space-y-3">
+              <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
+                Validated by <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 pb-2">
+                  Leadership
+                </span>
+              </h2>
+              <div className="w-16 h-[4px] bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full" />
+            </div>
+
+            <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-medium max-w-md">
+              Building monumental public properties, premium corporate experiences, and high-performance athletic systems backed by undisputed organizational trust.
+            </p>
+          </div>
+        </div>
+
+        {/* MIDDLE RAIL BLOCK: Connected Infinite Large Left-to-Right Loop Marquee Slider */}
+        <div className="w-full relative py-8 border-y border-slate-200/60 overflow-visible bg-slate-50/40">
+
+          {/* High-contrast Structural Pipeline Rail tracking passing behind the cards */}
+          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-300 pointer-events-none z-0 -translate-y-1/2 shadow-sm" />
+
+          {/* Luxury Soft Side Mask Faders */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#fafafa] to-transparent z-20 pointer-events-none hidden sm:block" />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#fafafa] to-transparent z-20 pointer-events-none hidden sm:block" />
+
+          <div className="w-full select-none overflow-hidden z-10 relative py-2">
+            <Swiper
+              modules={[Autoplay]}
+              direction="horizontal"
+              loop={true}
+              speed={4200} // Continuous uniform smooth linear motion pace
+              allowTouchMove={true}
+              slidesPerView="auto"
+              spaceBetween={32}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: true // Drives slide direction smoothly from Left-to-Right
+              }}
+              className="premium-marquee-swiper !overflow-visible"
+            >
+              {partnersData.map((partner, index) => (
+                <SwiperSlide key={`${partner.id}-${index}`} className="!w-auto">
+
+                  {/* Card wrapper container */}
+                  <div className={`group relative flex flex-col items-center justify-center bg-white border border-slate-200/90 rounded-2xl p-6 w-[260px] sm:w-[280px] h-[220px] sm:h-[240px] text-center transition-all duration-300 hover:shadow-[0_20px_45px_rgba(124,58,237,0.06)] hover:-translate-y-1.5 cursor-pointer select-none ${partner.bgAccent} ${partner.borderGlow}`}>
+
+                    {/* Glowing Interactive Active Status Radar Dot */}
+                    <div className={`absolute top-4 right-4 w-1.5 h-1.5 rounded-full transition-all duration-300 ${partner.dotColor} opacity-30 group-hover:opacity-100 group-hover:scale-125`} />
+
+                    {/* Ultra-Clean No Box Logo Frame (logos utilize 100% space and stay proper large) */}
+                    <div className="relative w-24 h-24 flex items-center justify-center mb-3 z-10 transition-transform duration-500 group-hover:scale-105">
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={96} // Full asset visibility size allocation
+                        height={96}
+                        className="object-contain filter contrast-[0.95] group-hover:contrast-100 transition-all duration-300"
+                      />
+                    </div>
+
+                    {/* Text block positioned cleanly beneath the image logo */}
+                    <div className="space-y-1 w-full z-10">
+                      <h3 className="text-xs sm:text-sm font-black text-slate-800 tracking-tight line-clamp-2 px-1 transition-colors duration-300 group-hover:text-violet-600">
+                        {partner.name}
+                      </h3>
+                      <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest block mt-0.5">
+                        {partner.zone}
+                      </p>
+                    </div>
+
                   </div>
-                </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
 
-                {/* Typography Metadata Block */}
-                <div className="ml-5 flex-grow space-y-0.5">
-                  <h3 className="text-base font-black text-slate-900 tracking-tight leading-snug transition-colors duration-300 group-hover:text-violet-600">
-                    {partner.name}
-                  </h3>
-                  <p className="text-xs text-slate-400 font-medium tracking-wide">
-                    {partner.desc}
-                  </p>
-                </div>
-
-              </div>
-            ))}
+        {/* BASE BLOCK: Highly Organized Structured Documentation Framework (500 Words) */}
+        <div className="border-t border-slate-200/50 pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full text-slate-600">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-slate-900">
+              <Award className="w-4.5 h-4.5 text-violet-600 flex-shrink-0" />
+              <h4 className="text-xs font-black uppercase tracking-wider text-slate-800">Operational Integrity & Regulation</h4>
+            </div>
+            <p className="text-xs leading-relaxed font-medium text-slate-400">
+              The Kho Kho Federation of India (KKFI) operates as the apex statutory authority recognized directly by the Ministry of Youth Affairs and Sports, Government of India. Tasked with overall administrative core standardizations, rule optimizations, and managing systemic multi-tier tournament properties, the federation certifies foundational leagues across territories. By upgrading clay layouts into high-tensile shock-absorbing indoor synthetic mats, KKFI has successfully transformed an ancient Indian indigenous game into a prime-time athletic discipline demanding sudden velocity and tactical tracking.
+            </p>
           </div>
 
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-slate-900">
+              <Target className="w-4.5 h-4.5 text-fuchsia-600 flex-shrink-0" />
+              <h4 className="text-xs font-black uppercase tracking-wider text-slate-800">State Affiliation Networks</h4>
+            </div>
+            <p className="text-xs leading-relaxed font-medium text-slate-400">
+              Through administrative structural layers with authorized units like the Telangana Kho Kho Association, the federation orchestrates uniform telemetry data tracking logs, standardized officiating parameters, and digital scoring registers across events. This integrated selection matrix scouts exceptional talent right from sub-junior brackets up to state selections. These regional boards supply key organizational safety, validating corporate setups, state league expansions, and academic physical system integrations.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-slate-900">
+              <Landmark className="w-4.5 h-4.5 text-pink-600 flex-shrink-0" />
+              <h4 className="text-xs font-black uppercase tracking-wider text-slate-800">Institutional Scaling & Security</h4>
+            </div>
+            <p className="text-xs leading-relaxed font-medium text-slate-400">
+              The operational model integrates corporate bodies and structural units such as the Sports Authority of Telangana to cultivate robust career safety pipelines for high-performance athletes. This framework helps secure sustainable employment fields and infrastructural funding matrices, converting an ancient playground sport into a commercial property. Consequently, the game attracts major brand asset endorsements, nationwide prime-time satellite broadcast streams, and extensive public viewing setups under validated management.
+            </p>
+          </div>
         </div>
 
       </div>
+
+      {/* Global CSS Style tag to enforce pure linear transition speed on Swiper marquee tracking bounds */}
+      <style jsx global>{`
+        .premium-marquee-swiper .swiper-wrapper {
+          transition-timing-function: linear !important;
+        }
+      `}</style>
     </section>
   );
 }

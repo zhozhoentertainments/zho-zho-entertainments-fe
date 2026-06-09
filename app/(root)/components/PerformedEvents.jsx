@@ -13,13 +13,14 @@ export default function PerformedEvents() {
       categories: [
         { name: "5K Fun Run/Walk", desc: "For everyone who wants to participate and show support. Untimed." },
         { name: "10K Timed Run", desc: "For those who want to challenge themselves with tracked timing." },
-        { name: "Virtual Run", desc: "For those who can't make it to the venue but still want to contribute." }
+        // { name: "Virtual Run", desc: "For those who can't make it to the venue but still want to contribute." }
       ],
       images: [
-        "/orangehub/inaugration.JPG",
-        "/orangehub/group.JPG",
+        "/oldevent/8S4A5060.JPG",
+        "/oldevent/8S4A5232.JPG",
+        "/oldevent/8S4A5256.JPG",
         "/orangehub/mind_over_miles_bg.jpg",
-        "/orangehub/poster.JPG",
+        "/oldevent/team-event.JPG",
       ]
     }
   ];

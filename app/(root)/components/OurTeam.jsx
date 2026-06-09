@@ -30,7 +30,7 @@ const teamData = [
     name: "Mondira Jaisimha",
     role: "Advisory Board",
     bio: "Mondira brings specialized experience in theatre, social impact, and elder care. Previously a Senior Advocacy Director for HIV awareness, she currently co-runs the eldercare organization Cura Servitium. Her background in a prominent cricketing family gives her a natural aptitude for supporting sports-related initiatives.",
-    imageUrl: "/advisor/monindra.jpeg", // Added leading slash
+    imageUrl: "/advisor/dr-mona-mehdi.jpg", // Added leading slash
     roles: ["Social Advocacy", "Theatre Arts", "Elder Care", "Sports Engagement"],
     expertiseText: "Social Advocacy, Theatre Arts, Elder Care, Sports Engagement.",
     aspectClass: "aspect-[4/5]"
@@ -39,6 +39,7 @@ const teamData = [
     id: 4,
     name: "Prof. (Dr.) Venkateshwarlu N",
     role: "Advisory Board",
+    imageUrl: "/advisor/dr-venkateshwarlu.jpg", // Added leading slash
     bio: "Dr. Venkateshwarlu is the Dean of Law at Osmania University and has served in high-level administrative roles, including Jt. Secretary for the Legal Bureau of the UGC. He is a recognized expert in Corporate and Securities Laws, IPR, and Human Rights.",
     roles: ["Intellectual Property", "Corporate Law", "Human Rights", "Academic Leadership"],
     expertiseText: "Intellectual Property, Corporate Law, Human Rights, Academic Leadership.",
@@ -66,6 +67,7 @@ const teamData = [
     id: 7,
     name: "Professor Prakash Satyavageswaran",
     role: "Advisory Board",
+    imageUrl: "/advisor/prakash-satyavageeswaran.jpg", // Added leading slash
     bio: "An Assistant Professor of Marketing at IIM Udaipur and an ISB graduate, Prakash bridges the gap between corporate strategy and social impact. His research and advisory work focus on driving behavior change in rural markets and low-income communities.",
     roles: ["Marketing Research", "Rural Markets", "Behavior Change", "Business Strategy"],
     expertiseText: "Marketing Research, Rural Markets, Behavior Change, Business Strategy.",
