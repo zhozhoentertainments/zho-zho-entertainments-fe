@@ -359,7 +359,7 @@ export default function GalleryPage() {
             <footer className="py-12 bg-white border-t border-gray-100 text-center">
                 <div className="max-w-7xl mx-auto px-4">
                     <p className="text-[10px] font-bold tracking-[0.24em] uppercase text-gray-400">
-                        Zho Zho Repository Engine · Clean Fail-Safe Image Buffer Layer
+                        Zho Zho Gallery - Visual Repository of Our Event Milestones
                     </p>
                 </div>
             </footer>

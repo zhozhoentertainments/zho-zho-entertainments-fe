@@ -19,7 +19,7 @@ export default function PerformedEvents() {
         "/oldevent/8S4A5060.JPG",
         "/oldevent/8S4A5232.JPG",
         "/oldevent/8S4A5256.JPG",
-        "/orangehub/mind_over_miles_bg.jpg",
+        // "/orangehub/mind_over_miles_bg.jpg",
         "/oldevent/team-event.JPG",
       ]
     }

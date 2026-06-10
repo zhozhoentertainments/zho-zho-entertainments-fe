@@ -362,7 +362,7 @@ export default function AboutUs() {
 
       <OurTeam />
       <RecentActivities />
-      <div class="w-full max-w-5xl mx-auto py-10 px-6 bg-white border-y border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left select-none">
+      {/* <div class="w-full max-w-5xl mx-auto py-10 px-6 bg-white border-y border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left select-none">
 
         <div class="font-sans tracking-tight">
           <span class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900">
@@ -383,6 +383,46 @@ export default function AboutUs() {
           </span>
         </div>
 
+      </div> */}
+       <div className=" font-['DM_Sans',sans-serif]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="relative overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm">
+
+            {/* Gradient Accent */}
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600" />
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-5 sm:px-8 py-5">
+
+              <div className="text-center sm:text-left">
+                <p className="text-xs font-semibold tracking-[0.25em] uppercase text-slate-500 mb-2">
+                  Brand Update
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+                  <span className="text-base sm:text-lg font-semibold text-slate-400 line-through">
+                    Orange Hub Events
+                  </span>
+
+                  <span className="px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-xs font-bold uppercase tracking-wider">
+                    is now
+                  </span>
+
+                  <span className="text-xl sm:text-2xl font-black text-slate-900">
+                    Zho Zho Entertainments
+                  </span>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 rounded-full bg-violet-50 border border-violet-200 px-4 py-2">
+                <span className="h-2 w-2 rounded-full bg-violet-600 animate-pulse" />
+                <span className="text-[11px] font-bold uppercase tracking-wider text-violet-700">
+                  Orange Hub Events is now Zho Zho Entertainments
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
