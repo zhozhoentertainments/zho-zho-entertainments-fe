@@ -185,7 +185,7 @@ export default function MentalHealthMatters() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { icon: <Heart className="w-5 h-5 text-rose-500" />, stat: '1 in 4', sub: 'people affected globally by mental illness' },
-                  { icon: <ShieldAlert className="w-5 h-5" style={{ color: '#f97316' }} />, stat: 'Millions', sub: 'remain silent due to stigma and lack of access' },
+                  // { icon: <ShieldAlert className="w-5 h-5" style={{ color: '#f97316' }} />, stat: 'Millions', sub: 'remain silent due to stigma and lack of access' },
                 ].map(({ icon, stat, sub }) => (
                   <div
                     key={stat}

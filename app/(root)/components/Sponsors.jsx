@@ -102,15 +102,15 @@ export default function Sponsors() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/80 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-violet-600 animate-pulse" />
               <span className="text-[9px] font-black tracking-[0.25em] uppercase text-slate-500">
-                Institutional Network
+                Premium Partners 
               </span>
             </div>
 
             <div className="space-y-3">
               <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[0.95]">
-                Validated by <br />
+                Notable by <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 pb-2">
-                  Leadership
+                  Endorsements
                 </span>
               </h2>
               <div className="w-16 h-[4px] bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full" />

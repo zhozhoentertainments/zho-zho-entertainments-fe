@@ -245,13 +245,46 @@ body {
   font-display: swap;
 }
 
-/* Hide scrollbar for carousel */
+/* ===================================================================
+   PREMIUM CUSTOM SCROLLBAR GLOBAL STYLES
+   =================================================================== */
+
+/* Firefox के लिए स्क्रॉल बार का कलर और साइज */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f59e0b #070a14; /* (अंबर/येलो थम्ब और डार्क ब्लू-ब्लैक ट्रैक) */
+}
+
+/* Chrome, Safari, Edge, और Opera के लिए मुख्य सेटिंग्स */
+::-webkit-scrollbar {
+  width: 10px;  /* वर्टिकल स्क्रॉल बार की चौड़ाई */
+  height: 10px; /* हॉरिजॉन्टल स्क्रॉल बार की ऊंचाई */
+}
+
+/* 1. Track: स्क्रॉल बार के पीछे का बैकग्राउंड हिस्सा */
+::-webkit-scrollbar-track {
+  background: #070a14; /* डार्क बैकग्राउंड जो आपकी वेबसाइट थीम से मैच करेगा */
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 2. Thumb: स्क्रॉल करने वाला हैंडल/बार जिसे पकड़ कर स्क्रॉल करते हैं */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f59e0b 0%, #ea580c 100%); /* अंबर से ऑरेंज ग्रेडिएंट */
+  border-radius: 20px; /* एकदम स्मूथ कैप्सूल लुक */
+  border: 2px solid #070a14; /* थम्ब के चारों तरफ खाली स्पेस देने के लिए */
+  transition: all 0.3s ease-in-out;
+}
+
+/* 3. Thumb Hover Effect: जब यूजर माउस स्क्रॉल बार के ऊपर ले जाए */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fbbf24 0%, #f97316 100%); /* थोड़ा और ब्राइट कलर */
+}
+
+/* 4. Carousel/Specific Sections के लिए हाइड क्लास (अगर किसी खास जगह छुपाना हो) */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
