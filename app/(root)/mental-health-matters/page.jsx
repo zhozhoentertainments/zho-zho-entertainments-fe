@@ -9,10 +9,10 @@ import {
 } from 'lucide-react';
 
 const GALLERY_IMAGES = [
-  { src: '/oldevent/8S4A5074.jpg', alt: 'Runners at the Start Line' },
-  { src: '/oldevent/8S4A5095.jpg', alt: 'Mind Over Miles – Gachibowli Stadium' },
-  { src: '/oldevent/8S4A4991.jpg', alt: 'Community Spirit' },
-  { src: '/oldevent/8S4A4927.jpg', alt: 'Finishers Celebration' },
+  { src: '/oldevent/8S4A5074.JPG', alt: 'Runners at the Start Line' },
+  { src: '/oldevent/8S4A5095.JPG', alt: 'Mind Over Miles – Gachibowli Stadium' },
+  { src: '/oldevent/8S4A4991.JPG', alt: 'Community Spirit' },
+  { src: '/oldevent/8S4A4927.JPG', alt: 'Finishers Celebration' },
   { src: '/oldevent/8S4A5206.JPG', alt: 'Orange Hub Community' },
 ];
 
