@@ -19,15 +19,6 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const teamLinks = [
-  { name: "Advisory Board", href: "/ourTeam/advisoryBoard" },
-  { name: "Board of Directors", href: "/ourTeam/boardOfDirectors" },
-];
-
-const galleryLinks = [
-  { name: "Image Gallery", href: "/gallery/images" },
-  { name: "Video Gallery", href: "/gallery/videos" },
-];
 
 export default function NewHeader() {
   const pathname = usePathname();
@@ -140,14 +131,14 @@ export default function NewHeader() {
               <Link
                 href="/"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Home
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/")
-                    ? "w-full bg-[#A822F5] shadow-[0_2px_8px_rgba(168,34,245,0.4)]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5] shadow-[0_2px_8px_rgba(168,34,245,0.4)]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -155,14 +146,14 @@ export default function NewHeader() {
               <Link
                 href="/mental-health-matters"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/mental-health-matters")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Mental Health Matters
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/mental-health-matters")
-                    ? "w-full bg-[#A822F5] shadow-[0_2px_8px_rgba(168,34,245,0.4)]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5] shadow-[0_2px_8px_rgba(168,34,245,0.4)]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -170,14 +161,14 @@ export default function NewHeader() {
               <Link
                 href="/about-us"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/about-us")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 About Us
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/about-us")
-                    ? "w-full bg-[#A822F5]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -185,14 +176,14 @@ export default function NewHeader() {
               <Link
                 href="/sponsors"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/sponsors")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Sponsors
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/sponsors")
-                    ? "w-full bg-[#A822F5]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -200,14 +191,14 @@ export default function NewHeader() {
               <Link
                 href="/volunteers"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/volunteers")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Volunteers
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/volunteers")
-                    ? "w-full bg-[#A822F5]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -215,14 +206,14 @@ export default function NewHeader() {
               <Link
                 href="/services"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/services")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Services
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/services")
-                    ? "w-full bg-[#A822F5]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -230,14 +221,14 @@ export default function NewHeader() {
               <Link
                 href="/our-gallery"
                 className={`relative py-1.5 transition-colors duration-200 group ${isActive("/our-gallery")
-                    ? "text-[#A822F5] font-black"
-                    : "text-neutral-800 font-medium hover:text-neutral-800"
+                  ? "text-[#A822F5] font-black"
+                  : "text-neutral-800 font-medium hover:text-neutral-800"
                   }`}
               >
                 Our Gallery
                 <span className={`absolute bottom-0 left-0 h-[2.5px] transition-all duration-200 ${isActive("/our-gallery")
-                    ? "w-full bg-[#A822F5]"
-                    : "w-0 bg-neutral-800 group-hover:w-full"
+                  ? "w-full bg-[#A822F5]"
+                  : "w-0 bg-neutral-800 group-hover:w-full"
                   }`} />
               </Link>
 
@@ -304,36 +295,6 @@ export default function NewHeader() {
 
               {/* Mobile Team Dropdown */}
               <div className="w-full flex flex-col items-center">
-                {/* <button
-                  onClick={() => toggleMobileSubmenu("team")}
-                  className={`flex items-center justify-center gap-1 py-3.5 w-full rounded-xl transition-colors ${isActive("/ourTeam/advisoryBoard") || isActive("/ourTeam/boardOfDirectors")
-                    ? "text-[#A822F5] bg-[#A822F5]/5"
-                    : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
-                    }`}
-                >
-                  <span>Our Team</span>
-                  <ChevronDown size={14} className={`transition-transform duration-200 text-[#A822F5] ${activeMobileSubmenu === "team" ? "rotate-180" : ""}`} />
-                </button> */}
-                {/* {activeMobileSubmenu === "team" && (
-                  <div className="flex flex-col items-center bg-neutral-100 w-11/12 rounded-xl py-1 mt-0.5">
-                    {teamLinks.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={`text-[11px] font-bold py-2.5 w-full text-center normal-case rounded-lg transition-colors ${isActive(item.href)
-                            ? "text-[#A822F5] bg-[#A822F5]/10"
-                            : "text-neutral-500 hover:text-[#A822F5] hover:bg-[#A822F5]/10"
-                          }`}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-
-                  </div>
-                )} */}
-
-
               </div>
               <Link
                 href="/mental-health-matters"
@@ -347,7 +308,7 @@ export default function NewHeader() {
               </Link>
 
               <Link
-                href="/aboutUs"
+                href="/about-us"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/about-us")
                   ? "text-[#A822F5] bg-[#A822F5]/5"
@@ -393,7 +354,7 @@ export default function NewHeader() {
               <Link
                 href="/our-gallery"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/services")
+                className={`w-full py-3.5 rounded-xl transition-colors ${isActive("/our-gallery")
                   ? "text-[#A822F5] bg-[#A822F5]/5"
                   : "hover:text-[#A822F5] hover:bg-[#A822F5]/5"
                   }`}
