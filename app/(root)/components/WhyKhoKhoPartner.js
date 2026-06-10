@@ -88,7 +88,7 @@ export default function CompleteKhoKhoPartner() {
                 <Layers className="w-4 h-4 text-slate-400 group-hover:text-red-500 transition-colors" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">Inclusivity Metrics</h4>
+                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">Women’s Engagement Matrix</h4>
                 <p className="text-xs text-slate-500 font-medium leading-tight mt-1">
                   Boasts one of the highest female engagement ratios at <span className="font-bold text-red-600 underline decoration-red-500/20 decoration-2 underline-offset-2">41%</span>.
                 </p>

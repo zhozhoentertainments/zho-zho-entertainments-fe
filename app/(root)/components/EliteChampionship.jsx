@@ -199,7 +199,7 @@ export default function EliteLeagueLanding() {
                 </h1>
 
                 <p className="text-slate-300 text-base md:text-lg max-w-xl leading-relaxed font-normal">
-                  Experience the <span className="text-yellow-400 font-semibold">"Sport of Our Soil"</span> — Telangana's Pride and India's Next Big Sporting Movement.
+                  Experience the <span className="text-yellow-400 font-semibold">"Sport of Our Soil"</span> — India’s Pride and India's Next Big Sporting Movement.
                 </p>
               </motion.div>
 
