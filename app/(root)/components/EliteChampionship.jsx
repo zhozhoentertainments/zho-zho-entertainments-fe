@@ -32,22 +32,22 @@ const BG_IMAGE = '/oldevent/6F8A7271.JPG';
 // const BG_IMAGE = '/oldevent/champs.JPG';
 const PHOTOS = [
   {
-    src: '/oldevent/india.jpg',
+    src: '/oldevent/india.JPG',
     label: 'kho kho world cup 2025',
     position: 'center',
   },
   {
-    src: '/oldevent/MDI00909.jpg',
+    src: '/oldevent/MDI00909.JPG',
     label: 'kho kho world cup 2025',
     position: 'center',
   },
   {
-    src: '/oldevent/SNK02451.jpg',
+    src: '/oldevent/SNK02451.JPG',
     label: 'kho kho world cup 2025',
-    position: 'right', // ye right se show hogi
+    position: 'right', 
   },
   {
-    src: '/oldevent/2SNK8537.jpg',
+    src: '/oldevent/2SNK8537.JPG',
     label: 'kho kho world cup 2025',
     position: 'center',
   },
