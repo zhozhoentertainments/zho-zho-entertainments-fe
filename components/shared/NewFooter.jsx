@@ -12,8 +12,8 @@ const SOCIALS = [
 
 const NAV_LINKS = [
   { href: '/', label: 'HOME' },
-  { href: '/ourTeam', label: 'OUR TEAM' },
-  { href: '/aboutUs', label: 'ABOUT US' },
+  // { href: '/ourTeam', label: 'OUR TEAM' },
+  { href: '/about-us', label: 'ABOUT US' },
   { href: '/sponsors', label: 'SPONSORS' },
   { href: '/volunteers', label: 'VOLUNTEERS' },
   { href: '/services', label: 'SERVICES' },

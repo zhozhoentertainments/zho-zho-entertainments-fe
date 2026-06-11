@@ -65,43 +65,48 @@ export default function NewHeader() {
                   href="https://www.instagram.com/zhozho_entertainments"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white flex items-center justify-center transition-all duration-300"
                 >
-                  <Instagram size={16} />
+                  <Instagram size={14} className="sm:w-4 sm:h-4" />
                 </a>
+
                 <a
                   href="https://www.facebook.com/share/1CxFmj3d56/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#1877F2] hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 hover:bg-[#1877F2] hover:text-white flex items-center justify-center transition-all duration-300"
                 >
-                  <Facebook size={16} />
+                  <Facebook size={14} className="sm:w-4 sm:h-4" />
                 </a>
+
                 <a
                   href="https://www.linkedin.com/company/zho-zho-entertainments/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#0A66C2] hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 hover:bg-[#0A66C2] hover:text-white flex items-center justify-center transition-all duration-300"
                 >
-                  <Linkedin size={16} />
+                  <Linkedin size={14} className="sm:w-4 sm:h-4" />
                 </a>
+
                 <a
                   href="https://x.com/zhozhoent"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-black hover:text-blue-600 flex items-center justify-center transition-all duration-300"
+                  className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 hover:bg-black hover:text-blue-600 flex items-center justify-center transition-all duration-300"
                 >
-                  <X size={16} />  {/* Changed from Twitter to X */}
+                  <X size={14} className="sm:w-4 sm:h-4" />
                 </a>
+
                 <a
                   href="https://youtube.com/@zhozhoentertainments"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-6 h-6 rounded-full bg-white/10 hover:bg-[#FF0000] hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 hover:bg-[#FF0000] hover:text-white flex items-center justify-center transition-all duration-300"
                 >
-                  <Youtube size={16} />
+                  <Youtube size={14} className="sm:w-4 sm:h-4" />
                 </a>
               </div>
+
             </div>
           </div>
         </div>

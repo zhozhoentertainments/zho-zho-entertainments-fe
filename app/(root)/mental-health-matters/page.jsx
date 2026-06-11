@@ -183,7 +183,7 @@ export default function MentalHealthMatters() {
           ))}
         </div>
 
-        <div className="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-28 w-full">
+        <div className="relative mt-10 z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-28 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             <motion.div
@@ -571,7 +571,7 @@ export default function MentalHealthMatters() {
             </div>
             <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1.5 border border-white/20">
               <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-white">Rebranded for excellence</span>
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-white">Rebranded</span>
             </div>
           </div>
         </div>
