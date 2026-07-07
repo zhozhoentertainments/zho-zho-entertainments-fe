@@ -44,7 +44,7 @@ const PHOTOS = [
   {
     src: '/oldevent/SNK02451.JPG',
     label: 'kho kho world cup 2025',
-    position: 'right', 
+    position: 'right',
   },
   {
     src: '/oldevent/2SNK8537.JPG',
@@ -74,7 +74,7 @@ const FEATURES = [
   },
   {
     icon: Tv,
-    label: 'Live Broadcast straming',
+    label: 'Live Broadcast Streaming',
     desc: 'Daily coverage on leading OTT & digital channels.',
     accent: '#1e90ff',
     glow: 'rgba(30, 144, 255, 0.15)',
@@ -391,10 +391,10 @@ export default function EliteLeagueLanding() {
                 src={src}
                 alt={label}
                 className={`w-full h-full object-cover brightness-[0.75] group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out ${position === 'right'
-                    ? 'object-right'
-                    : position === 'left'
-                      ? 'object-left'
-                      : 'object-center'
+                  ? 'object-right'
+                  : position === 'left'
+                    ? 'object-left'
+                    : 'object-center'
                   }`}
               />              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
               <p className="absolute bottom-4 left-4 text-xs font-bold text-white uppercase tracking-wider">{label}</p>

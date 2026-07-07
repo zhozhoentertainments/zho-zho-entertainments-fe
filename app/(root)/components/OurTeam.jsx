@@ -25,16 +25,16 @@ const teamData = [
     expertiseText: "Strategic Vision, Public Health, Operational Rigor, Sports Advocacy.",
     aspectClass: "aspect-[4/5]"
   },
-  {
-    id: 3,
-    name: "Mondira Jaisimha",
-    role: "Advisory Board",
-    bio: "Mondira brings specialized experience in theatre, social impact, and elder care. Previously a Senior Advocacy Director for HIV awareness, she currently co-runs the eldercare organization Cura Servitium. Her background in a prominent cricketing family gives her a natural aptitude for supporting sports-related initiatives.",
-    imageUrl: "/advisor/dr-mona-mehdi.jpg", // Added leading slash
-    roles: ["Social Advocacy", "Theatre Arts", "Elder Care", "Sports Engagement"],
-    expertiseText: "Social Advocacy, Theatre Arts, Elder Care, Sports Engagement.",
-    aspectClass: "aspect-[4/5]"
-  },
+  // {
+  //   id: 3,
+  //   name: "Mondira Jaisimha",
+  //   role: "Advisory Board",
+  //   bio: "Mondira brings specialized experience in theatre, social impact, and elder care. Previously a Senior Advocacy Director for HIV awareness, she currently co-runs the eldercare organization Cura Servitium. Her background in a prominent cricketing family gives her a natural aptitude for supporting sports-related initiatives.",
+  //   imageUrl: "/advisor/dr-mona-mehdi.jpg", // Added leading slash
+  //   roles: ["Social Advocacy", "Theatre Arts", "Elder Care", "Sports Engagement"],
+  //   expertiseText: "Social Advocacy, Theatre Arts, Elder Care, Sports Engagement.",
+  //   aspectClass: "aspect-[4/5]"
+  // },
   {
     id: 4,
     name: "Prof. (Dr.) Venkateshwarlu N",
@@ -45,15 +45,15 @@ const teamData = [
     expertiseText: "Intellectual Property, Corporate Law, Human Rights, Academic Leadership.",
     aspectClass: "aspect-[4/5]"
   },
-  {
-    id: 5,
-    name: "Dr. Mona Mehdi",
-    role: "Advisory Board",
-    bio: "With more than 30 years of experience in education and administration, Dr. Mehdi is an Academic Director known for her leadership and artistic talents. She previously served as Director of the VVS Group, where she established sports academies and foundations for legendary cricketer VVS Laxman.",
-    roles: ["Educational Leadership", "Academic Administration", "Sports Mentorship", "Professional Development"],
-    expertiseText: "Educational Leadership, Academic Administration, Sports Mentorship, Professional Development.",
-    aspectClass: "aspect-[4/5]"
-  },
+  // {
+  //   id: 5,
+  //   name: "Dr. Mona Mehdi",
+  //   role: "Advisory Board",
+  //   bio: "With more than 30 years of experience in education and administration, Dr. Mehdi is an Academic Director known for her leadership and artistic talents. She previously served as Director of the VVS Group, where she established sports academies and foundations for legendary cricketer VVS Laxman.",
+  //   roles: ["Educational Leadership", "Academic Administration", "Sports Mentorship", "Professional Development"],
+  //   expertiseText: "Educational Leadership, Academic Administration, Sports Mentorship, Professional Development.",
+  //   aspectClass: "aspect-[4/5]"
+  // },
   {
     id: 6,
     name: "Itishree Kanungo",
